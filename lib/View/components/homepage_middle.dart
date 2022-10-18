@@ -74,16 +74,14 @@ class HomePageMid extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(
-            height: 20.h,
-          ),
           Padding(
             padding: EdgeInsets.only(right: 10.w),
             child: Container(
-              height: 400.h,
+              height: 460.h,
               child: Swiper(
                 itemCount: 3,
                 layout: SwiperLayout.STACK,
+                itemHeight: 400.h,
                 itemWidth: 250.w,
                 axisDirection: AxisDirection.right,
                 itemBuilder: (context, index) {
@@ -95,9 +93,19 @@ class HomePageMid extends StatelessWidget {
                     ),
                   );
                 },
+                pagination: SwiperPagination(
+                  margin: EdgeInsets.only(top: 70.h),
+                  builder: const DotSwiperPaginationBuilder(
+                    activeColor: Color(0xFF5D5FEF),
+                    color: Color(0x305D5FEF),
+                  ),
+                ),
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
         ],
       ),
     );
