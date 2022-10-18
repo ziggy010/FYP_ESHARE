@@ -8,7 +8,10 @@ class HomePageTop extends StatelessWidget {
   Widget build(BuildContext context) {
     //home page top part component for simple accesss.
     return Padding(
-      padding: EdgeInsets.only(right: 24.w),
+      padding: EdgeInsets.only(
+        right: 24.w,
+        left: 24.w,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

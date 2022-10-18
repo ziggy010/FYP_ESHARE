@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,6 +23,12 @@ class HomePageMid extends StatelessWidget {
       ],
     ];
 
+    List swiperContent = [
+      'images/coffee1.jpeg',
+      'images/coffee2.jpeg',
+      'images/coffee3.jpeg',
+    ];
+
     return Padding(
       padding: EdgeInsets.only(
         top: 30.h,
@@ -37,7 +44,7 @@ class HomePageMid extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: EdgeInsets.only(
-                    right: 24.w,
+                    left: 24.w,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,6 +74,30 @@ class HomePageMid extends StatelessWidget {
               },
             ),
           ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 10.w),
+            child: Container(
+              height: 400.h,
+              child: Swiper(
+                itemCount: 3,
+                layout: SwiperLayout.STACK,
+                itemWidth: 250.w,
+                axisDirection: AxisDirection.right,
+                itemBuilder: (context, index) {
+                  return ClipRRect(
+                    borderRadius: BorderRadius.circular(18.r),
+                    child: Image.asset(
+                      swiperContent[index],
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
+              ),
+            ),
+          )
         ],
       ),
     );
