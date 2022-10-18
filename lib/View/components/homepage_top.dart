@@ -27,6 +27,7 @@ class HomePageTop extends StatelessWidget {
                 style: TextStyle(
                   color: const Color(0x95FFFFFF),
                   fontSize: 18.sp,
+                  fontWeight: FontWeight.w800,
                 ),
               )
             ],
