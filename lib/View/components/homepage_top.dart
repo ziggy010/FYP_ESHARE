@@ -61,14 +61,20 @@ class _HomePageTopState extends State<HomePageTop>
                     style: TextStyle(
                       color: const Color(0x54FFFFFF),
                       fontSize: 14.sp,
+                      letterSpacing: 1,
                     ),
+                  ),
+                  SizedBox(
+                    height: 3.h,
                   ),
                   Text(
                     'Welcome Back!',
                     style: TextStyle(
                       color: const Color(0x95FFFFFF),
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 17.sp,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.7,
+                      fontFamily: 'manrope',
                     ),
                   )
                 ],

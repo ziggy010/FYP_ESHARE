@@ -10,7 +10,7 @@ class HomePageMid extends StatelessWidget {
   Widget build(BuildContext context) {
     List homeTitle = [
       [
-        'Visiting Card',
+        'Visiting card',
         true,
       ],
       [
@@ -24,9 +24,9 @@ class HomePageMid extends StatelessWidget {
     ];
 
     List swiperContent = [
-      'images/coffee1.jpeg',
-      'images/coffee2.jpeg',
-      'images/coffee3.jpeg',
+      'images/try.png',
+      'images/try.png',
+      'images/try.png',
     ];
 
     return Padding(
@@ -54,12 +54,14 @@ class HomePageMid extends StatelessWidget {
                         style: TextStyle(
                           color:
                               homeTitle[index][1] ? Colors.white : kGreyColor,
-                          fontSize: 20.sp,
+                          fontSize: 17.sp,
                           fontWeight: FontWeight.w800,
+                          letterSpacing: 1.9,
+                          fontFamily: 'manrope',
                         ),
                       ),
                       SizedBox(
-                        height: 5.h,
+                        height: 10.h,
                       ),
                       Container(
                         height: 2.h,
@@ -77,7 +79,7 @@ class HomePageMid extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 10.w),
             child: Container(
-              height: 460.h,
+              height: 453.h,
               child: Swiper(
                 itemCount: 3,
                 layout: SwiperLayout.STACK,
@@ -94,7 +96,9 @@ class HomePageMid extends StatelessWidget {
                   );
                 },
                 pagination: SwiperPagination(
-                  margin: EdgeInsets.only(top: 70.h),
+                  margin: EdgeInsets.only(
+                    left: 15.w,
+                  ),
                   builder: const DotSwiperPaginationBuilder(
                     activeColor: Color(0xFF5D5FEF),
                     color: Color(0x305D5FEF),
@@ -102,9 +106,6 @@ class HomePageMid extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 15.h,
           ),
         ],
       ),

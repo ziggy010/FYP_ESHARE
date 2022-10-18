@@ -8,6 +8,10 @@ const kSwiperColor = Color(0xFF4A4C5B);
 const kSelectedTextColor = Colors.white;
 const kGreyColor = Color(0x24FFFFFF);
 const kBottomNavBarColor = Color.fromARGB(255, 49, 50, 60);
-
+const kUnselectedIconColor = Color(0xFFB2B2B3);
 
 //textstyles
+
+var kAppBar = TextStyle(
+  color: Colors.white,
+);
