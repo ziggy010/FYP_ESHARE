@@ -18,7 +18,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
       shape: CircularNotchedRectangle(),
       notchMargin: 10,
       child: Container(
-        height: 60.h,
+        height: 65.h,
         child: Padding(
           padding: EdgeInsets.only(
             left: 60.w,
@@ -40,7 +40,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                     'My Cards',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10.sp,
+                      fontSize: 7.sp,
                     ),
                   )
                 ],
@@ -57,7 +57,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                     'Saved Cards',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10.sp,
+                      fontSize: 7.sp,
                     ),
                   )
                 ],
