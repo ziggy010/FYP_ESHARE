@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/Model/home_page_methods.dart';
+import 'package:e_share/View/my_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -83,6 +84,16 @@ class _HomePageMidState extends State<HomePageMid> {
             child: Container(
               height: 453.h,
               child: Swiper(
+                onTap: (value) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MyDetail();
+                      },
+                    ),
+                  );
+                },
                 controller: _mySwipperController,
                 itemCount: 3,
                 layout: SwiperLayout.STACK,
