@@ -1,34 +1,22 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/Model/home_page_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomePageMid extends StatelessWidget {
+class HomePageMid extends StatefulWidget {
   const HomePageMid({super.key});
 
   @override
+  State<HomePageMid> createState() => _HomePageMidState();
+}
+
+class _HomePageMidState extends State<HomePageMid> {
+  //referencing class having methods.
+
+  HomePageText _homePageText = HomePageText();
+
   Widget build(BuildContext context) {
-    List homeTitle = [
-      [
-        'Visiting card',
-        true,
-      ],
-      [
-        'Passport',
-        false,
-      ],
-      [
-        'Citizenship Card',
-        false,
-      ],
-    ];
-
-    List swiperContent = [
-      'images/try.png',
-      'images/try.png',
-      'images/try.png',
-    ];
-
     return Padding(
       padding: EdgeInsets.only(
         top: 30.h,
@@ -40,7 +28,7 @@ class HomePageMid extends StatelessWidget {
             width: double.infinity,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: homeTitle.length,
+              itemCount: _homePageText.homeTitle.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: EdgeInsets.only(
@@ -50,10 +38,11 @@ class HomePageMid extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        homeTitle[index][0],
+                        _homePageText.homeTitle[index][0],
                         style: TextStyle(
-                          color:
-                              homeTitle[index][1] ? Colors.white : kGreyColor,
+                          color: _homePageText.homeTitle[index][1]
+                              ? Colors.white
+                              : kGreyColor,
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w800,
                           letterSpacing: 1.9,
@@ -66,7 +55,7 @@ class HomePageMid extends StatelessWidget {
                       Container(
                         height: 2.h,
                         width: 50.w,
-                        color: homeTitle[index][1]
+                        color: _homePageText.homeTitle[index][1]
                             ? const Color(0xFF7B66FF)
                             : Colors.transparent,
                       ),
@@ -90,7 +79,7 @@ class HomePageMid extends StatelessWidget {
                   return ClipRRect(
                     borderRadius: BorderRadius.circular(18.r),
                     child: Image.asset(
-                      swiperContent[index],
+                      _homePageText.swiperContent[index],
                       fit: BoxFit.cover,
                     ),
                   );
@@ -104,6 +93,11 @@ class HomePageMid extends StatelessWidget {
                     color: Color(0x305D5FEF),
                   ),
                 ),
+                onIndexChanged: ((value) {
+                  setState(() {
+                    _homePageText.onSwiperIndexChange(value);
+                  });
+                }),
               ),
             ),
           ),
