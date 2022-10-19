@@ -16,7 +16,7 @@ class MyDetailTop extends StatelessWidget {
         height: 190.h,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: kGreyColor,
+          color: Color(0xFF464855),
           borderRadius: BorderRadius.circular(20.r),
         ),
       ),
