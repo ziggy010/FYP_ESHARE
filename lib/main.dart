@@ -1,3 +1,4 @@
+import 'package:e_share/View/my_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: MyDetail(),
         );
       },
     );
