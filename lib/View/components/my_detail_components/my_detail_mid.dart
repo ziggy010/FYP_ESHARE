@@ -20,7 +20,7 @@ class _MyDetailMidState extends State<MyDetailMid>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 400),
+      duration: Duration(milliseconds: 500),
     );
 
     _animation = CurvedAnimation(
@@ -43,7 +43,7 @@ class _MyDetailMidState extends State<MyDetailMid>
         top: 20.h,
       ),
       child: SlideTransition(
-        position: Tween<Offset>(begin: Offset(0, 3), end: Offset.zero)
+        position: Tween<Offset>(begin: Offset(0, 2), end: Offset.zero)
             .animate(_animationController),
         child: FadeTransition(
           opacity: _animationController,

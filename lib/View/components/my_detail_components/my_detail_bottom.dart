@@ -43,14 +43,14 @@ class _MyDetailBottomState extends State<MyDetailBottom>
     return Padding(
       padding: EdgeInsets.only(top: 32.h),
       child: SlideTransition(
-        position: Tween<Offset>(begin: Offset(0, 1), end: Offset.zero)
+        position: Tween<Offset>(begin: Offset(0, 0.4), end: Offset.zero)
             .animate(_animationController),
         child: FadeTransition(
           opacity: _animationController,
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: kGreyColor,
+              color: Color(0xFF464855),
               borderRadius: BorderRadius.circular(10.r),
             ),
             child: Column(
