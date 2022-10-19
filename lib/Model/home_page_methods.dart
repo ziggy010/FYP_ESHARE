@@ -24,10 +24,10 @@ class HomePageText {
     if (getIndex == 0) {}
   }
 
-  void onSwiperIndexChange(int getValue) {
+  void onSwiperIndexChange() {
     for (int i = 0; i < homeTitle.length; i++) {
       homeTitle[i][1] = false;
     }
-    homeTitle[getValue][1] = true;
+    homeTitle[0][1] = true;
   }
 }

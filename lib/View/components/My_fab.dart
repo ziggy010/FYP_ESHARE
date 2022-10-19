@@ -39,6 +39,8 @@ class _MyFabState extends State<MyFab> with TickerProviderStateMixin {
       height: 72.h,
       width: 72.w,
       child: FloatingActionButton(
+        highlightElevation: 0,
+        focusElevation: 0.0,
         backgroundColor: kSelectedColor,
         onPressed: fabOnPressed,
         child: isFabPressed

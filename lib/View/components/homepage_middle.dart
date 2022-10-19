@@ -12,9 +12,23 @@ class HomePageMid extends StatefulWidget {
 }
 
 class _HomePageMidState extends State<HomePageMid> {
+  int oldPage = 0;
+  int currentPage = 0;
+  bool get reverseSwipe =>
+      oldPage == 0 && currentPage == _homePageText.swiperContent.length - 1;
+  bool get normalSwipe {
+    return (oldPage < currentPage && !reverseSwipe) ||
+        (oldPage == _homePageText.swiperContent.length - 1 && currentPage == 0);
+  }
+
+  bool get abnormalSwipe {
+    return oldPage > currentPage || reverseSwipe;
+  }
   //referencing class having methods.
 
   HomePageText _homePageText = HomePageText();
+
+  SwiperController _mySwipperController = SwiperController();
 
   Widget build(BuildContext context) {
     return Padding(
@@ -70,6 +84,7 @@ class _HomePageMidState extends State<HomePageMid> {
             child: Container(
               height: 453.h,
               child: Swiper(
+                controller: _mySwipperController,
                 itemCount: 3,
                 layout: SwiperLayout.STACK,
                 itemHeight: 400.h,
@@ -94,8 +109,21 @@ class _HomePageMidState extends State<HomePageMid> {
                   ),
                 ),
                 onIndexChanged: ((value) {
+                  oldPage = currentPage;
+                  currentPage = value;
+                  if (normalSwipe) {
+                    setState(() {
+                      final first = _homePageText.homeTitle.removeAt(0);
+                      _homePageText.homeTitle.add(first);
+                    });
+                  } else if (abnormalSwipe) {
+                    setState(() {
+                      final last = _homePageText.homeTitle.removeLast();
+                      _homePageText.homeTitle.insert(0, last);
+                    });
+                  }
                   setState(() {
-                    _homePageText.onSwiperIndexChange(value);
+                    _homePageText.onSwiperIndexChange();
                   });
                 }),
               ),
