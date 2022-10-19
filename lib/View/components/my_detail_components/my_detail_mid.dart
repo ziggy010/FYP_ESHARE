@@ -1,3 +1,4 @@
+import 'package:e_share/View/components/main_components/my_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,8 +12,17 @@ class MyDetailMid extends StatelessWidget {
         top: 20.h,
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(),
+          MyButton(
+            buttonColor: const Color(0xFF49495C),
+            text: 'Update Design',
+          ),
+          MyButton(
+            buttonColor: Colors.transparent,
+            text: 'Edit Information',
+            borderColor: const Color(0xFF49495C),
+          ),
         ],
       ),
     );
