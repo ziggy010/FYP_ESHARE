@@ -85,14 +85,7 @@ class _HomePageMidState extends State<HomePageMid> {
               height: 453.h,
               child: Swiper(
                 onTap: (value) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return MyDetail();
-                      },
-                    ),
-                  );
+                  Navigator.pushNamed(context, MyDetail.id);
                 },
                 controller: _mySwipperController,
                 itemCount: 3,

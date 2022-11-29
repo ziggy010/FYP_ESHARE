@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class MyDetail extends StatelessWidget {
   const MyDetail({super.key});
 
+  static const String id = 'MyDetail';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
