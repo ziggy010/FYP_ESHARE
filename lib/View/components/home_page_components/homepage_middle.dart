@@ -58,10 +58,9 @@ class _HomePageMidState extends State<HomePageMid> {
                           color: _homePageText.homeTitle[index][1]
                               ? Colors.white
                               : kGreyColor,
-                          fontSize: 17.sp,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w800,
-                          letterSpacing: 1.9,
-                          fontFamily: 'manrope',
+                          letterSpacing: 1.4,
                         ),
                       ),
                       SizedBox(

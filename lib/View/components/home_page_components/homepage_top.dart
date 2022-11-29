@@ -71,10 +71,9 @@ class _HomePageTopState extends State<HomePageTop>
                     'Welcome Back!',
                     style: TextStyle(
                       color: const Color(0x95FFFFFF),
-                      fontSize: 17.sp,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.w700,
-                      letterSpacing: 1.7,
-                      fontFamily: 'manrope',
+                      letterSpacing: 1.2,
                     ),
                   )
                 ],
