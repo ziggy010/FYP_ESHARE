@@ -19,7 +19,10 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          initialRoute: HomePage.id,
+          routes: {
+            HomePage.id: (context) => HomePage(),
+          },
         );
       },
     );
