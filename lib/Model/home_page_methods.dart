@@ -5,7 +5,7 @@ class HomePageText {
       true,
     ],
     [
-      'Passport',
+      'License',
       false,
     ],
     [
