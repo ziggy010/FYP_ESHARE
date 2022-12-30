@@ -5,11 +5,11 @@ class HomePageText {
       true,
     ],
     [
-      'License',
+      'Citizenship Card',
       false,
     ],
     [
-      'Citizenship Card',
+      'License',
       false,
     ],
   ];
