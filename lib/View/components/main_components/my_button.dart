@@ -2,38 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyButton extends StatelessWidget {
+  final double? height;
+  final double? width;
   final Color buttonColor;
-  final String text;
   final Color borderColor;
+  final int borderRadius;
+  final Widget textWidget;
 
   MyButton({
+    required this.height,
+    required this.width,
     this.borderColor = Colors.transparent,
     required this.buttonColor,
-    required this.text,
+    required this.borderRadius,
+    required this.textWidget,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 42.h,
-      width: 144.w,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
-          color: buttonColor,
-          borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(
-            color: borderColor,
-            width: 1.5,
-          )),
-      child: Center(
-          child: Text(
-        text,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 13.sp,
-          fontFamily: 'manrope',
-          letterSpacing: 0.3,
+        color: buttonColor,
+        borderRadius: BorderRadius.circular(borderRadius.r),
+        border: Border.all(
+          color: borderColor,
+          width: 1.5,
         ),
-      )),
+      ),
+      child: Center(
+        child: textWidget,
+      ),
     );
   }
 }

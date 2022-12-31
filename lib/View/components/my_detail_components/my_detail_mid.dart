@@ -50,15 +50,15 @@ class _MyDetailMidState extends State<MyDetailMid>
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MyButton(
-                buttonColor: const Color(0xFF49495C),
-                text: 'Update Design',
-              ),
-              MyButton(
-                buttonColor: Colors.transparent,
-                text: 'Edit Information',
-                borderColor: const Color(0xFF49495C),
-              ),
+              // MyButton(
+              //   buttonColor: const Color(0xFF49495C),
+              //   text: 'Update Design',
+              // ),
+              // MyButton(
+              //   buttonColor: Colors.transparent,
+              //   text: 'Edit Information',
+              //   borderColor: const Color(0xFF49495C),
+              // ),
             ],
           ),
         ),

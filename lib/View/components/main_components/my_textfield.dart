@@ -5,7 +5,7 @@ class MyTextfield extends StatelessWidget {
   final TextInputType? keyboardType;
   Function(String) onSaved;
   final bool ObscureText;
-  final Icon? icon;
+  final Widget? icon;
   final String? hintText;
   final String? labelText;
 
@@ -34,7 +34,12 @@ class MyTextfield extends StatelessWidget {
       decoration: InputDecoration(
         fillColor: Color(0xFF4A4C5B),
         filled: true,
-        suffixIcon: icon,
+        suffixIcon: Padding(
+          padding: EdgeInsets.only(
+            right: 6.h,
+          ),
+          child: icon,
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xFF4A4C5B)),
           borderRadius: BorderRadius.circular(15.r),

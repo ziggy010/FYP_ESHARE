@@ -1,4 +1,5 @@
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/login_bottom.dart';
 import 'package:e_share/View/components/login_page_components./login_mid.dart';
 import 'package:e_share/View/components/login_page_components./login_top.dart';
 import 'package:flutter/material.dart';
@@ -16,16 +17,23 @@ class LoginPage extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: kBackgroundColor,
-        body: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 24.h,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              LoginTop(),
-              LoginMid(),
-            ],
+        body: SafeArea(
+          bottom: false,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 24.h,
+            ),
+            child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  LoginTop(),
+                  LoginMid(),
+                  LoginBottom(),
+                ],
+              ),
+            ),
           ),
         ),
       ),
