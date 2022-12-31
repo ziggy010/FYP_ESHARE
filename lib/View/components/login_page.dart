@@ -1,4 +1,5 @@
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/login_page_components./login_mid.dart';
 import 'package:e_share/View/components/login_page_components./login_top.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,17 +10,23 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24.h,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            LoginTop(),
-          ],
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: kBackgroundColor,
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 24.h,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              LoginTop(),
+              LoginMid(),
+            ],
+          ),
         ),
       ),
     );

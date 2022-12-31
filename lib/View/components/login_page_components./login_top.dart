@@ -22,9 +22,17 @@ class LoginTop extends StatelessWidget {
         Text(
           'Welcome Back',
           style: TextStyle(
-            fontFamily: 'poppins',
+            fontFamily: 'poppinsLight',
             fontSize: 24.sp,
-            fontWeight: FontWeight.normal,
+            letterSpacing: 4,
+            color: Colors.white,
+          ),
+        ),
+        Text(
+          'You\'ve been missed!',
+          style: TextStyle(
+            fontFamily: 'poppinsLight',
+            fontSize: 24.sp,
             letterSpacing: 4,
             color: Colors.white,
           ),
