@@ -87,6 +87,9 @@ flutter:
     - family: manrope
       fonts:
         - asset: fonts/Manrope-Regular.ttf
+    - family: poppinsLight
+      fonts:
+        - asset: fonts/Poppins-ExtraLight.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
