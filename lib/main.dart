@@ -1,6 +1,8 @@
+import 'package:e_share/View/components/login_page.dart';
 import 'package:e_share/View/my_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 
 import 'View/home_page.dart';
 
@@ -16,14 +18,15 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(360, 800),
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          initialRoute: HomePage.id,
-          routes: {
-            HomePage.id: (context) => HomePage(),
-            MyDetail.id: (context) => MyDetail(),
-          },
+          home: LoginPage(),
+          getPages: [
+            GetPage(name: HomePage.id, page: () => HomePage()),
+            GetPage(name: MyDetail.id, page: () => MyDetail()),
+            GetPage(name: LoginPage.id, page: () => LoginPage()),
+          ],
         );
       },
     );

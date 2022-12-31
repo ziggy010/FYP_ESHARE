@@ -4,6 +4,7 @@ import 'package:e_share/Model/home_page_methods.dart';
 import 'package:e_share/View/my_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class HomePageMid extends StatefulWidget {
   const HomePageMid({super.key});
@@ -85,7 +86,9 @@ class _HomePageMidState extends State<HomePageMid> {
               height: 453.h,
               child: Swiper(
                 onTap: (value) {
-                  Navigator.pushNamed(context, MyDetail.id);
+                  Get.toNamed(
+                    MyDetail.id,
+                  );
                 },
                 controller: _mySwipperController,
                 itemCount: 3,

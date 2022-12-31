@@ -10,7 +10,7 @@ import 'components/main_components/bottom_navbar.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-  static const String id = 'Homepage';
+  static const String id = '/Homepage';
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBakgroundColor,
+      backgroundColor: kBackgroundColor,
       body: SafeArea(
         bottom: false,
         child: Padding(
