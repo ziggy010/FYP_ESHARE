@@ -1,5 +1,7 @@
+import 'package:e_share/View/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 
 class HomePageTop extends StatefulWidget {
   const HomePageTop({super.key});
@@ -78,12 +80,17 @@ class _HomePageTopState extends State<HomePageTop>
                   )
                 ],
               ),
-              CircleAvatar(
-                radius: 22.r,
-                backgroundImage: const AssetImage(
-                  'images/hero.png',
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(ProfilePage.id);
+                },
+                child: CircleAvatar(
+                  radius: 22.r,
+                  backgroundImage: const AssetImage(
+                    'images/hero.png',
+                  ),
+                  backgroundColor: Colors.transparent,
                 ),
-                backgroundColor: Colors.transparent,
               ),
             ],
           ),
