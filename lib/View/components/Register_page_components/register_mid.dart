@@ -14,12 +14,9 @@ class RegisterMid extends StatelessWidget {
         MyTextfield(
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},
-          ObscureText: false,
           hintText: 'Enter your email address',
           labelText: 'Email Address',
-        ),
-        SizedBox(
-          height: 32.h,
+          bottomPadding: 32,
         ),
         MyPasswordField(
           keyboardType: TextInputType.visiblePassword,

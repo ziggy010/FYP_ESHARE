@@ -15,12 +15,9 @@ class LoginMid extends StatelessWidget {
         MyTextfield(
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},
-          ObscureText: false,
           hintText: 'Email address',
           labelText: 'Email address',
-        ),
-        SizedBox(
-          height: 30.h,
+          bottomPadding: 30,
         ),
         MyPasswordField(
           keyboardType: TextInputType.visiblePassword,
