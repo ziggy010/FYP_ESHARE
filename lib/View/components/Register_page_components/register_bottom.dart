@@ -1,34 +1,35 @@
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
-import 'package:e_share/View/home_page.dart';
-import 'package:e_share/View/register_page.dart';
+import 'package:e_share/View/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
 
-class LoginBottom extends StatelessWidget {
-  const LoginBottom({super.key});
+class RegisterBottom extends StatelessWidget {
+  const RegisterBottom({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GestureDetector(
           onTap: () {
-            Get.toNamed(RegisterPage.id);
+            Get.toNamed(LoginPage.id);
           },
-          child: RichText(
-            text: TextSpan(
-              text: 'Don\'t have an account? ',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'poppins',
-                fontSize: 12.sp,
-              ),
-              children: <TextSpan>[
+          child: Text.rich(
+            TextSpan(
+              children: [
                 TextSpan(
-                  text: 'Register',
+                  text: 'Don\'t have an account? ',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'poppins',
+                    fontSize: 12.sp,
+                  ),
+                ),
+                TextSpan(
+                  text: 'Login',
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'poppins',
@@ -41,24 +42,21 @@ class LoginBottom extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 16.h,
+          height: 15.h,
         ),
         MyButton(
           height: 57.h,
-          width: 292.w,
+          width: double.infinity,
           buttonColor: kSelectedColor,
-          borderRadius: 14,
+          borderRadius: 16,
           textWidget: Text(
-            'Sign in',
+            'Register',
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'poppins',
               fontSize: 16.sp,
             ),
           ),
-          onTap: () {
-            Get.toNamed(HomePage.id);
-          },
         ),
       ],
     );

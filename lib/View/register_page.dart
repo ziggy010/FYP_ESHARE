@@ -1,4 +1,5 @@
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/Register_page_components/register_bottom.dart';
 import 'package:e_share/View/components/Register_page_components/register_mid.dart';
 import 'package:e_share/View/components/Register_page_components/register_top.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class RegisterPage extends StatelessWidget {
                     children: const [
                       RegisterTop(),
                       RegisterMid(),
+                      RegisterBottom(),
                     ],
                   ),
                 )
