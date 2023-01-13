@@ -8,6 +8,7 @@ class MyButton extends StatelessWidget {
   final Color borderColor;
   final int borderRadius;
   final Widget textWidget;
+  final VoidCallback? onTap;
 
   MyButton({
     required this.height,
@@ -16,23 +17,27 @@ class MyButton extends StatelessWidget {
     required this.buttonColor,
     required this.borderRadius,
     required this.textWidget,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: buttonColor,
-        borderRadius: BorderRadius.circular(borderRadius.r),
-        border: Border.all(
-          color: borderColor,
-          width: 1.5,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: buttonColor,
+          borderRadius: BorderRadius.circular(borderRadius.r),
+          border: Border.all(
+            color: borderColor,
+            width: 1.5,
+          ),
         ),
-      ),
-      child: Center(
-        child: textWidget,
+        child: Center(
+          child: textWidget,
+        ),
       ),
     );
   }

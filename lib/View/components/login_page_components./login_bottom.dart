@@ -1,7 +1,9 @@
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
+import 'package:e_share/View/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class LoginBottom extends StatelessWidget {
   const LoginBottom({super.key});
@@ -48,6 +50,9 @@ class LoginBottom extends StatelessWidget {
               fontSize: 16.sp,
             ),
           ),
+          onTap: () {
+            Get.toNamed(HomePage.id);
+          },
         ),
       ],
     );
