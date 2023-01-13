@@ -4,14 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class MyPasswordField extends StatefulWidget {
   final TextInputType? keyboardType;
   Function(String) onSaved;
-  final bool ObscureText;
   final String? hintText;
   final String? labelText;
 
   MyPasswordField({
     required this.keyboardType,
     required this.onSaved,
-    required this.ObscureText,
     required this.hintText,
     required this.labelText,
   });
@@ -22,8 +20,8 @@ class MyPasswordField extends StatefulWidget {
 
 class _MyPasswordFieldState extends State<MyPasswordField> {
   bool isClicked = false;
-  bool obscure = false;
-  IconData finalIcon = Icons.visibility_off_outlined;
+  bool obscure = true;
+  IconData finalIcon = Icons.visibility_outlined;
 
   @override
   Widget build(BuildContext context) {

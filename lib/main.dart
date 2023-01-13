@@ -1,5 +1,6 @@
 import 'package:e_share/View/login_page.dart';
 import 'package:e_share/View/my_detail_page.dart';
+import 'package:e_share/View/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
@@ -21,11 +22,12 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: LoginPage(),
+          home: RegisterPage(),
           getPages: [
             GetPage(name: HomePage.id, page: () => HomePage()),
             GetPage(name: MyDetail.id, page: () => MyDetail()),
             GetPage(name: LoginPage.id, page: () => LoginPage()),
+            GetPage(name: RegisterPage.id, page: () => RegisterPage()),
           ],
         );
       },

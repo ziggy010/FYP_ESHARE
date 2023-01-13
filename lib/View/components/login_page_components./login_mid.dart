@@ -25,7 +25,6 @@ class LoginMid extends StatelessWidget {
         MyPasswordField(
           keyboardType: TextInputType.visiblePassword,
           onSaved: (hello) {},
-          ObscureText: true,
           hintText: 'Password',
           labelText: 'Password',
         ),
