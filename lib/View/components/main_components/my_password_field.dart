@@ -1,32 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MyTextfield extends StatelessWidget {
+class MyPasswordField extends StatefulWidget {
   final TextInputType? keyboardType;
   Function(String) onSaved;
   final bool ObscureText;
-  final Widget? icon;
   final String? hintText;
   final String? labelText;
 
-  MyTextfield({
+  MyPasswordField({
     required this.keyboardType,
     required this.onSaved,
     required this.ObscureText,
-    this.icon,
     required this.hintText,
     required this.labelText,
   });
 
   @override
+  State<MyPasswordField> createState() => _MyPasswordFieldState();
+}
+
+class _MyPasswordFieldState extends State<MyPasswordField> {
+  bool isClicked = false;
+  bool obscure = false;
+  IconData finalIcon = Icons.visibility_off_outlined;
+
+  @override
   Widget build(BuildContext context) {
-    bool isClicked = false;
     return TextField(
-      keyboardType: keyboardType,
-      onChanged: onSaved,
+      keyboardType: widget.keyboardType,
+      onChanged: widget.onSaved,
       autocorrect: false,
       enableSuggestions: false,
-      obscureText: ObscureText,
+      obscureText: obscure,
       cursorColor: Colors.grey.shade400,
       style: TextStyle(
         color: Colors.white,
@@ -39,7 +45,21 @@ class MyTextfield extends StatelessWidget {
           padding: EdgeInsets.only(
             right: 6.h,
           ),
-          child: icon,
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                isClicked = !isClicked;
+                obscure = isClicked ? false : true;
+                finalIcon = isClicked
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined;
+              });
+            },
+            child: Icon(
+              finalIcon,
+              color: Colors.white,
+            ),
+          ),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xFF4A4C5B)),
@@ -52,13 +72,13 @@ class MyTextfield extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(15.r),
         ),
-        hintText: hintText,
+        hintText: widget.hintText,
         hintStyle: TextStyle(
           color: Colors.grey.shade600,
         ),
         floatingLabelStyle: TextStyle(color: Colors.grey.shade400),
         labelStyle: TextStyle(color: Colors.grey.shade500),
-        labelText: labelText,
+        labelText: widget.labelText,
       ),
     );
   }

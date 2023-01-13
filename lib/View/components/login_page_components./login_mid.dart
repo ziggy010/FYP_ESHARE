@@ -3,6 +3,8 @@ import 'package:e_share/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../main_components/my_password_field.dart';
+
 class LoginMid extends StatelessWidget {
   const LoginMid({super.key});
 
@@ -20,16 +22,12 @@ class LoginMid extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        MyTextfield(
+        MyPasswordField(
           keyboardType: TextInputType.visiblePassword,
           onSaved: (hello) {},
           ObscureText: true,
           hintText: 'Password',
           labelText: 'Password',
-          icon: Image.asset(
-            'icons/password_invisible.png',
-            color: Colors.white,
-          ),
         ),
         SizedBox(
           height: 14.h,
