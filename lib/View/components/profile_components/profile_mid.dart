@@ -7,10 +7,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ProfileMid extends StatefulWidget {
   final String image;
   final String title;
+  final VoidCallback? onTap;
 
   ProfileMid({
     required this.image,
     required this.title,
+    this.onTap,
   });
 
   @override
@@ -57,49 +59,52 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
         opacity: _animationController,
         child: Padding(
           padding: EdgeInsets.only(bottom: 16.w),
-          child: Container(
-            height: 48.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: kContainerColor,
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            child: Padding(
-              padding: EdgeInsets.only(
-                right: 21.h,
-                left: 10.h,
+          child: GestureDetector(
+            onTap: widget.onTap,
+            child: Container(
+              height: 48.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: kContainerColor,
+                borderRadius: BorderRadius.circular(10.r),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 60.w,
-                        child: Image.asset(
-                          'icons/${widget.image}',
+              child: Padding(
+                padding: EdgeInsets.only(
+                  right: 21.h,
+                  left: 10.h,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 60.w,
+                          child: Image.asset(
+                            'icons/${widget.image}',
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          '${widget.title}',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'poppins',
+                            fontSize: 14.sp,
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Icon(
+                          Icons.chevron_right,
                           color: Colors.white,
                         ),
-                      ),
-                      Text(
-                        '${widget.title}',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'poppins',
-                          fontSize: 14.sp,
-                        ),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: const [
-                      Icon(
-                        Icons.chevron_right,
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

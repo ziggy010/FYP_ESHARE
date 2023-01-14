@@ -16,6 +16,47 @@ class CardDesignTop extends StatelessWidget {
           10.r,
         ),
       ),
+      child: Padding(
+        padding: EdgeInsets.all(4.sm),
+        child: Row(
+          children: [
+            Container(
+              height: 40.h,
+              width: 149.w,
+              decoration: BoxDecoration(
+                color: kSelectedColor,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Center(
+                  child: Text(
+                'Free Designs',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'poppins',
+                  fontSize: 12.sp,
+                ),
+              )),
+            ),
+            Container(
+              height: 40.h,
+              width: 149.w,
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Center(
+                  child: Text(
+                'Premium Designs',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'poppins',
+                  fontSize: 12.sp,
+                ),
+              )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
