@@ -22,7 +22,7 @@ class CardDesignTop extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideTransition(
       position: Tween<Offset>(
-        begin: Offset(0, -0.3),
+        begin: const Offset(0, -0.3),
         end: Offset.zero,
       ).animate(animationController3),
       child: FadeTransition(
