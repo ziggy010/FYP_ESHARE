@@ -92,6 +92,8 @@ class _CardDesignPageState extends State<CardDesignPage>
             ),
             CardDesignMid(
               pageController: _pageController,
+              animationController1: _animationController1,
+              animationController2: _animationController2,
             ),
           ],
         ),
