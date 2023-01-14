@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/components/card_design_components/card_design_mid.dart';
 import 'package:e_share/View/components/card_design_components/card_design_top.dart';
@@ -17,8 +19,10 @@ class CardDesignPage extends StatefulWidget {
 class _CardDesignPageState extends State<CardDesignPage>
     with TickerProviderStateMixin {
   final _pageController = PageController();
-  late AnimationController _animationController1, _animationController2;
-  late Animation _animation1, _animation2;
+  late AnimationController _animationController1,
+      _animationController2,
+      _animationController3;
+  late Animation _animation1, _animation2, _animation3;
 
   @override
   void initState() {
@@ -39,6 +43,13 @@ class _CardDesignPageState extends State<CardDesignPage>
       ),
     );
 
+    _animationController3 = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        milliseconds: 400,
+      ),
+    );
+
     _animation1 = ColorTween(
       begin: kSelectedColor,
       end: null,
@@ -54,6 +65,15 @@ class _CardDesignPageState extends State<CardDesignPage>
       ..addListener(() {
         setState(() {});
       });
+
+    _animation3 = CurvedAnimation(
+      parent: _animationController3,
+      curve: Curves.easeInOut,
+    );
+
+    Timer(const Duration(milliseconds: 100), () {
+      _animationController3.forward();
+    });
   }
 
   @override
@@ -89,6 +109,7 @@ class _CardDesignPageState extends State<CardDesignPage>
               animation2: _animation2,
               animationController1: _animationController1,
               animationController2: _animationController2,
+              animationController3: _animationController3,
             ),
             CardDesignMid(
               pageController: _pageController,

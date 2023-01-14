@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: CardDesignPage(),
+          home: HomePage(),
           getPages: [
             GetPage(name: HomePage.id, page: () => HomePage()),
             GetPage(name: MyDetail.id, page: () => MyDetail()),
