@@ -22,7 +22,7 @@ class _MyDetailBottomState extends State<MyDetailBottom>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 500),
     );
 
     _animation = CurvedAnimation(
@@ -31,7 +31,7 @@ class _MyDetailBottomState extends State<MyDetailBottom>
     );
 
     Timer(
-      const Duration(milliseconds: 200),
+      const Duration(milliseconds: 50),
       (() => _animationController.forward()),
     );
 
@@ -39,11 +39,17 @@ class _MyDetailBottomState extends State<MyDetailBottom>
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 32.h),
       child: SlideTransition(
-        position: Tween<Offset>(begin: Offset(0, 0.4), end: Offset.zero)
+        position: Tween<Offset>(begin: Offset(0, 0.1), end: Offset.zero)
             .animate(_animationController),
         child: FadeTransition(
           opacity: _animationController,

@@ -31,7 +31,7 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(
-        milliseconds: 400,
+        milliseconds: 450,
       ),
     );
 
@@ -41,7 +41,7 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
     );
 
     Timer(
-      Duration(milliseconds: 200),
+      Duration(milliseconds: 50),
       () => _animationController.forward(),
     );
   }
@@ -56,7 +56,7 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return SlideTransition(
       position: Tween<Offset>(
-        begin: Offset(-0.2, 0.0),
+        begin: Offset(-0.1, 0.0),
         end: Offset.zero,
       ).animate(
         _animationController,

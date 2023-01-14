@@ -30,11 +30,17 @@ class _MyDetailMidState extends State<MyDetailMid>
     );
 
     Timer(
-      Duration(milliseconds: 200),
+      Duration(milliseconds: 50),
       () => _animationController.forward(),
     );
 
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -44,7 +50,7 @@ class _MyDetailMidState extends State<MyDetailMid>
         top: 20.h,
       ),
       child: SlideTransition(
-        position: Tween<Offset>(begin: Offset(0, 2), end: Offset.zero)
+        position: Tween<Offset>(begin: Offset(0, 0.5), end: Offset.zero)
             .animate(_animationController),
         child: FadeTransition(
           opacity: _animationController,
