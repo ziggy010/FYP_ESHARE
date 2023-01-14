@@ -25,7 +25,6 @@ class CardDesignMid extends StatelessWidget {
           controller: pageController,
           onPageChanged: (number) {
             _cardDesignController.changePageNumber(number);
-            print(_cardDesignController.pageNumber);
           },
           children: const [
             FreeDesign(),

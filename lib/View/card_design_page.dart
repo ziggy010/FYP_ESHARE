@@ -2,17 +2,69 @@ import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/components/card_design_components/card_design_mid.dart';
 import 'package:e_share/View/components/card_design_components/card_design_top.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CardDesignPage extends StatelessWidget {
+class CardDesignPage extends StatefulWidget {
   const CardDesignPage({super.key});
 
   static const String id = '/cardDesignPage';
 
   @override
-  Widget build(BuildContext context) {
-    final _pageController = PageController();
+  State<CardDesignPage> createState() => _CardDesignPageState();
+}
 
+class _CardDesignPageState extends State<CardDesignPage>
+    with TickerProviderStateMixin {
+  final _pageController = PageController();
+  late AnimationController _animationController1, _animationController2;
+  late Animation _animation1, _animation2;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _animationController1 = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        milliseconds: 600,
+      ),
+    );
+
+    _animationController2 = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        milliseconds: 600,
+      ),
+    );
+
+    _animation1 = ColorTween(
+      begin: kSelectedColor,
+      end: null,
+    ).animate(_animationController1)
+      ..addListener(() {
+        setState(() {});
+      });
+
+    _animation2 = ColorTween(
+      begin: null,
+      end: kSelectedColor,
+    ).animate(_animationController2)
+      ..addListener(() {
+        setState(() {});
+      });
+  }
+
+  @override
+  void dispose() {
+    _animationController1.dispose();
+    _animationController2.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: AppBar(
@@ -33,6 +85,10 @@ class CardDesignPage extends StatelessWidget {
           children: [
             CardDesignTop(
               pageController: _pageController,
+              animation1: _animation1,
+              animation2: _animation2,
+              animationController1: _animationController1,
+              animationController2: _animationController2,
             ),
             CardDesignMid(
               pageController: _pageController,

@@ -38,6 +38,12 @@ class _HomePageTopState extends State<HomePageTop>
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     //home page top part component for simple accesss.
     return Padding(

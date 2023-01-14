@@ -4,9 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardDesignTop extends StatelessWidget {
   final PageController pageController;
+  final AnimationController animationController1, animationController2;
+  final Animation animation1, animation2;
 
   CardDesignTop({
     required this.pageController,
+    required this.animation1,
+    required this.animation2,
+    required this.animationController1,
+    required this.animationController2,
   });
 
   @override
@@ -23,6 +29,7 @@ class CardDesignTop extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(4.sm),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             GestureDetector(
               onTap: () {
@@ -31,12 +38,14 @@ class CardDesignTop extends StatelessWidget {
                   duration: const Duration(milliseconds: 600),
                   curve: Curves.easeInOut,
                 );
+                animationController1.reverse();
+                animationController2.reverse();
               },
               child: Container(
                 height: 40.h,
                 width: 149.w,
                 decoration: BoxDecoration(
-                  color: kSelectedColor,
+                  color: animation1.value,
                   borderRadius: BorderRadius.circular(10.r),
                 ),
                 child: Center(
@@ -57,12 +66,17 @@ class CardDesignTop extends StatelessWidget {
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeInOut,
                 );
+                animationController2.forward();
+                if (animationController1.isDismissed ||
+                    animationController1.isCompleted) {
+                  animationController1.forward();
+                }
               },
               child: Container(
                 height: 40.h,
                 width: 149.w,
                 decoration: BoxDecoration(
-                  color: Colors.transparent,
+                  color: animation2.value,
                   borderRadius: BorderRadius.circular(10.r),
                 ),
                 child: Center(

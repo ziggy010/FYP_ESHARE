@@ -47,6 +47,12 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SlideTransition(
       position: Tween<Offset>(
