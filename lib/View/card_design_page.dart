@@ -11,6 +11,8 @@ class CardDesignPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _pageController = PageController();
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: AppBar(
@@ -28,9 +30,13 @@ class CardDesignPage extends StatelessWidget {
           top: 24.w,
         ),
         child: Column(
-          children: const [
-            CardDesignTop(),
-            CardDesignMid(),
+          children: [
+            CardDesignTop(
+              pageController: _pageController,
+            ),
+            CardDesignMid(
+              pageController: _pageController,
+            ),
           ],
         ),
       ),

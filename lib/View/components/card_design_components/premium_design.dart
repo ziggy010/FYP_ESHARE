@@ -13,8 +13,8 @@ class PremiumDesign extends StatelessWidget {
           Column(
             children: const [
               CardContainer(),
-              CardContainer(),
-              CardContainer(),
+              // CardContainer(),
+              // CardContainer(),
             ],
           ),
         ],
