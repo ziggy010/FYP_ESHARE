@@ -92,7 +92,7 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
                     ],
                   ),
                   Row(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.chevron_right,
                         color: Colors.white,

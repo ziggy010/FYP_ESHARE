@@ -1,3 +1,4 @@
+import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/fill_details_page.dart';
 import 'package:e_share/View/login_page.dart';
 import 'package:e_share/View/my_detail_page.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: CardDesignPage(),
           getPages: [
             GetPage(name: HomePage.id, page: () => HomePage()),
             GetPage(name: MyDetail.id, page: () => MyDetail()),
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: RegisterPage.id, page: () => RegisterPage()),
             GetPage(name: FillDetailsPage.id, page: () => FillDetailsPage()),
             GetPage(name: ProfilePage.id, page: () => ProfilePage()),
+            GetPage(name: CardDesignPage.id, page: () => CardDesignPage()),
           ],
         );
       },
