@@ -3,14 +3,14 @@ import 'package:e_share/View/components/main_components/sliding_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CardDesignTop extends StatelessWidget {
+class QrScanPageTop extends StatelessWidget {
   final PageController pageController;
+  final Animation animation1, animation2;
   final AnimationController animationController1,
       animationController2,
       animationController3;
-  final Animation animation1, animation2;
 
-  CardDesignTop({
+  QrScanPageTop({
     required this.pageController,
     required this.animation1,
     required this.animation2,
@@ -28,8 +28,8 @@ class CardDesignTop extends StatelessWidget {
       animationController1: animationController1,
       animationController2: animationController2,
       animationController3: animationController3,
-      firstText: 'Free Designs',
-      secondText: 'Premium Designs',
+      firstText: 'QR Scan',
+      secondText: 'Share',
     );
   }
 }
