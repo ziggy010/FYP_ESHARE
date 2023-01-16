@@ -40,7 +40,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                   Get.offAllNamed(HomePage.id);
                   _bottomNavbarController.changeHomeIcon('icons/home.png');
                   _bottomNavbarController.changeSavedIcon(
-                    'icons/saved_card.png_2.png',
+                    'icons/saved_card.png',
                   );
                 },
                 child: Column(
