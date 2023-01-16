@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/profile_components/profile_mid.dart';
 import 'package:e_share/View/saved_card_detail.dart';
@@ -36,7 +37,13 @@ class ProfilePage extends StatelessWidget {
                 Get.toNamed(CardDesignPage.id);
               },
             ),
-            ProfileMid(image: 'about_us.png', title: 'About Us'),
+            ProfileMid(
+              image: 'about_us.png',
+              title: 'About Us',
+              onTap: () {
+                Get.toNamed(QrScanPage.id);
+              },
+            ),
             ProfileMid(
               image: 'about_us.png',
               title: 'FAQs',

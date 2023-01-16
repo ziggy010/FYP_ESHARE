@@ -1,4 +1,5 @@
 import 'package:e_share/View/components/Qr_scan_components/Qr_scan_page_first.dart';
+import 'package:e_share/View/components/Qr_scan_components/Qr_scan_page_second.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,9 +33,7 @@ class QrScanPageMid extends StatelessWidget {
           },
           children: [
             QrScanPageFirst(),
-            Container(
-              color: Colors.blue,
-            )
+            QrScanPageSecond(),
           ],
         ),
       ),
