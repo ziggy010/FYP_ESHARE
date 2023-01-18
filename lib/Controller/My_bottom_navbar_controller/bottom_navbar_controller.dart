@@ -13,11 +13,19 @@ class BottomNavbarController extends GetxController {
     color: Colors.white30,
   ).obs;
 
+  var firstText = kSelectedColor.obs;
+  var secondText = Colors.white30.obs;
+
   changeHomeIcon(Icon value) {
     homeIcon.value = value;
   }
 
   changeSavedIcon(Icon value) {
     savedIcon.value = value;
+  }
+
+  changeFontColor(Color color1, Color color2) {
+    firstText.value = color1;
+    secondText.value = color2;
   }
 }

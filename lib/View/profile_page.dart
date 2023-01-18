@@ -47,9 +47,7 @@ class ProfilePage extends StatelessWidget {
             ProfileMid(
               image: Icons.info_outline_rounded,
               title: 'About Us',
-              onTap: () {
-                Get.toNamed(QrScanPage.id);
-              },
+              onTap: () {},
             ),
             ProfileMid(
               image: Icons.quiz_outlined,

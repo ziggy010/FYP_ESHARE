@@ -39,16 +39,20 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                 onTap: () {
                   Get.offAllNamed(HomePage.id);
                   _bottomNavbarController.changeHomeIcon(
-                    const Icon(
+                    Icon(
                       Icons.home_rounded,
-                      color: Colors.white30,
+                      color: kSelectedColor,
                     ),
                   );
                   _bottomNavbarController.changeSavedIcon(
-                    const Icon(
+                    Icon(
                       Icons.bookmark_border_rounded,
-                      color: kSelectedColor,
+                      color: Colors.white30,
                     ),
+                  );
+                  _bottomNavbarController.changeFontColor(
+                    kSelectedColor,
+                    Colors.white30,
                   );
                 },
                 child: Column(
@@ -62,7 +66,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                     Text(
                       'My Cards',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: _bottomNavbarController.firstText.value,
                         fontSize: 8.sp,
                       ),
                     )
@@ -74,16 +78,20 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                   // Get.offAndToNamed(SavedCardsPage.id);
                   Get.offAllNamed(SavedCardsPage.id);
                   _bottomNavbarController.changeHomeIcon(
-                    const Icon(
+                    Icon(
                       Icons.home_outlined,
                       color: Colors.white30,
                     ),
                   );
                   _bottomNavbarController.changeSavedIcon(
-                    const Icon(
+                    Icon(
                       Icons.bookmark_rounded,
                       color: kSelectedColor,
                     ),
+                  );
+                  _bottomNavbarController.changeFontColor(
+                    Colors.white30,
+                    kSelectedColor,
                   );
                 },
                 child: Column(
@@ -97,7 +105,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                     Text(
                       'Saved Cards',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: _bottomNavbarController.secondText.value,
                         fontSize: 8.sp,
                       ),
                     )
