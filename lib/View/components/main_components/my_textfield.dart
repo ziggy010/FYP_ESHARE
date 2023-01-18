@@ -1,3 +1,4 @@
+import 'package:e_share/Main%20files/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,6 +26,7 @@ class MyTextfield extends StatelessWidget {
       padding: EdgeInsets.only(bottom: bottomPadding.h),
       child: TextField(
         keyboardType: keyboardType,
+        keyboardAppearance: Brightness.dark,
         onChanged: onSaved,
         autocorrect: false,
         enableSuggestions: false,
@@ -34,7 +36,7 @@ class MyTextfield extends StatelessWidget {
           fontFamily: 'poppins',
         ),
         decoration: InputDecoration(
-          fillColor: Color(0xFF4A4C5B),
+          fillColor: kContainerColor,
           filled: true,
           suffixIcon: Padding(
             padding: EdgeInsets.only(
@@ -43,13 +45,14 @@ class MyTextfield extends StatelessWidget {
             child: icon,
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF4A4C5B)),
+            borderSide: const BorderSide(
+              color: kContainerColor,
+            ),
             borderRadius: BorderRadius.circular(15.r),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              // color: Color.fromARGB(255, 120, 124, 150),
-              color: Colors.white,
+            borderSide: const BorderSide(
+              color: kSelectedColor,
             ),
             borderRadius: BorderRadius.circular(15.r),
           ),

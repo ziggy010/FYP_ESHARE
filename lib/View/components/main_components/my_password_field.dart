@@ -1,3 +1,4 @@
+import 'package:e_share/Main%20files/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,6 +28,7 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: widget.keyboardType,
+      keyboardAppearance: Brightness.dark,
       onChanged: widget.onSaved,
       autocorrect: false,
       enableSuggestions: false,
@@ -37,7 +39,7 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
         fontFamily: 'poppins',
       ),
       decoration: InputDecoration(
-        fillColor: Color(0xFF4A4C5B),
+        fillColor: kContainerColor,
         filled: true,
         suffixIcon: Padding(
           padding: EdgeInsets.only(
@@ -60,13 +62,14 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF4A4C5B)),
+          borderSide: const BorderSide(
+            color: kContainerColor,
+          ),
           borderRadius: BorderRadius.circular(15.r),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            // color: Color.fromARGB(255, 120, 124, 150),
-            color: Colors.white,
+          borderSide: const BorderSide(
+            color: kSelectedColor,
           ),
           borderRadius: BorderRadius.circular(15.r),
         ),

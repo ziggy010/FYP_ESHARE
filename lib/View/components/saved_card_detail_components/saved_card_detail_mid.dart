@@ -33,8 +33,8 @@ class SavedCardDetailMid extends StatelessWidget {
                 children: [
                   ContactButton(
                     text: 'Call',
-                    buttonColor: kContainerColor,
-                    borderColor: kContainerColor,
+                    buttonColor: kSelectedPrimary,
+                    borderColor: kSelectedPrimary,
                   ),
                   SizedBox(
                     width: 12.h,
@@ -42,7 +42,7 @@ class SavedCardDetailMid extends StatelessWidget {
                   ContactButton(
                     text: 'Email',
                     buttonColor: Colors.transparent,
-                    borderColor: kContainerColor,
+                    borderColor: kSelectedPrimary,
                   ),
                 ],
               ),
