@@ -39,15 +39,15 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                 onTap: () {
                   Get.offAllNamed(HomePage.id);
                   _bottomNavbarController.changeHomeIcon(
-                    Icon(
+                    const Icon(
                       Icons.home_rounded,
-                      color: Colors.white,
+                      color: Colors.white30,
                     ),
                   );
                   _bottomNavbarController.changeSavedIcon(
                     const Icon(
                       Icons.bookmark_border_rounded,
-                      color: Colors.white30,
+                      color: kSelectedColor,
                     ),
                   );
                 },
@@ -63,7 +63,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                       'My Cards',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 7.sp,
+                        fontSize: 8.sp,
                       ),
                     )
                   ],
@@ -82,7 +82,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                   _bottomNavbarController.changeSavedIcon(
                     const Icon(
                       Icons.bookmark_rounded,
-                      color: Colors.white,
+                      color: kSelectedColor,
                     ),
                   );
                 },
@@ -98,7 +98,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                       'Saved Cards',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 7.sp,
+                        fontSize: 8.sp,
                       ),
                     )
                   ],

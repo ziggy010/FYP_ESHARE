@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BottomNavbarController extends GetxController {
-  var homeIcon = const Icon(
+  var homeIcon = Icon(
     Icons.home_rounded,
-    color: Colors.white,
+    color: kSelectedColor,
   ).obs;
 
-  var savedIcon = const Icon(
+  var savedIcon = Icon(
     Icons.bookmark_border_rounded,
     color: Colors.white30,
   ).obs;

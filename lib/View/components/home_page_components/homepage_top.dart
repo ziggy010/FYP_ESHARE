@@ -67,7 +67,7 @@ class _HomePageTopState extends State<HomePageTop>
                   Text(
                     'Hi, Risab',
                     style: TextStyle(
-                      color: const Color(0x54FFFFFF),
+                      color: const Color(0x84FFFFFF),
                       fontSize: 14.sp,
                       letterSpacing: 1,
                     ),
@@ -78,7 +78,7 @@ class _HomePageTopState extends State<HomePageTop>
                   Text(
                     'Welcome Back!',
                     style: TextStyle(
-                      color: const Color(0x95FFFFFF),
+                      color: const Color(0x99FFFFFF),
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w700,
                       letterSpacing: 1.2,

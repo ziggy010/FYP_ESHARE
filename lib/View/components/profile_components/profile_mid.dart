@@ -91,7 +91,7 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
                             color: Colors.white,
                           ),
                           // child: Image.asset(
-                          //   'icons/${widget.image}',
+                          //   'icons/Union.png',
                           //   color: Colors.white,
                           // ),
                         ),
