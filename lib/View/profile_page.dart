@@ -31,7 +31,7 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             ProfileMid(
-              image: 'saved_card1.png',
+              image: 'saved_card.png',
               title: 'Saved Cards',
               onTap: () {
                 Get.toNamed(SavedCardsPage.id);

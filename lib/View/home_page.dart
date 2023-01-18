@@ -1,6 +1,9 @@
+import 'package:e_share/Controller/fab_controller.dart';
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/main_components/option_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'components/home_page_components/homepage_middle.dart';
 import 'components/home_page_components/homepage_top.dart';
@@ -17,28 +20,41 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final FabController _fabController = Get.put(FabController());
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: SafeArea(
-        bottom: false,
-        child: Padding(
-          padding: EdgeInsets.only(
-            top: 24.h,
-            // left: 24.w,
-          ),
-          child: Column(
-            children: [
-              HomePageTop(),
-              HomePageMid(),
-            ],
+    return Obx(() {
+      return Scaffold(
+        backgroundColor: _fabController.backgroundColor.value,
+        body: SafeArea(
+          bottom: false,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 24.h,
+              // left: 24.w,
+            ),
+            child: Column(
+              children: [
+                HomePageTop(),
+                Stack(
+                  children: [
+                    HomePageMid(),
+                    Positioned(
+                      bottom: 0.w,
+                      left: 90.h,
+                      child: OptionBox(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-      bottomNavigationBar: MyBottomNavBar(),
-      floatingActionButton: MyFab(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-    );
+        bottomNavigationBar: MyBottomNavBar(),
+        floatingActionButton: MyFab(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      );
+    });
   }
 }
