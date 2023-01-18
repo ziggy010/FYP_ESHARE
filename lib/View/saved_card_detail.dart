@@ -65,25 +65,29 @@ class _SavedCardDetailState extends State<SavedCardDetail>
           style: kAppBar,
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(
-          top: 32.w,
-          left: 24.h,
-          right: 24.h,
-        ),
-        child: Column(
-          children: [
-            SavedCardDetailTop(),
-            SavedCardDetailMid(
-              animation: _animation,
-              animationController: _animationController,
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              top: 32.w,
+              left: 24.h,
+              right: 24.h,
             ),
-            SavedCardDetailBottom(
-              animation: _animation,
-              animationController: _animationController,
-            )
-          ],
-        ),
+            child: Column(
+              children: [
+                SavedCardDetailTop(),
+                SavedCardDetailMid(
+                  animation: _animation,
+                  animationController: _animationController,
+                ),
+              ],
+            ),
+          ),
+          SavedCardDetailBottom(
+            animation: _animation,
+            animationController: _animationController,
+          )
+        ],
       ),
     );
   }

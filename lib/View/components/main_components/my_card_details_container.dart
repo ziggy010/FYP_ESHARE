@@ -7,48 +7,43 @@ class MyCardDetailsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(
-          height: 25.h,
-        ),
-        Text(
-          'Share your card',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w700,
-            fontSize: 16.sp,
-            letterSpacing: 2,
-            fontFamily: 'manrope',
-          ),
-        ),
-        SizedBox(
-          height: 8.h,
-        ),
-        Text(
-          'Scan this QR code to add this card to\nyour account',
-          style: TextStyle(
-            color: Color(0x75FFFFFF),
-            fontSize: 12.sp,
-            letterSpacing: 1,
-            fontFamily: 'manrope',
-          ),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(
-          height: 24.h,
+        Column(
+          children: [
+            Text(
+              'Share this card',
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'poppins',
+                fontSize: 18.sp,
+              ),
+            ),
+            SizedBox(
+              height: 6.h,
+            ),
+            Text(
+              'Scan this QR code to add this card to \nyour account',
+              style: TextStyle(
+                color: Color(0x75FFFFFF),
+                fontFamily: 'poppins',
+                fontSize: 12.sp,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
         Container(
-          width: 185.w,
           height: 185.h,
+          width: 185.w,
           decoration: BoxDecoration(
             color: kGreyColor,
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(
+              14.r,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 70.h,
-        ),
+        )
       ],
     );
   }

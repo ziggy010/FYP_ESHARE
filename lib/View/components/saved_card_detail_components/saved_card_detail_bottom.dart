@@ -1,4 +1,5 @@
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/main_components/my_card_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -34,53 +35,14 @@ class SavedCardDetailBottom extends StatelessWidget {
                 color: kContainerColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(
-                    10.r,
+                    30.r,
                   ),
                   topRight: Radius.circular(
-                    10.r,
+                    30.r,
                   ),
                 ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Share this card',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'poppins',
-                          fontSize: 18.sp,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 6.h,
-                      ),
-                      Text(
-                        'Scan this QR code to add this card to \nyour account',
-                        style: TextStyle(
-                          color: Color(0x55FFFFFF),
-                          fontFamily: 'poppins',
-                          fontSize: 12.sp,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                  Container(
-                    height: 185.h,
-                    width: 185.w,
-                    decoration: BoxDecoration(
-                      color: kUnselectedIconColor,
-                      borderRadius: BorderRadius.circular(
-                        14.r,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              child: MyCardDetailsContainer(),
             ),
           ),
         ),
