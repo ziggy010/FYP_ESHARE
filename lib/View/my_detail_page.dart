@@ -23,17 +23,21 @@ class MyDetail extends StatelessWidget {
           style: kAppBar,
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24.w,
-        ),
-        child: Column(
-          children: [
-            MyDetailTop(),
-            MyDetailMid(),
-            MyDetailBottom(),
-          ],
-        ),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 24.sm,
+            ),
+            child: Column(
+              children: [
+                MyDetailTop(),
+                MyDetailMid(),
+              ],
+            ),
+          ),
+          MyDetailBottom(),
+        ],
       ),
     );
   }

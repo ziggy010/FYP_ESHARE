@@ -56,11 +56,17 @@ class _MyFabState extends State<MyFab> with TickerProviderStateMixin {
             child: _fabController.isFabPressed.value
                 ? RotationTransition(
                     turns: _animationController,
-                    child: Image.asset('icons/cross.png'),
-                  )
+                    child: const Icon(
+                      Icons.close_rounded,
+                      color: Colors.white,
+                    ))
                 : RotationTransition(
                     turns: _animationController,
-                    child: Image.asset('icons/scanner.png'),
+                    // child: Image.asset('icons/scanner.png'),
+                    child: Icon(
+                      Icons.shutter_speed_rounded,
+                      color: Colors.white,
+                    ),
                   ),
           );
         }),

@@ -1,14 +1,23 @@
+import 'package:e_share/Main%20files/constant.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BottomNavbarController extends GetxController {
-  var homeIcon = 'icons/home.png'.obs;
-  var savedIcon = 'icons/saved_card.png'.obs;
+  var homeIcon = const Icon(
+    Icons.home_rounded,
+    color: Colors.white,
+  ).obs;
 
-  changeHomeIcon(String value) {
+  var savedIcon = const Icon(
+    Icons.bookmark_border_rounded,
+    color: Colors.white30,
+  ).obs;
+
+  changeHomeIcon(Icon value) {
     homeIcon.value = value;
   }
 
-  changeSavedIcon(String value) {
+  changeSavedIcon(Icon value) {
     savedIcon.value = value;
   }
 }

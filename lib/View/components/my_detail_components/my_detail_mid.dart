@@ -60,9 +60,9 @@ class _MyDetailMidState extends State<MyDetailMid>
               MyButton(
                 height: 42.h,
                 width: 144.w,
-                buttonColor: kContainerColor,
+                buttonColor: kSelectedPrimary,
                 borderRadius: 10,
-                borderColor: kContainerColor,
+                borderColor: kSelectedPrimary,
                 textWidget: Text(
                   'Update Design',
                   style: TextStyle(
@@ -77,7 +77,7 @@ class _MyDetailMidState extends State<MyDetailMid>
                 width: 144.w,
                 buttonColor: Colors.transparent,
                 borderRadius: 10,
-                borderColor: kSwiperColor,
+                borderColor: kSelectedPrimary,
                 textWidget: Text(
                   'Edit Information',
                   style: TextStyle(

@@ -7,9 +7,10 @@ class MyCardDetailsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          height: 24.h,
+          height: 25.h,
         ),
         Text(
           'Share your card',
@@ -27,7 +28,7 @@ class MyCardDetailsContainer extends StatelessWidget {
         Text(
           'Scan this QR code to add this card to\nyour account',
           style: TextStyle(
-            color: Color(0x55FFFFFF),
+            color: Color(0x75FFFFFF),
             fontSize: 12.sp,
             letterSpacing: 1,
             fontFamily: 'manrope',

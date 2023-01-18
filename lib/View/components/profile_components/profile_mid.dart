@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileMid extends StatefulWidget {
-  final String image;
+  final IconData image;
   final String title;
   final VoidCallback? onTap;
 
@@ -86,10 +86,14 @@ class _ProfileMidState extends State<ProfileMid> with TickerProviderStateMixin {
                       children: [
                         Container(
                           width: 60.w,
-                          child: Image.asset(
-                            'icons/${widget.image}',
+                          child: Icon(
+                            widget.image,
                             color: Colors.white,
                           ),
+                          // child: Image.asset(
+                          //   'icons/${widget.image}',
+                          //   color: Colors.white,
+                          // ),
                         ),
                         Text(
                           '${widget.title}',

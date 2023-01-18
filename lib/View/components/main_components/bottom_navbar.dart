@@ -38,17 +38,23 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
               GestureDetector(
                 onTap: () {
                   Get.offAllNamed(HomePage.id);
-                  _bottomNavbarController.changeHomeIcon('icons/home.png');
+                  _bottomNavbarController.changeHomeIcon(
+                    Icon(
+                      Icons.home_rounded,
+                      color: Colors.white,
+                    ),
+                  );
                   _bottomNavbarController.changeSavedIcon(
-                    'icons/saved_card.png',
+                    const Icon(
+                      Icons.bookmark_border_rounded,
+                      color: Colors.white30,
+                    ),
                   );
                 },
                 child: Column(
                   children: [
                     Obx(() {
-                      return Image.asset(
-                        _bottomNavbarController.homeIcon.toString(),
-                      );
+                      return _bottomNavbarController.homeIcon.value;
                     }),
                     SizedBox(
                       height: 5.h,
@@ -68,18 +74,22 @@ class _MyBottomNavBarState extends State<MyBottomNavBar>
                   // Get.offAndToNamed(SavedCardsPage.id);
                   Get.offAllNamed(SavedCardsPage.id);
                   _bottomNavbarController.changeHomeIcon(
-                    'icons/home_not_selected.png',
+                    const Icon(
+                      Icons.home_outlined,
+                      color: Colors.white30,
+                    ),
                   );
                   _bottomNavbarController.changeSavedIcon(
-                    'icons/saved_card.png',
+                    const Icon(
+                      Icons.bookmark_rounded,
+                      color: Colors.white,
+                    ),
                   );
                 },
                 child: Column(
                   children: [
                     Obx(() {
-                      return Image.asset(
-                        _bottomNavbarController.savedIcon.toString(),
-                      );
+                      return _bottomNavbarController.savedIcon.value;
                     }),
                     SizedBox(
                       height: 5.h,

@@ -31,28 +31,28 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             ProfileMid(
-              image: 'saved_card.png',
+              image: Icons.bookmarks_outlined,
               title: 'Saved Cards',
               onTap: () {
                 Get.toNamed(SavedCardsPage.id);
               },
             ),
             ProfileMid(
-              image: 'change_card.png',
+              image: Icons.wallet_outlined,
               title: 'Change Cards',
               onTap: () {
                 Get.toNamed(CardDesignPage.id);
               },
             ),
             ProfileMid(
-              image: 'about_us.png',
+              image: Icons.info_outline_rounded,
               title: 'About Us',
               onTap: () {
                 Get.toNamed(QrScanPage.id);
               },
             ),
             ProfileMid(
-              image: 'about_us.png',
+              image: Icons.quiz_outlined,
               title: 'FAQs',
               onTap: () {
                 Get.toNamed(
@@ -60,7 +60,10 @@ class ProfilePage extends StatelessWidget {
                 );
               },
             ),
-            ProfileMid(image: 'logout.png', title: 'Sign Out'),
+            ProfileMid(
+              image: Icons.logout_outlined,
+              title: 'Sign Out',
+            ),
           ],
         ),
       ),
