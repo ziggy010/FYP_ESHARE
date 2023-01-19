@@ -27,7 +27,7 @@ class SavedCardPageMid extends StatelessWidget {
                     SavedCardDetail.id,
                     parameters: {
                       'name':
-                          '${_savedCardPageController.allSavedCardList.value[index].name}',
+                          '${_savedCardPageController.foundSavedCard.value[index].name}',
                     },
                   );
                 },
