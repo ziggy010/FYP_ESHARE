@@ -27,8 +27,7 @@ class OptionBox extends StatelessWidget {
         padding: EdgeInsets.all(
           16.sm,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView(
           children: [
             InnerContainer(
               text: 'Citizenship',
@@ -65,26 +64,31 @@ class InnerContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 400),
-        curve: Curves.easeInOut,
-        height: fabController.innerHeight.value.h,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: kContainerColor,
-          borderRadius: BorderRadius.circular(
-            10.r,
-          ),
+      child: Padding(
+        padding: EdgeInsets.only(
+          bottom: 16.w,
         ),
-        child: Center(
-            child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'poppins',
-            fontSize: 14.sp,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeInOut,
+          height: fabController.innerHeight.value.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: kContainerColor,
+            borderRadius: BorderRadius.circular(
+              10.r,
+            ),
           ),
-        )),
+          child: Center(
+              child: Text(
+            text,
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'poppins',
+              fontSize: 14.sp,
+            ),
+          )),
+        ),
       ),
     );
   }

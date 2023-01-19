@@ -7,6 +7,7 @@ import 'package:e_share/View/components/saved_card_detail_components/saved_card_
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SavedCardDetail extends StatefulWidget {
   const SavedCardDetail({super.key});
@@ -61,7 +62,7 @@ class _SavedCardDetailState extends State<SavedCardDetail>
         elevation: 0,
         backgroundColor: kNavbarColor,
         title: Text(
-          'Risab Tajale',
+          Get.parameters['name'].toString(),
           style: kAppBar,
         ),
       ),

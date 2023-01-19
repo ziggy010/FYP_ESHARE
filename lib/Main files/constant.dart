@@ -15,4 +15,5 @@ const kUnselectedIconColor = Color(0xFFB2B2B3);
 
 var kAppBar = TextStyle(
   color: Colors.white,
+  fontSize: 16,
 );
