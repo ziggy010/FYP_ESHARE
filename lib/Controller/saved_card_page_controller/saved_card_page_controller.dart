@@ -11,13 +11,28 @@ class SavedCardPageController extends GetxController {
       name: 'Aashma Rai',
     ),
     SavedCardList(
-      name: 'Sirish Kodna',
+      name: 'Sirish donda',
+    ),
+    SavedCardList(
+      name: 'Andrew Suwal',
+    ),
+    SavedCardList(
+      name: 'Rushan Phanju',
+    ),
+    SavedCardList(
+      name: 'Nischhal Shrestha',
+    ),
+    SavedCardList(
+      name: 'Rohan Awal',
     ),
     SavedCardList(
       name: 'Anish Koju',
     ),
     SavedCardList(
-      name: 'Rohan Awal',
+      name: 'Rozen Awal',
+    ),
+    SavedCardList(
+      name: 'Trilok Thapa',
     ),
   ].obs;
 
