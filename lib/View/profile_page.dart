@@ -4,6 +4,7 @@ import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/profile_components/profile_mid.dart';
+import 'package:e_share/View/login_page.dart';
 import 'package:e_share/View/saved_card_detail.dart';
 import 'package:e_share/View/saved_card_page.dart';
 import 'package:flutter/material.dart';
@@ -52,15 +53,16 @@ class ProfilePage extends StatelessWidget {
             ProfileMid(
               image: Icons.quiz_outlined,
               title: 'FAQs',
-              onTap: () {
-                Get.toNamed(
-                  SavedCardDetail.id,
-                );
-              },
+              onTap: () {},
             ),
             ProfileMid(
               image: Icons.logout_outlined,
               title: 'Sign Out',
+              onTap: () {
+                Get.toNamed(
+                  LoginPage.id,
+                );
+              },
             ),
           ],
         ),

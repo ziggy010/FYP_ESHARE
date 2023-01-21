@@ -9,10 +9,45 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class SavedCardsPage extends StatelessWidget {
+class SavedCardsPage extends StatefulWidget {
   static const String id = '/SavedCardsPage';
 
+  @override
+  State<SavedCardsPage> createState() => _SavedCardsPageState();
+}
+
+class _SavedCardsPageState extends State<SavedCardsPage>
+    with TickerProviderStateMixin {
   TextEditingController _textEditingController = TextEditingController();
+
+  late AnimationController _animationController;
+
+  late Animation _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        milliseconds: 500,
+      ),
+    );
+
+    _animation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    );
+
+    _animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _animationController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +72,11 @@ class SavedCardsPage extends StatelessWidget {
             children: [
               SavedCardPageTop(
                 textEditingController: _textEditingController,
+                animationController: _animationController,
               ),
-              SavedCardPageMid(),
+              SavedCardPageMid(
+                animationController: _animationController,
+              ),
             ],
           ),
         ),
