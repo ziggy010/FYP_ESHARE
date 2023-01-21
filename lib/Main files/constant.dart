@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const kBackgroundColor = Color(0xFF17171A);
 const kNavbarColor = Color(0xFF211F30);
@@ -18,3 +19,11 @@ var kAppBar = TextStyle(
   color: Colors.white,
   fontSize: 16,
 );
+
+TextStyle kCardTextStyle(double fontSize) {
+  return TextStyle(
+    color: kGoldenColor,
+    fontFamily: 'poppins',
+    fontSize: fontSize.sp,
+  );
+}

@@ -33,7 +33,6 @@ class EshareHorizontalCard extends StatelessWidget {
                   bottom: 10.w,
                 ),
                 child: Container(
-                  // color: Colors.red,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -58,9 +57,11 @@ class EshareHorizontalCard extends StatelessWidget {
                           SizedBox(
                             width: 9.h,
                           ),
-                          Text(
-                            'tajale01@gmail.com',
-                            style: cardTextStyle(11),
+                          Expanded(
+                            child: Text(
+                              'tajale01@gmail.com',
+                              style: cardTextStyle(11),
+                            ),
                           ),
                         ],
                       ),
@@ -94,12 +95,11 @@ class EshareHorizontalCard extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Container(
-                    child: Image.asset(
-                      'icons/card_icon.png',
-                      color: kGoldenColor,
-                      fit: BoxFit.cover,
-                    ),
+                  Image.asset(
+                    'icons/app_icon_bg.png',
+                    color: kGoldenColor,
+                    fit: BoxFit.cover,
+                    height: 80.h,
                   ),
                   Text(
                     'E-Share',
@@ -108,7 +108,7 @@ class EshareHorizontalCard extends StatelessWidget {
                       fontFamily: 'lobster',
                       fontSize: 24.sp,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
