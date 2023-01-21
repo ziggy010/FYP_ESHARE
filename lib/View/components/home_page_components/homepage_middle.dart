@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/Model/home_page_methods.dart';
+import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
 import 'package:e_share/View/my_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

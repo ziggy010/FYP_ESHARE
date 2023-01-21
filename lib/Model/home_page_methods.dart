@@ -1,5 +1,7 @@
+import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
+import 'package:flutter/material.dart';
 
 class HomePageText {
   List homeTitle = [
@@ -18,11 +20,20 @@ class HomePageText {
   ];
 
   List swiperContent = [
-    EshareVerticalCard(),
-    EshareHorizontalCard(),
-    EshareHorizontalCard(),
-    // 'images/try.png',
-    // 'images/try.png',
+    EshareVerticalCard(
+      name: 'Risab Tajale',
+      profession: 'App Developer',
+      email: 'tajale01@gmail.com',
+      number: '9813110577',
+    ),
+    Container(
+      color: kContainerColor,
+    ),
+    Container(
+      color: kContainerColor,
+    ),
+    // EshareVerticalCard(),
+    // EshareVerticalCard(),
   ];
 
   void changeTextOrder(int getIndex) {

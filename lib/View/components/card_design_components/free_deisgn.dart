@@ -17,7 +17,12 @@ class FreeDesign extends StatelessWidget {
           Column(
             children: [
               CardContainer(
-                content: EshareHorizontalCard(),
+                content: EshareHorizontalCard(
+                  name: 'Risab Tajale',
+                  profession: 'App Developer',
+                  email: 'tajale01@gmail.com',
+                  number: '9813110577',
+                ),
               ),
               CardContainer(),
               CardContainer(),

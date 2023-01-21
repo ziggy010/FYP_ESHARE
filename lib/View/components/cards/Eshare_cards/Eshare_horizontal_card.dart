@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalCard extends StatelessWidget {
-  const EshareHorizontalCard({super.key});
+  final String name, profession, email, number;
+
+  EshareHorizontalCard({
+    required this.name,
+    required this.profession,
+    required this.email,
+    required this.number,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +44,11 @@ class EshareHorizontalCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Risab Tajale',
+                        name,
                         style: cardTextStyle(20),
                       ),
                       Text(
-                        'App Developer',
+                        profession,
                         style: cardTextStyle(12),
                       ),
                       SizedBox(
@@ -59,7 +66,7 @@ class EshareHorizontalCard extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              'tajale01@gmail.com',
+                              email,
                               style: cardTextStyle(11),
                             ),
                           ),
@@ -79,7 +86,7 @@ class EshareHorizontalCard extends StatelessWidget {
                             width: 9.h,
                           ),
                           Text(
-                            '9813110577',
+                            number,
                             style: cardTextStyle(11),
                           ),
                         ],
