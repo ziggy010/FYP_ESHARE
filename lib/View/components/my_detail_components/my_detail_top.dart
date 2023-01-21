@@ -1,3 +1,4 @@
+import 'package:e_share/View/components/cards/e_share_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,12 +19,12 @@ class MyDetailTop extends StatelessWidget {
         decoration: BoxDecoration(
           color: kContainerColor,
           borderRadius: BorderRadius.circular(20.r),
-          image: const DecorationImage(
-            image: AssetImage(
-              'images/card1.jpg',
-            ),
-            fit: BoxFit.fill,
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(
+            10.sm,
           ),
+          child: EshareCard(),
         ),
       ),
     );
