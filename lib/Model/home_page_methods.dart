@@ -1,3 +1,5 @@
+import 'package:e_share/View/components/cards/e_share_horizontal_card.dart';
+
 class HomePageText {
   List homeTitle = [
     [
@@ -15,9 +17,11 @@ class HomePageText {
   ];
 
   List swiperContent = [
-    'images/try.png',
-    'images/try.png',
-    'images/try.png',
+    EshareCard(),
+    EshareCard(),
+    EshareCard(),
+    // 'images/try.png',
+    // 'images/try.png',
   ];
 
   void changeTextOrder(int getIndex) {
