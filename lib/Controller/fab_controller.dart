@@ -22,7 +22,7 @@ class FabController extends GetxController {
     if (isFabPressed.value == false) {
       backgroundColor.value = kBackgroundColor;
     } else {
-      backgroundColor.value = Color(0x99353746);
+      backgroundColor.value = Color.fromARGB(153, 17, 18, 21);
     }
   }
 

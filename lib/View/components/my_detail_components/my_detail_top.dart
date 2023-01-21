@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:e_share/View/components/cards/e_share_horizontal_card.dart';
+import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,7 +60,7 @@ class _MyDetailTopState extends State<MyDetailTop>
               color: kContainerColor,
               borderRadius: BorderRadius.circular(20.r),
             ),
-            child: EshareCard(),
+            child: EshareHorizontalCard(),
           ),
         ),
       ),

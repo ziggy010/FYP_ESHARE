@@ -1,4 +1,5 @@
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,8 +15,10 @@ class FreeDesign extends StatelessWidget {
       child: ListView(
         children: [
           Column(
-            children: const [
-              CardContainer(),
+            children: [
+              CardContainer(
+                content: EshareHorizontalCard(),
+              ),
               CardContainer(),
               CardContainer(),
               CardContainer(),

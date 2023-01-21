@@ -1,4 +1,5 @@
-import 'package:e_share/View/components/cards/e_share_horizontal_card.dart';
+import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
+import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
 
 class HomePageText {
   List homeTitle = [
@@ -17,9 +18,9 @@ class HomePageText {
   ];
 
   List swiperContent = [
-    EshareCard(),
-    EshareCard(),
-    EshareCard(),
+    EshareVerticalCard(),
+    EshareHorizontalCard(),
+    EshareHorizontalCard(),
     // 'images/try.png',
     // 'images/try.png',
   ];

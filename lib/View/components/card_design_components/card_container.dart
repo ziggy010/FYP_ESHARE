@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardContainer extends StatelessWidget {
-  const CardContainer({
-    Key? key,
-  }) : super(key: key);
+  final Widget? content;
+
+  CardContainer({
+    this.content,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class CardContainer extends StatelessWidget {
             20.r,
           ),
         ),
+        child: content,
       ),
     );
   }
