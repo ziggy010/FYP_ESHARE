@@ -18,6 +18,12 @@ class MyDetailTop extends StatelessWidget {
         decoration: BoxDecoration(
           color: kContainerColor,
           borderRadius: BorderRadius.circular(20.r),
+          image: const DecorationImage(
+            image: AssetImage(
+              'images/card1.jpg',
+            ),
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );
