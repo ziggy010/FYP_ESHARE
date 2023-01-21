@@ -17,6 +17,8 @@ class SavedCardPageTop extends StatelessWidget {
     required this.textEditingController,
   });
 
+  List popList = ["Alphabetically"];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -75,13 +77,51 @@ class SavedCardPageTop extends StatelessWidget {
                 10.r,
               ),
             ),
-            child: Center(
-              child: Icon(
+            child: PopupMenuButton(
+              offset: Offset(0, 20),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(
+                  10.r,
+                ),
+              ),
+              color: kContainerColor,
+              position: PopupMenuPosition.under,
+              splashRadius: 0.1,
+              icon: Icon(
                 Icons.filter_list_rounded,
                 color: Colors.white,
                 size: 30.sp,
               ),
+              itemBuilder: (context) {
+                return popList
+                    .map((e) => PopupMenuItem(
+                          onTap: () {
+                            _savedCardPageController.foundSavedCard.value =
+                                _savedCardPageController.foundSavedCard.value
+                                    .toList()
+                                  ..sort((a, b) => a.name.compareTo(b.name));
+                          },
+                          value: e,
+                          child: Container(
+                            child: Text(
+                              e,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'poppins',
+                              ),
+                            ),
+                          ),
+                        ))
+                    .toList();
+              },
             ),
+            // child: Center(
+            //   child: Icon(
+            //     Icons.filter_list_rounded,
+            //     color: Colors.white,
+            //     size: 30.sp,
+            //   ),
+            // ),
           ),
         ],
       ),

@@ -17,20 +17,20 @@ class SavedCardPageMid extends StatelessWidget {
         child: ListView.builder(
           itemCount: _savedCardPageController.foundSavedCard.value.length,
           itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.only(
-                bottom: 16.h,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  Get.toNamed(
-                    SavedCardDetail.id,
-                    parameters: {
-                      'name':
-                          '${_savedCardPageController.foundSavedCard.value[index].name}',
-                    },
-                  );
-                },
+            return GestureDetector(
+              onTap: () {
+                Get.toNamed(
+                  SavedCardDetail.id,
+                  parameters: {
+                    'name':
+                        '${_savedCardPageController.foundSavedCard.value[index].name}',
+                  },
+                );
+              },
+              child: Padding(
+                padding: EdgeInsets.only(
+                  bottom: 16.h,
+                ),
                 child: Container(
                   height: 40.h,
                   width: double.infinity,
