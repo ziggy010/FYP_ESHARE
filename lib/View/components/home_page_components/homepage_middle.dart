@@ -99,10 +99,11 @@ class _HomePageMidState extends State<HomePageMid> {
                 itemBuilder: (context, index) {
                   return ClipRRect(
                     borderRadius: BorderRadius.circular(18.r),
-                    child: Image.asset(
-                      _homePageText.swiperContent[index],
-                      fit: BoxFit.cover,
-                    ),
+                    child: _homePageText.swiperContent[index],
+                    // child: Image.asset(
+                    //   _homePageText.swiperContent[index],
+                    //   fit: BoxFit.cover,
+                    // ),
                   );
                 },
                 pagination: SwiperPagination(
