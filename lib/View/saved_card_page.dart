@@ -67,7 +67,11 @@ class _SavedCardsPageState extends State<SavedCardsPage>
         ),
         backgroundColor: kBackgroundColor,
         body: Padding(
-          padding: EdgeInsets.all(24.0.sm),
+          padding: EdgeInsets.only(
+            top: 24.w,
+            left: 24.h,
+            right: 24.h,
+          ),
           child: Column(
             children: [
               SavedCardPageTop(
