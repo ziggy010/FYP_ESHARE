@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -60,12 +61,7 @@ class _MyDetailTopState extends State<MyDetailTop>
               color: kContainerColor,
               borderRadius: BorderRadius.circular(20.r),
             ),
-            child: EshareHorizontalCard(
-              name: 'Risab Tajale',
-              profession: 'App Developer',
-              email: 'tajale01@gmail.com',
-              number: '9813110577',
-            ),
+            child: EshareHorizontalTwo(),
           ),
         ),
       ),
