@@ -22,7 +22,7 @@ class EshareHorizontalCard extends StatelessWidget {
         ),
         image: const DecorationImage(
           image: AssetImage(
-            'images/card1.jpg',
+            'images/Eshare1b.jpg',
           ),
           fit: BoxFit.cover,
         ),
