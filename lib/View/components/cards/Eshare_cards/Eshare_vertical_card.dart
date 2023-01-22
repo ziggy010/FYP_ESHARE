@@ -20,7 +20,7 @@ class EshareVerticalCard extends StatelessWidget {
       decoration: const BoxDecoration(
         color: kContainerColor,
         image: DecorationImage(
-          image: AssetImage("images/Eshare1a.jpg"),
+          image: AssetImage("images/Eshare1a.png"),
           fit: BoxFit.cover,
         ),
       ),
