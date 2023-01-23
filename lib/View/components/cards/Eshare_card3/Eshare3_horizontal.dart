@@ -13,7 +13,7 @@ class EshareHorizontalThree extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
         image: const DecorationImage(
           image: AssetImage(
-            'images/card7.jpg',
+            'images/Eshare3b.jpg',
           ),
           fit: BoxFit.cover,
         ),
