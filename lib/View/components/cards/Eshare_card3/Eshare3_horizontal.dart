@@ -33,11 +33,11 @@ class EshareHorizontalThree extends StatelessWidget {
               children: [
                 Text(
                   'Risab Tajale',
-                  style: basicTextStyle(24, 'lobster'),
+                  style: basicTextStyle(font: 'lobster', fontSize: 24),
                 ),
                 Text(
                   'App Developer',
-                  style: basicTextStyle(12, 'poppins'),
+                  style: basicTextStyle(font: 'poppins', fontSize: 12),
                 ),
               ],
             ),
@@ -90,7 +90,10 @@ class CardRowDetail extends StatelessWidget {
       children: [
         Text(
           text,
-          style: basicTextStyle(10, 'poppins'),
+          style: basicTextStyle(
+            font: 'poppins',
+            fontSize: 10,
+          ),
         ),
         SizedBox(
           width: 9.h,

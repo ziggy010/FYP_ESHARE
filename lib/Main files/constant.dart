@@ -30,7 +30,10 @@ TextStyle kCardTextStyle(double fontSize) {
   );
 }
 
-TextStyle basicTextStyle(double fontSize, String font) {
+TextStyle basicTextStyle({
+  required double fontSize,
+  required String font,
+}) {
   return TextStyle(
     color: Color(0xFFFAB345),
     fontFamily: font,

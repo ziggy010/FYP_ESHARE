@@ -18,6 +18,44 @@ class EshareHorizontalFour extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
+      child: Container(
+        // color: Colors.red,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 30.h,
+              top: 30.w,
+              child: Container(
+                height: 55.h,
+                width: 200.w,
+                // color: Colors.blue,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Risab Tajale',
+                      style: basicTextStyle(fontSize: 22, font: 'lobster'),
+                    ),
+                    Text(
+                      'App Developer',
+                      style: basicTextStyle(fontSize: 10, font: 'poppins'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              child: Container(
+                height: 70.h,
+                width: 100.w,
+                // color: Colors.blue,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

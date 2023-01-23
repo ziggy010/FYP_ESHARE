@@ -63,7 +63,7 @@ class _MyDetailTopState extends State<MyDetailTop>
               color: kContainerColor,
               borderRadius: BorderRadius.circular(20.r),
             ),
-            child: EshareHorizontalFour(),
+            child: EshareHorizontalThree(),
             // child: EshareHorizontalCard(
             //   name: 'Risab Tajale',
             //   profession: 'App Developer',
