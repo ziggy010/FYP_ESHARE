@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalFour extends StatelessWidget {
-  const EshareHorizontalFour({super.key});
+  final _color = Color(0xFFF9DD6F);
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +35,19 @@ class EshareHorizontalFour extends StatelessWidget {
                   children: [
                     Text(
                       'Risab Tajale',
-                      style: basicTextStyle(fontSize: 22, font: 'lobster'),
+                      style: TextStyle(
+                        color: _color,
+                        fontFamily: 'lobster',
+                        fontSize: 22.sp,
+                      ),
                     ),
                     Text(
                       'App Developer',
-                      style: basicTextStyle(fontSize: 10, font: 'poppins'),
+                      style: TextStyle(
+                        color: _color,
+                        fontFamily: 'poppins',
+                        fontSize: 12.sp,
+                      ),
                     ),
                   ],
                 ),
@@ -49,13 +57,91 @@ class EshareHorizontalFour extends StatelessWidget {
               bottom: 0,
               child: Container(
                 height: 70.h,
-                width: 100.w,
+                width: 280.w,
                 // color: Colors.blue,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CardDetailRow(
+                            color: _color,
+                            icon: Icons.location_on_outlined,
+                            text: 'Kamalbinayak, Bhaktapur',
+                          ),
+                          CardDetailRow(
+                            color: _color,
+                            icon: Icons.email_outlined,
+                            text: 'tajale01@gmail.com',
+                          )
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CardDetailRow(
+                            color: _color,
+                            icon: Icons.phone_outlined,
+                            text: '9813110577',
+                          ),
+                          CardDetailRow(
+                            color: _color,
+                            icon: Icons.language_outlined,
+                            text: 'risab.com.np',
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class CardDetailRow extends StatelessWidget {
+  const CardDetailRow({
+    Key? key,
+    required Color color,
+    required this.icon,
+    required this.text,
+  })  : _color = color,
+        super(key: key);
+
+  final Color _color;
+  final IconData icon;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          color: _color,
+          size: 15.sm,
+        ),
+        SizedBox(
+          width: 9.w,
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            color: _color,
+            fontFamily: 'poppins',
+            fontSize: 10.sp,
+          ),
+        )
+      ],
     );
   }
 }
