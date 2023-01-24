@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalFour extends StatelessWidget {
-  const EshareHorizontalFour({super.key});
+  final String name, profession, address, email, number, website;
+
+  EshareHorizontalFour({
+    required this.name,
+    required this.profession,
+    required this.address,
+    required this.email,
+    required this.number,
+    required this.website,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +40,7 @@ class EshareHorizontalFour extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Risab Tajale',
+                    name,
                     style: TextStyle(
                       color: Color(0xFFCE915B),
                       fontFamily: 'poppins',
@@ -40,7 +49,7 @@ class EshareHorizontalFour extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'App developer',
+                    profession,
                     style: TextStyle(
                       color: Color(0xFFCE915B),
                       fontFamily: 'poppins',
@@ -59,19 +68,19 @@ class EshareHorizontalFour extends StatelessWidget {
                     children: [
                       CardRowDetail(
                         icon: Icons.phone_outlined,
-                        text: '9813110577',
+                        text: number,
                       ),
                       CardRowDetail(
                         icon: Icons.email_outlined,
-                        text: 'tajale01@gmail.com',
+                        text: email,
                       ),
                       CardRowDetail(
                         icon: Icons.language_outlined,
-                        text: 'risab.com.np',
+                        text: website,
                       ),
                       CardRowDetail(
                         icon: Icons.location_on_outlined,
-                        text: 'Kamalbinayak, Bhaktapur',
+                        text: address,
                       ),
                     ],
                   ),

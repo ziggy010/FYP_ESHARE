@@ -82,40 +82,30 @@ class EshareVerticalCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Icon(
-                        Icons.phone_outlined,
-                        color: kGoldenColor,
-                      ),
-                      SizedBox(
-                        width: 9.h,
-                      ),
-                      Text(
-                        email,
-                        style: kCardTextStyle(13),
-                      ),
-                    ],
+                  cardRowDetail(
+                    text: 'tajale01@gmail.com',
+                    icon: Icons.email_outlined,
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Icon(
-                        Icons.email_outlined,
-                        color: kGoldenColor,
-                      ),
-                      SizedBox(
-                        width: 9.h,
-                      ),
-                      Text(
-                        number,
-                        style: kCardTextStyle(13),
-                      ),
-                    ],
+                  cardRowDetail(
+                    text: '9813110577',
+                    icon: Icons.phone_outlined,
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  cardRowDetail(
+                    text: 'risab.com.np',
+                    icon: Icons.language_outlined,
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  cardRowDetail(
+                    text: 'kamalbinayak, Bhaktapur',
+                    icon: Icons.location_on_outlined,
                   ),
                 ],
               ),
@@ -123,6 +113,37 @@ class EshareVerticalCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class cardRowDetail extends StatelessWidget {
+  final String text;
+  final IconData icon;
+
+  cardRowDetail({
+    required this.text,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Icon(
+          icon,
+          color: kGoldenColor,
+          size: 20.sm,
+        ),
+        SizedBox(
+          width: 9.h,
+        ),
+        Text(
+          text,
+          style: kCardTextStyle(10),
+        ),
+      ],
     );
   }
 }

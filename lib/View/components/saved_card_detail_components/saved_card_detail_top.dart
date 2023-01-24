@@ -1,9 +1,14 @@
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/cards/Eshare_card3/Eshare3_horizontal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SavedCardDetailTop extends StatelessWidget {
-  const SavedCardDetailTop({super.key});
+  final String name;
+
+  SavedCardDetailTop({
+    required this.name,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +20,14 @@ class SavedCardDetailTop extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           20.r,
         ),
+      ),
+      child: EshareHorizontalThree(
+        name: name,
+        profession: 'App Developer',
+        email: 'tajale01@gmail.com',
+        number: '9813110577',
+        address: 'Kamalbinayak, Bhaktapur',
+        website: 'risab.com.np',
       ),
     );
   }

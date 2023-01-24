@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalCard extends StatelessWidget {
-  final String name, profession, email, number;
+  final String name, profession, email, number, address, website;
 
   EshareHorizontalCard({
     required this.name,
     required this.profession,
     required this.email,
     required this.number,
+    required this.address,
+    required this.website,
   });
 
   @override
@@ -42,6 +44,7 @@ class EshareHorizontalCard extends StatelessWidget {
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
                         name,
@@ -52,7 +55,7 @@ class EshareHorizontalCard extends StatelessWidget {
                         style: cardTextStyle(12),
                       ),
                       SizedBox(
-                        height: 20.h,
+                        height: 10.h,
                       ),
                       Row(
                         children: [
@@ -67,13 +70,10 @@ class EshareHorizontalCard extends StatelessWidget {
                           Expanded(
                             child: Text(
                               email,
-                              style: cardTextStyle(11),
+                              style: cardTextStyle(10),
                             ),
                           ),
                         ],
-                      ),
-                      SizedBox(
-                        height: 9.h,
                       ),
                       Row(
                         children: [
@@ -87,7 +87,39 @@ class EshareHorizontalCard extends StatelessWidget {
                           ),
                           Text(
                             number,
-                            style: cardTextStyle(11),
+                            style: cardTextStyle(10),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on_outlined,
+                            color: kGoldenColor,
+                            size: 16.sp,
+                          ),
+                          SizedBox(
+                            width: 9.h,
+                          ),
+                          Text(
+                            address,
+                            style: cardTextStyle(10),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.language_outlined,
+                            color: kGoldenColor,
+                            size: 16.sp,
+                          ),
+                          SizedBox(
+                            width: 9.h,
+                          ),
+                          Text(
+                            website,
+                            style: cardTextStyle(10),
                           ),
                         ],
                       ),

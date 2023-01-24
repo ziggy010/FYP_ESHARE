@@ -41,11 +41,11 @@ class EshareHorizontalThree extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'Risab Tajale',
+                  name,
                   style: basicTextStyle(font: 'lobster', fontSize: 24),
                 ),
                 Text(
-                  'App Developer',
+                  profession,
                   style: basicTextStyle(font: 'poppins', fontSize: 12),
                 ),
               ],
@@ -58,19 +58,19 @@ class EshareHorizontalThree extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CardRowDetail(
-                    text: 'Kamalbinayak, Bhaktapur',
+                    text: address,
                     icon: Icons.location_on_outlined,
                   ),
                   CardRowDetail(
-                    text: '9813110577',
+                    text: number,
                     icon: Icons.phone_outlined,
                   ),
                   CardRowDetail(
-                    text: 'tajale01@gmail.com',
+                    text: email,
                     icon: Icons.email_outlined,
                   ),
                   CardRowDetail(
-                    text: 'risab.com.np',
+                    text: website,
                     icon: Icons.language_outlined,
                   ),
                 ],

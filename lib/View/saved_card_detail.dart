@@ -76,7 +76,9 @@ class _SavedCardDetailState extends State<SavedCardDetail>
             ),
             child: Column(
               children: [
-                SavedCardDetailTop(),
+                SavedCardDetailTop(
+                  name: Get.parameters['name'].toString(),
+                ),
                 SavedCardDetailMid(
                   animation: _animation,
                   animationController: _animationController,
