@@ -28,6 +28,19 @@ class FreeDesign extends StatelessWidget {
                 ),
               ),
               CardContainer(
+                content: EshareHorizontalThree(
+                  name: 'Risab Tajale',
+                  profession: 'App Developer',
+                  email: 'tajale01@gmail.com',
+                  number: '9813110577',
+                  address: 'Kamalbinayak, Bhaktapur',
+                  website: 'risab.com.np',
+                ),
+              ),
+              CardContainer(
+                content: EshareHorizontalFour(),
+              ),
+              CardContainer(
                 content: EshareHorizontalTwo(
                   name: 'Risab Tajale',
                   profession: 'App Developer',
@@ -36,12 +49,6 @@ class FreeDesign extends StatelessWidget {
                   address: 'kamalbinayak,Bhaktapur',
                   website: 'risab.com.np',
                 ),
-              ),
-              CardContainer(
-                content: EshareHorizontalThree(),
-              ),
-              CardContainer(
-                content: EshareHorizontalFour(),
               ),
             ],
           ),

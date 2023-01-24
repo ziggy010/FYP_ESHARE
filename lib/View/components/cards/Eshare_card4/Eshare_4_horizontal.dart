@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalFour extends StatelessWidget {
-  final _color = Color(0xFFF9DD6F);
+  const EshareHorizontalFour({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,114 +12,87 @@ class EshareHorizontalFour extends StatelessWidget {
         color: kContainerColor,
         borderRadius: BorderRadius.circular(12.r),
         image: const DecorationImage(
-          image: AssetImage(
-            'images/Eshare4b.jpg',
-          ),
-          fit: BoxFit.cover,
+          image: AssetImage('images/Eshare4b.png'),
+          fit: BoxFit.fill,
         ),
       ),
       child: Container(
-        // color: Colors.red,
-        child: Stack(
-          children: [
-            Positioned(
-              left: 30.h,
-              top: 30.w,
-              child: Container(
-                height: 55.h,
-                width: 200.w,
-                // color: Colors.blue,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      'Risab Tajale',
-                      style: TextStyle(
-                        color: _color,
-                        fontFamily: 'lobster',
-                        fontSize: 22.sp,
-                      ),
+        // color: Colors.blue,
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 20.w,
+            left: 10.h,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Risab Tajale',
+                    style: TextStyle(
+                      color: Color(0xFFCE915B),
+                      fontFamily: 'poppins',
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Text(
-                      'App Developer',
-                      style: TextStyle(
-                        color: _color,
-                        fontFamily: 'poppins',
-                        fontSize: 12.sp,
-                      ),
+                  ),
+                  Text(
+                    'App developer',
+                    style: TextStyle(
+                      color: Color(0xFFCE915B),
+                      fontFamily: 'poppins',
+                      fontSize: 10.sp,
+                      fontStyle: FontStyle.italic,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ),
-            Positioned(
-              bottom: 0,
-              child: Container(
-                height: 70.h,
-                width: 280.w,
-                // color: Colors.blue,
+              Expanded(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CardDetailRow(
-                            color: _color,
-                            icon: Icons.location_on_outlined,
-                            text: 'Kamalbinayak, Bhaktapur',
-                          ),
-                          CardDetailRow(
-                            color: _color,
-                            icon: Icons.email_outlined,
-                            text: 'tajale01@gmail.com',
-                          )
-                        ],
+                      CardRowDetail(
+                        icon: Icons.phone_outlined,
+                        text: '9813110577',
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CardDetailRow(
-                            color: _color,
-                            icon: Icons.phone_outlined,
-                            text: '9813110577',
-                          ),
-                          CardDetailRow(
-                            color: _color,
-                            icon: Icons.language_outlined,
-                            text: 'risab.com.np',
-                          )
-                        ],
+                      CardRowDetail(
+                        icon: Icons.email_outlined,
+                        text: 'tajale01@gmail.com',
+                      ),
+                      CardRowDetail(
+                        icon: Icons.language_outlined,
+                        text: 'risab.com.np',
+                      ),
+                      CardRowDetail(
+                        icon: Icons.location_on_outlined,
+                        text: 'Kamalbinayak, Bhaktapur',
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class CardDetailRow extends StatelessWidget {
-  const CardDetailRow({
-    Key? key,
-    required Color color,
-    required this.icon,
-    required this.text,
-  })  : _color = color,
-        super(key: key);
-
-  final Color _color;
-  final IconData icon;
+class CardRowDetail extends StatelessWidget {
   final String text;
+  final IconData icon;
+
+  CardRowDetail({
+    required this.text,
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -127,16 +100,16 @@ class CardDetailRow extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: _color,
+          color: Color(0xFFCE915B),
           size: 15.sm,
         ),
         SizedBox(
-          width: 9.w,
+          width: 5.w,
         ),
         Text(
           text,
           style: TextStyle(
-            color: _color,
+            color: Color(0xFFCE915B),
             fontFamily: 'poppins',
             fontSize: 10.sp,
           ),

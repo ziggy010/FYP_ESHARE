@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalThree extends StatelessWidget {
-  const EshareHorizontalThree({super.key});
+  final String name, profession, address, email, number, website;
+
+  EshareHorizontalThree({
+    required this.name,
+    required this.profession,
+    required this.address,
+    required this.email,
+    required this.number,
+    required this.website,
+  });
 
   @override
   Widget build(BuildContext context) {
