@@ -1,6 +1,7 @@
 import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/fill_details_page.dart';
+import 'package:e_share/View/forgot_password_page.dart';
 import 'package:e_share/View/login_page.dart';
 import 'package:e_share/View/my_detail_page.dart';
 import 'package:e_share/View/profile_page.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: ForgotPasswordPage(),
           getPages: [
             GetPage(name: HomePage.id, page: () => const HomePage()),
             GetPage(name: MyDetail.id, page: () => const MyDetail()),
@@ -40,6 +41,8 @@ class MyApp extends StatelessWidget {
             GetPage(name: SavedCardsPage.id, page: () => SavedCardsPage()),
             GetPage(name: SavedCardDetail.id, page: () => SavedCardDetail()),
             GetPage(name: QrScanPage.id, page: () => QrScanPage()),
+            GetPage(
+                name: ForgotPasswordPage.id, page: () => ForgotPasswordPage()),
           ],
         );
       },
