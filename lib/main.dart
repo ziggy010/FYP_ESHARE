@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 800),
+      designSize: const Size(360, 900),
       builder: (context, child) {
         return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: ForgotPasswordPage(),
+          home: HomePage(),
           getPages: [
             GetPage(name: HomePage.id, page: () => const HomePage()),
             GetPage(name: MyDetail.id, page: () => const MyDetail()),
