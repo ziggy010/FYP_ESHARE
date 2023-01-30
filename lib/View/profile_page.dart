@@ -4,6 +4,7 @@ import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/profile_components/profile_mid.dart';
+import 'package:e_share/View/faq_page.dart';
 import 'package:e_share/View/login_page.dart';
 import 'package:e_share/View/saved_card_detail.dart';
 import 'package:e_share/View/saved_card_page.dart';
@@ -53,7 +54,9 @@ class ProfilePage extends StatelessWidget {
             ProfileMid(
               image: Icons.quiz_outlined,
               title: 'FAQs',
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(FaqPage.id);
+              },
             ),
             ProfileMid(
               image: Icons.logout_outlined,
