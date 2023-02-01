@@ -1,20 +1,60 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/card_design_page.dart';
+import 'package:e_share/View/components/profile_components/profilePageMid.dart';
+import 'package:e_share/View/components/profile_components/profile_bottom.dart';
 import 'package:e_share/View/components/profile_components/profile_mid.dart';
-import 'package:e_share/View/faq_page.dart';
-import 'package:e_share/View/login_page.dart';
-import 'package:e_share/View/saved_card_detail.dart';
-import 'package:e_share/View/saved_card_page.dart';
+import 'package:e_share/View/components/profile_components/profile_top.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
   static const String id = '/profilePage';
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage>
+    with TickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation _animation;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        milliseconds: 500,
+      ),
+    );
+
+    _animation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    );
+
+    Timer(
+      Duration(milliseconds: 50),
+      () => _animationController.forward(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,44 +70,23 @@ class ProfilePage extends StatelessWidget {
       backgroundColor: kBackgroundColor,
       body: Padding(
         padding: EdgeInsets.all(24.0.sm),
-        child: Column(
-          children: [
-            ProfileMid(
-              image: Icons.bookmarks_outlined,
-              title: 'Saved Cards',
-              onTap: () {
-                Get.toNamed(SavedCardsPage.id);
-              },
+        child: SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(-0.1, 0),
+            end: Offset.zero,
+          ).animate(
+            _animationController,
+          ),
+          child: FadeTransition(
+            opacity: _animationController,
+            child: Column(
+              children: const [
+                ProfileTop(),
+                ProfilePageMid(),
+                ProfileBottom(),
+              ],
             ),
-            ProfileMid(
-              image: Icons.wallet_outlined,
-              title: 'Change Cards',
-              onTap: () {
-                Get.toNamed(CardDesignPage.id);
-              },
-            ),
-            ProfileMid(
-              image: Icons.info_outline_rounded,
-              title: 'About Us',
-              onTap: () {},
-            ),
-            ProfileMid(
-              image: Icons.quiz_outlined,
-              title: 'FAQs',
-              onTap: () {
-                Get.toNamed(FaqPage.id);
-              },
-            ),
-            ProfileMid(
-              image: Icons.logout_outlined,
-              title: 'Sign Out',
-              onTap: () {
-                Get.toNamed(
-                  LoginPage.id,
-                );
-              },
-            ),
-          ],
+          ),
         ),
       ),
     );
