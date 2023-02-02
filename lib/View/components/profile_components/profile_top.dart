@@ -23,9 +23,9 @@ class ProfileTop extends StatelessWidget {
               Text(
                 'Change picture',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 184, 184, 184),
                   fontFamily: 'poppins',
-                  fontSize: 11.sp,
+                  fontSize: 9.sp,
                 ),
               )
             ],
