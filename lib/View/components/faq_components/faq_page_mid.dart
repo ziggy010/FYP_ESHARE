@@ -49,14 +49,14 @@ class _FaqPageMidState extends State<FaqPageMid> with TickerProviderStateMixin {
   TextStyle headerTextStyle = TextStyle(
     color: Colors.white,
     fontFamily: 'poppins',
-    fontSize: 18.sp,
+    fontSize: 13.sp,
     fontWeight: FontWeight.bold,
   );
 
   TextStyle contentTextStyle = TextStyle(
     color: Colors.white,
     fontFamily: 'poppins',
-    fontSize: 13.sp,
+    fontSize: 11.sp,
   );
 
   @override
@@ -105,7 +105,7 @@ class _FaqPageMidState extends State<FaqPageMid> with TickerProviderStateMixin {
             children: [
               AccordionSection(
                 header: Text(
-                  'first',
+                  'How to share card with others?',
                   style: headerTextStyle,
                 ),
                 isOpen: true,
@@ -116,7 +116,7 @@ class _FaqPageMidState extends State<FaqPageMid> with TickerProviderStateMixin {
               ),
               AccordionSection(
                 header: Text(
-                  'first',
+                  'How to save others card?',
                   style: headerTextStyle,
                 ),
                 isOpen: true,
@@ -125,25 +125,7 @@ class _FaqPageMidState extends State<FaqPageMid> with TickerProviderStateMixin {
               ),
               AccordionSection(
                 header: Text(
-                  'first',
-                  style: headerTextStyle,
-                ),
-                isOpen: true,
-                content:
-                    Icon(Icons.airplay, size: 70, color: Colors.green[200]),
-              ),
-              AccordionSection(
-                header: Text(
-                  'first',
-                  style: headerTextStyle,
-                ),
-                isOpen: true,
-                content: Icon(Icons.airline_seat_flat,
-                    size: 120, color: Colors.blue[200]),
-              ),
-              AccordionSection(
-                header: Text(
-                  'first',
+                  'Is our uploaded documents safe?',
                   style: headerTextStyle,
                 ),
                 isOpen: true,

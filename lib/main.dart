@@ -1,4 +1,5 @@
 import 'package:e_share/View/Qr_scan_page.dart';
+import 'package:e_share/View/about_us_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/faq_page.dart';
 import 'package:e_share/View/fill_details_page.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
             GetPage(
                 name: ForgotPasswordPage.id, page: () => ForgotPasswordPage()),
             GetPage(name: FaqPage.id, page: () => FaqPage()),
+            GetPage(name: AboutUsPage.id, page: () => AboutUsPage()),
           ],
         );
       },

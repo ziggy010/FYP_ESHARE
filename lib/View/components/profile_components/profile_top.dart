@@ -14,7 +14,7 @@ class ProfileTop extends StatelessWidget {
           Column(
             children: [
               CircleAvatar(
-                radius: 50.r,
+                radius: 45.r,
                 backgroundImage: AssetImage('images/hero1.png'),
               ),
               SizedBox(
@@ -25,7 +25,7 @@ class ProfileTop extends StatelessWidget {
                 style: TextStyle(
                   color: Color.fromARGB(255, 184, 184, 184),
                   fontFamily: 'poppins',
-                  fontSize: 9.sp,
+                  fontSize: 11.sp,
                 ),
               )
             ],

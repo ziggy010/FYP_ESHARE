@@ -1,3 +1,4 @@
+import 'package:e_share/View/about_us_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/profile_components/profile_mid.dart';
 import 'package:e_share/View/faq_page.dart';
@@ -27,7 +28,9 @@ class ProfileBottom extends StatelessWidget {
           ProfileMid(
             image: Icons.info_outline,
             title: 'About Us',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AboutUsPage.id);
+            },
           ),
           ProfileMid(
             image: Icons.info_outline,
