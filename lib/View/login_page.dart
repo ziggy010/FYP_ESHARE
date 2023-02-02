@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
                   hasScrollBody: false,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children: [
                       LoginTop(),
                       LoginMid(),
                       LoginBottom(),

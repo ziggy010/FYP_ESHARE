@@ -9,6 +9,7 @@ class MyTextfield extends StatelessWidget {
   final String? hintText;
   final String? labelText;
   final double bottomPadding;
+  final TextEditingController textEditingController;
 
   MyTextfield({
     required this.keyboardType,
@@ -17,6 +18,7 @@ class MyTextfield extends StatelessWidget {
     required this.hintText,
     required this.labelText,
     required this.bottomPadding,
+    required this.textEditingController,
   });
 
   @override
@@ -25,6 +27,7 @@ class MyTextfield extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: bottomPadding.h),
       child: TextField(
+        controller: textEditingController,
         keyboardType: keyboardType,
         keyboardAppearance: Brightness.dark,
         onChanged: onSaved,

@@ -28,7 +28,7 @@ class RegisterPage extends StatelessWidget {
                 SliverFillRemaining(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children: [
                       RegisterTop(),
                       RegisterMid(),
                       RegisterBottom(),

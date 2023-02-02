@@ -3,13 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class FillDetailsMid extends StatelessWidget {
-  const FillDetailsMid({super.key});
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _professionController = TextEditingController();
+  final TextEditingController _companyNameController = TextEditingController();
+  final TextEditingController _designationController = TextEditingController();
+  final TextEditingController _emailAddressController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         MyTextfield(
+          textEditingController: _fullNameController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Full Name',
@@ -17,6 +23,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
+          textEditingController: _professionController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Profession',
@@ -24,6 +31,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
+          textEditingController: _companyNameController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Company Name',
@@ -31,6 +39,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
+          textEditingController: _designationController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Designation',
@@ -38,6 +47,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
+          textEditingController: _emailAddressController,
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},
           hintText: 'Email Address',
@@ -45,6 +55,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
+          textEditingController: _phoneNumberController,
           keyboardType: TextInputType.phone,
           onSaved: (hello) {},
           hintText: 'Phone Number',

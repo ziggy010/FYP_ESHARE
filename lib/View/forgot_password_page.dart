@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ForgotPasswordPage extends StatelessWidget {
   static const String id = '/forgotPassword';
 
+  late TextEditingController _forgotEmailController;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -44,6 +46,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 MyTextfield(
+                  textEditingController: _forgotEmailController,
                   keyboardType: TextInputType.emailAddress,
                   onSaved: (hello) {},
                   hintText: 'Enter Your Email Address',

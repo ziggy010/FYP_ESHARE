@@ -6,13 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../main_components/my_password_field.dart';
 
 class LoginMid extends StatelessWidget {
-  const LoginMid({super.key});
+  final TextEditingController _loginEmailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         MyTextfield(
+          textEditingController: _loginEmailController,
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},
           hintText: 'Email address',
