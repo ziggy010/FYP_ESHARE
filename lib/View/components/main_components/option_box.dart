@@ -1,6 +1,7 @@
 import 'package:e_share/Controller/fab_controller.dart';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/Qr_scan_page.dart';
+import 'package:e_share/View/citizenship_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,9 @@ class OptionBox extends StatelessWidget {
           children: [
             InnerContainer(
               text: 'Citizenship',
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(CitizenshipPage.id);
+              },
             ),
             InnerContainer(
               text: 'passport',

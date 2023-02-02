@@ -20,7 +20,7 @@ We're dedicated to continuously improving our product and delivering a seamless 
 
 Thank you for choosing our digital business card application, and we look forward to helping you elevate your personal brand.''',
             style: TextStyle(
-              color: Colors.white,
+              color: Color.fromARGB(255, 218, 215, 215),
               fontFamily: 'poppins',
               fontSize: 14.sp,
             ),
