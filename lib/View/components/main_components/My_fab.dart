@@ -64,7 +64,7 @@ class _MyFabState extends State<MyFab> with TickerProviderStateMixin {
                     turns: _animationController,
                     // child: Image.asset('icons/scanner.png'),
                     child: Icon(
-                      Icons.shutter_speed_rounded,
+                      Icons.center_focus_weak_outlined,
                       color: Colors.white,
                     ),
                   ),
