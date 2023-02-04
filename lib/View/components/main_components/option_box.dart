@@ -1,5 +1,6 @@
 import 'package:e_share/Controller/fab_controller.dart';
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/License_page.dart';
 import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/citizenship_page.dart';
 import 'package:flutter/material.dart';
@@ -37,8 +38,10 @@ class OptionBox extends StatelessWidget {
               },
             ),
             InnerContainer(
-              text: 'passport',
-              onTap: () {},
+              text: 'License',
+              onTap: () {
+                Get.toNamed(MyLicensePage.id);
+              },
             ),
             InnerContainer(
               text: 'QR Scan',
