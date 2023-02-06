@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class EshareHorizontalTwo extends StatelessWidget {
   final String name, profession, address, number, email, website;
 
+  int cardNo = 2;
+
   EshareHorizontalTwo({
     required this.name,
     required this.profession,
