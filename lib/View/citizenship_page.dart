@@ -93,13 +93,15 @@ class _CitizenshipPageState extends State<CitizenshipPage>
           style: kAppBar,
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(
-          24.sm,
-        ),
-        child: Column(
-          children: [
-            CitizenshipTop(
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              top: 24.w,
+              left: 24.h,
+              right: 24.h,
+            ),
+            child: CitizenshipTop(
               pageController: _pageController,
               animation1: _animation1,
               animation2: _animation2,
@@ -107,13 +109,13 @@ class _CitizenshipPageState extends State<CitizenshipPage>
               animationController2: _animationController2,
               animationController3: _animationController3,
             ),
-            CitizenshipMid(
-              pageController: _pageController,
-              animationController1: _animationController1,
-              animationController2: _animationController2,
-            ),
-          ],
-        ),
+          ),
+          CitizenshipMid(
+            pageController: _pageController,
+            animationController1: _animationController1,
+            animationController2: _animationController2,
+          ),
+        ],
       ),
     );
   }

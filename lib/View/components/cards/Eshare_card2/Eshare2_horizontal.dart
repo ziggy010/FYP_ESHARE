@@ -132,7 +132,10 @@ class CardDetailRow extends StatelessWidget {
       children: [
         Text(
           text,
-          style: kCardTextStyle(fontSize),
+          style: kCardTextStyle(
+            fontSize,
+            kGoldenColor,
+          ),
         ),
         SizedBox(
           width: 9.h,

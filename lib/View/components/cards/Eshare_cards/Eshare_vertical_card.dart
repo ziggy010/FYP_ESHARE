@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareVerticalCard extends StatelessWidget {
-  final String name, profession, email, number;
+  final String name, profession, email, number, website, address;
 
   EshareVerticalCard({
     required this.name,
     required this.profession,
     required this.email,
     required this.number,
+    required this.address,
+    required this.website,
   });
 
   @override
@@ -64,11 +66,11 @@ class EshareVerticalCard extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: kCardTextStyle(20),
+                    style: kCardTextStyle(20, kGoldenColor),
                   ),
                   Text(
                     profession,
-                    style: kCardTextStyle(12),
+                    style: kCardTextStyle(12, kGoldenColor),
                   ),
                 ],
               ),
@@ -83,29 +85,33 @@ class EshareVerticalCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   cardRowDetail(
-                    text: 'tajale01@gmail.com',
+                    text: email,
                     icon: Icons.email_outlined,
+                    color: kGoldenColor,
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   cardRowDetail(
-                    text: '9813110577',
+                    text: number,
                     icon: Icons.phone_outlined,
+                    color: kGoldenColor,
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   cardRowDetail(
-                    text: 'risab.com.np',
+                    text: website,
                     icon: Icons.language_outlined,
+                    color: kGoldenColor,
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   cardRowDetail(
-                    text: 'kamalbinayak, Bhaktapur',
+                    text: address,
                     icon: Icons.location_on_outlined,
+                    color: kGoldenColor,
                   ),
                 ],
               ),
@@ -120,10 +126,12 @@ class EshareVerticalCard extends StatelessWidget {
 class cardRowDetail extends StatelessWidget {
   final String text;
   final IconData icon;
+  final Color color;
 
   cardRowDetail({
     required this.text,
     required this.icon,
+    required this.color,
   });
 
   @override
@@ -133,7 +141,7 @@ class cardRowDetail extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: kGoldenColor,
+          color: color,
           size: 20.sm,
         ),
         SizedBox(
@@ -141,7 +149,10 @@ class cardRowDetail extends StatelessWidget {
         ),
         Text(
           text,
-          style: kCardTextStyle(10),
+          style: kCardTextStyle(
+            10,
+            color,
+          ),
         ),
       ],
     );

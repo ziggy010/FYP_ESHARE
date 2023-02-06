@@ -1,19 +1,18 @@
-import 'package:e_share/View/components/main_components/my_button.dart';
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Main files/constant.dart';
-import 'package:flip_card/flip_card.dart';
+import '../citizenship_components/dotted_container.dart';
+import '../main_components/my_button.dart';
 
-import 'dotted_container.dart';
-
-class CitizenshipFirst extends StatelessWidget {
-  const CitizenshipFirst({super.key});
+class LicenseFirst extends StatelessWidget {
+  const LicenseFirst({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: EdgeInsets.all(24.0.sm),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -24,10 +23,10 @@ class CitizenshipFirst extends StatelessWidget {
                 direction: FlipDirection.VERTICAL,
                 side: CardSide.FRONT,
                 front: DottedContainer(
-                  text: 'Citizenship front',
+                  text: 'License front',
                 ),
                 back: DottedContainer(
-                  text: 'Citizenship back',
+                  text: 'License back',
                 ),
               ),
               SizedBox(

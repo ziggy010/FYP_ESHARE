@@ -1,4 +1,6 @@
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_vertical.dart';
+import 'package:e_share/View/components/cards/Eshare_card3/Eshare3_vertical.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +22,13 @@ class HomePageText {
   ];
 
   List swiperContent = [
-    EshareVerticalCard(
+    EshareVerticalThree(
       name: 'Risab Tajale',
       profession: 'App Developer',
       email: 'tajale01@gmail.com',
       number: '9813110577',
+      website: 'risab.com.np',
+      address: 'kamalbinayak, Bhaktapur',
     ),
     Container(
       color: kContainerColor,

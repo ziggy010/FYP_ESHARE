@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/license_page_components/license_mid.dart';
 import 'package:e_share/View/components/license_page_components/license_top.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -91,22 +92,27 @@ class _MyLicensePageState extends State<MyLicensePage>
           style: kAppBar,
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(
-          24.sm,
-        ),
-        child: Column(
-          children: [
-            LicenseTop(
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              top: 24.w,
+              left: 24.h,
+              right: 24.h,
+            ),
+            child: LicenseTop(
               pageController: _pageController,
               animation1: _animation1,
               animation2: _animation2,
               animationController1: _animationController1,
               animationController2: _animationController2,
               animationController3: _animationController3,
-            )
-          ],
-        ),
+            ),
+          ),
+          LicenseMid(
+            pageController: _pageController,
+          ),
+        ],
       ),
     );
   }

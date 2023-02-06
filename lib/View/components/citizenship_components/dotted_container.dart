@@ -41,7 +41,7 @@ class DottedContainer extends StatelessWidget {
                 height: 10.h,
               ),
               Text(
-                'Upload citizenship ${text} photo page here.',
+                'Upload ${text} photo page here.',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'poppins',

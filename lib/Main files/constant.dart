@@ -22,9 +22,9 @@ var kAppBar = TextStyle(
   fontSize: 16,
 );
 
-TextStyle kCardTextStyle(double fontSize) {
+TextStyle kCardTextStyle(double fontSize, Color color) {
   return TextStyle(
-    color: kGoldenColor,
+    color: color,
     fontFamily: 'poppins',
     fontSize: fontSize.sp,
   );
