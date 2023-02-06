@@ -127,17 +127,20 @@ class cardRowDetail extends StatelessWidget {
   final String text;
   final IconData icon;
   final Color color;
+  final MainAxisAlignment main;
 
   cardRowDetail({
     required this.text,
     required this.icon,
     required this.color,
+    this.main = MainAxisAlignment.start,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      // mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: main,
       children: [
         Icon(
           icon,

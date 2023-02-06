@@ -21,8 +21,8 @@ class EshareHorizontalFour extends StatelessWidget {
         color: kContainerColor,
         borderRadius: BorderRadius.circular(12.r),
         image: const DecorationImage(
-          image: AssetImage('images/Eshare4b.png'),
-          fit: BoxFit.fill,
+          image: AssetImage('images/Eshare4b.jpg'),
+          fit: BoxFit.cover,
         ),
       ),
       child: Container(
