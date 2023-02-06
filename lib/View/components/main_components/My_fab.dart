@@ -62,11 +62,12 @@ class _MyFabState extends State<MyFab> with TickerProviderStateMixin {
                     ))
                 : RotationTransition(
                     turns: _animationController,
-                    // child: Image.asset('icons/scanner.png'),
-                    child: Icon(
-                      Icons.center_focus_weak_outlined,
-                      color: Colors.white,
-                    ),
+                    child: Image.asset('icons/Scanner.png'),
+                    // child: Icon(
+                    //   // Icons.center_focus_weak_outlined,
+                    //   Icons.camera,
+                    //   color: Colors.white,
+                    // ),
                   ),
           );
         }),
