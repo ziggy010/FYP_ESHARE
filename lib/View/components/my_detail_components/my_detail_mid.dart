@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
+import 'package:e_share/View/edit_information_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -78,6 +79,9 @@ class _MyDetailMidState extends State<MyDetailMid>
                 ),
               ),
               MyButton(
+                onTap: () {
+                  Get.toNamed(EditInformation.id);
+                },
                 height: 42.h,
                 width: 144.w,
                 buttonColor: Colors.transparent,

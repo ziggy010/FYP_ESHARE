@@ -3,6 +3,7 @@ import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/about_us_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/citizenship_page.dart';
+import 'package:e_share/View/edit_information_page.dart';
 import 'package:e_share/View/faq_page.dart';
 import 'package:e_share/View/fill_details_page.dart';
 import 'package:e_share/View/forgot_password_page.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: FillDetailsPage(),
           getPages: [
             GetPage(name: HomePage.id, page: () => const HomePage()),
             GetPage(name: MyDetail.id, page: () => const MyDetail()),
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: AboutUsPage.id, page: () => AboutUsPage()),
             GetPage(name: CitizenshipPage.id, page: () => CitizenshipPage()),
             GetPage(name: MyLicensePage.id, page: () => MyLicensePage()),
+            GetPage(name: EditInformation.id, page: (() => EditInformation())),
           ],
         );
       },

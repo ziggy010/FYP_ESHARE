@@ -47,7 +47,6 @@ class FillDetailsPage extends StatelessWidget {
                 SizedBox(height: 33.h),
                 FillDetailsBottom(
                   onTap: () {
-                    Get.toNamed(HomePage.id);
                     _cardDetailsController.fullName.value =
                         _fullNameController.text;
                     _cardDetailsController.profession.value =
@@ -60,6 +59,7 @@ class FillDetailsPage extends StatelessWidget {
                         _emailAddressController.text;
                     _cardDetailsController.phoneNumber.value =
                         _phoneNumberController.text;
+                    Get.toNamed(HomePage.id);
                   },
                 )
               ],

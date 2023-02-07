@@ -1,6 +1,5 @@
 import 'package:e_share/View/components/main_components/my_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class FillDetailsMid extends StatelessWidget {
   final TextEditingController fullNameController;
