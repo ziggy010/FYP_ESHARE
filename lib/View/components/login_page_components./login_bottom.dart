@@ -57,7 +57,7 @@ class LoginBottom extends StatelessWidget {
             ),
           ),
           onTap: () {
-            Get.toNamed(HomePage.id);
+            Get.offAllNamed(HomePage.id);
           },
         ),
       ],

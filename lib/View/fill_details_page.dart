@@ -59,7 +59,7 @@ class FillDetailsPage extends StatelessWidget {
                         _emailAddressController.text;
                     _cardDetailsController.phoneNumber.value =
                         _phoneNumberController.text;
-                    Get.toNamed(HomePage.id);
+                    Get.offAllNamed(HomePage.id);
                   },
                 )
               ],
