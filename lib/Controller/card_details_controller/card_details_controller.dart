@@ -1,10 +1,10 @@
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
 class CardDetailsController extends GetxController {
-  String fullName = '';
-  String profession = '';
-  String companyName = '';
-  String designation = '';
-  String emailAddress = '';
-  String phoneNumber = '';
+  RxString fullName = ''.obs;
+  RxString profession = ''.obs;
+  RxString companyName = ''.obs;
+  RxString designation = ''.obs;
+  RxString emailAddress = ''.obs;
+  RxString phoneNumber = ''.obs;
 }

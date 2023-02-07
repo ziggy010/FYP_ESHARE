@@ -6,14 +6,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 
 class FillDetailsBottom extends StatelessWidget {
-  const FillDetailsBottom({super.key});
+  final VoidCallback onTap;
+
+  FillDetailsBottom({
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () {
-        Get.toNamed(HomePage.id);
-      },
+      onTap: onTap,
       height: 57.h,
       width: double.infinity,
       buttonColor: kSelectedColor,

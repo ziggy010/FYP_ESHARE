@@ -1,4 +1,5 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/Model/card_design_model.dart';
@@ -15,6 +16,9 @@ import 'card_container.dart';
 class FreeDesign extends StatelessWidget {
   final MyVistingCardController _cardController =
       Get.put(MyVistingCardController());
+
+  final CardDetailsController _cardDetailsController =
+      Get.put(CardDetailsController());
 
   final _cardDesignModel = CardDesignModel();
 

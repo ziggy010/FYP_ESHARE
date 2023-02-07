@@ -3,19 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class FillDetailsMid extends StatelessWidget {
-  final TextEditingController _fullNameController = TextEditingController();
-  final TextEditingController _professionController = TextEditingController();
-  final TextEditingController _companyNameController = TextEditingController();
-  final TextEditingController _designationController = TextEditingController();
-  final TextEditingController _emailAddressController = TextEditingController();
-  final TextEditingController _phoneNumberController = TextEditingController();
+  final TextEditingController fullNameController;
+  final TextEditingController professionController;
+  final TextEditingController companyNameController;
+  final TextEditingController designationController;
+  final TextEditingController emailAddressController;
+  final TextEditingController phoneNumberController;
 
+  FillDetailsMid({
+    required this.companyNameController,
+    required this.designationController,
+    required this.emailAddressController,
+    required this.fullNameController,
+    required this.phoneNumberController,
+    required this.professionController,
+  });
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         MyTextfield(
-          textEditingController: _fullNameController,
+          textEditingController: fullNameController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Full Name',
@@ -23,7 +31,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
-          textEditingController: _professionController,
+          textEditingController: professionController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Profession',
@@ -31,7 +39,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
-          textEditingController: _companyNameController,
+          textEditingController: companyNameController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Company Name',
@@ -39,7 +47,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
-          textEditingController: _designationController,
+          textEditingController: designationController,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
           hintText: 'Designation',
@@ -47,7 +55,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
-          textEditingController: _emailAddressController,
+          textEditingController: emailAddressController,
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},
           hintText: 'Email Address',
@@ -55,7 +63,7 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
-          textEditingController: _phoneNumberController,
+          textEditingController: phoneNumberController,
           keyboardType: TextInputType.phone,
           onSaved: (hello) {},
           hintText: 'Phone Number',
