@@ -1,4 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/Model/home_page_methods.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
@@ -32,6 +33,9 @@ class _HomePageMidState extends State<HomePageMid> {
   HomePageText _homePageText = HomePageText();
 
   SwiperController _mySwipperController = SwiperController();
+
+  final MyVistingCardController _cardController =
+      Get.put(MyVistingCardController());
 
   Widget build(BuildContext context) {
     return Padding(
@@ -98,14 +102,12 @@ class _HomePageMidState extends State<HomePageMid> {
                 itemWidth: 250.w,
                 axisDirection: AxisDirection.right,
                 itemBuilder: (context, index) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(18.r),
-                    child: _homePageText.swiperContent[index],
-                    // child: Image.asset(
-                    //   _homePageText.swiperContent[index],
-                    //   fit: BoxFit.cover,
-                    // ),
-                  );
+                  return Obx(() {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(18.r),
+                      child: _cardController.swiperContent[index],
+                    );
+                  });
                 },
                 pagination: SwiperPagination(
                   margin: EdgeInsets.only(

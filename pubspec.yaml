@@ -44,6 +44,7 @@ dependencies:
   flutter_swiper_view: ^1.1.8
   flip_card: ^0.7.0
   dotted_border: ^2.0.0+3
+  awesome_snackbar_content: ^0.1.0
 
 dev_dependencies:
   flutter_test:

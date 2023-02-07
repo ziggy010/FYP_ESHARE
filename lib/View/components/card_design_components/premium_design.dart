@@ -15,6 +15,7 @@ class PremiumDesign extends StatelessWidget {
           Column(
             children: [
               CardContainer(
+                onTap: (() {}),
                 content: EshareHorizontalThree(
                   name: 'Risab Tajale',
                   profession: 'App Developer',

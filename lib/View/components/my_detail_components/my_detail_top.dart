@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
 import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_card3/Eshare3_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.dart';
@@ -7,6 +8,7 @@ import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_car
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../Main files/constant.dart';
 
@@ -21,6 +23,9 @@ class _MyDetailTopState extends State<MyDetailTop>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation _animation;
+
+  final MyVistingCardController _cardController =
+      Get.put(MyVistingCardController());
 
   @override
   void initState() {
@@ -56,27 +61,18 @@ class _MyDetailTopState extends State<MyDetailTop>
         ).animate(_animationController),
         child: FadeTransition(
           opacity: _animationController,
-          child: Container(
-            height: 190.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: kContainerColor,
-              borderRadius: BorderRadius.circular(20.r),
-            ),
-            child: EshareHorizontalThree(
-              name: 'Risab Tajale',
-              profession: 'App Developer',
-              email: 'tajale01@gmail.com',
-              number: '9813110577',
-              address: 'Kamalbinayak, Bhaktapur',
-              website: 'risab.com.np',
-            ),
-            // child: EshareHorizontalCard(
-            //   name: 'Risab Tajale',
-            //   profession: 'App Developer',
-            //   email: 'tajale01@gmail.com',
-            //   number: '9813110577',
-            // ),
+          child: Obx(
+            () {
+              return Container(
+                height: 190.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: kContainerColor,
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+                child: _cardController.getHorizontalCard(),
+              );
+            },
           ),
         ),
       ),

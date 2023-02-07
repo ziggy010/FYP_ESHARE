@@ -111,6 +111,8 @@ class _MyLicensePageState extends State<MyLicensePage>
           ),
           LicenseMid(
             pageController: _pageController,
+            animationController1: _animationController1,
+            animationController2: _animationController2,
           ),
         ],
       ),

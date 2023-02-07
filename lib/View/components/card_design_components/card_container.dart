@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardContainer extends StatelessWidget {
   final Widget? content;
+  final VoidCallback onTap;
 
   CardContainer({
     this.content,
+    required this.onTap,
   });
 
   @override
@@ -17,16 +19,19 @@ class CardContainer extends StatelessWidget {
         left: 5.h,
         right: 5.h,
       ),
-      child: Container(
-        height: 190.h,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: kContainerColor,
-          borderRadius: BorderRadius.circular(
-            20.r,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 190.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: kContainerColor,
+            borderRadius: BorderRadius.circular(
+              20.r,
+            ),
           ),
+          child: content,
         ),
-        child: content,
       ),
     );
   }

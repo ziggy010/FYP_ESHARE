@@ -37,7 +37,7 @@ class CardDesignMid extends StatelessWidget {
               animationController2.reverse();
             }
           },
-          children: const [
+          children: [
             FreeDesign(),
             PremiumDesign(),
           ],
