@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../Main files/constant.dart';
 
@@ -38,9 +39,19 @@ class MyCardDetailsContainer extends StatelessWidget {
           height: 185.h,
           width: 185.w,
           decoration: BoxDecoration(
-            color: kGreyColor,
+            color: Color.fromARGB(255, 236, 235, 235),
             borderRadius: BorderRadius.circular(
               14.r,
+            ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(10.0.sm),
+            child: QrImage(
+              data:
+                  'This is the longest text you\'ve ever seen in your life mother fucker',
+              version: QrVersions.auto,
+              size: 200.0,
+              foregroundColor: Colors.black,
             ),
           ),
         )
