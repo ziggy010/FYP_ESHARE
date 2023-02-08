@@ -80,7 +80,7 @@ class _ProfilePageState extends State<ProfilePage>
           child: FadeTransition(
             opacity: _animationController,
             child: Column(
-              children: const [
+              children: [
                 ProfileTop(),
                 ProfilePageMid(),
                 ProfileBottom(),

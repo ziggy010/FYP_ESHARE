@@ -1,6 +1,10 @@
+import 'dart:io';
+
+import 'package:e_share/Controller/profile_picture_controller/profile_picture_controller.dart';
 import 'package:e_share/View/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
 class HomePageTop extends StatefulWidget {
@@ -42,6 +46,9 @@ class _HomePageTopState extends State<HomePageTop>
     _animationController.dispose();
     super.dispose();
   }
+
+  final ProfilePictureController _profilePictureController =
+      Get.put(ProfilePictureController());
 
   @override
   Widget build(BuildContext context) {
@@ -86,18 +93,22 @@ class _HomePageTopState extends State<HomePageTop>
                   )
                 ],
               ),
-              GestureDetector(
-                onTap: () {
-                  Get.toNamed(ProfilePage.id);
+              GestureDetector(onTap: () {
+                Get.toNamed(ProfilePage.id);
+              }, child: Obx(
+                () {
+                  return CircleAvatar(
+                    radius: 22.r,
+                    backgroundImage:
+                        _profilePictureController.imagePath.isNotEmpty
+                            ? FileImage(File(
+                                _profilePictureController.imagePath.toString(),
+                              ))
+                            : AssetImage('images/profile.png') as ImageProvider,
+                    backgroundColor: Colors.transparent,
+                  );
                 },
-                child: CircleAvatar(
-                  radius: 22.r,
-                  backgroundImage: const AssetImage(
-                    'images/hero.png',
-                  ),
-                  backgroundColor: Colors.transparent,
-                ),
-              ),
+              )),
             ],
           ),
         ),

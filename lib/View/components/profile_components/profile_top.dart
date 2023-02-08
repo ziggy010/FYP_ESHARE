@@ -1,9 +1,13 @@
-import 'package:e_share/Main%20files/constant.dart';
+import 'dart:io';
+
+import 'package:e_share/Controller/profile_picture_controller/profile_picture_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ProfileTop extends StatelessWidget {
-  const ProfileTop({super.key});
+  final ProfilePictureController _profilePictureController =
+      Get.put(ProfilePictureController());
 
   @override
   Widget build(BuildContext context) {
@@ -13,19 +17,36 @@ class ProfileTop extends StatelessWidget {
         children: [
           Column(
             children: [
-              CircleAvatar(
-                radius: 45.r,
-                backgroundImage: AssetImage('images/hero1.png'),
+              Obx(
+                (() {
+                  return CircleAvatar(
+                    radius: 45.r,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: _profilePictureController
+                            .imagePath.isNotEmpty
+                        ? FileImage(
+                            File(
+                              _profilePictureController.imagePath.toString(),
+                            ),
+                          )
+                        : AssetImage('images/profile.png') as ImageProvider,
+                  );
+                }),
               ),
               SizedBox(
                 height: 12.h,
               ),
-              Text(
-                'Change picture',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 184, 184, 184),
-                  fontFamily: 'poppins',
-                  fontSize: 11.sp,
+              GestureDetector(
+                onTap: () {
+                  _profilePictureController.getImage();
+                },
+                child: Text(
+                  'Change picture',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 184, 184, 184),
+                    fontFamily: 'poppins',
+                    fontSize: 11.sp,
+                  ),
                 ),
               )
             ],
