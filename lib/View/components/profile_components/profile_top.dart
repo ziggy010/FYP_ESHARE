@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class ProfileTop extends StatelessWidget {
   final ProfilePictureController _profilePictureController =
-      Get.put(ProfilePictureController());
+      Get.put(ProfilePictureController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {

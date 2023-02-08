@@ -48,7 +48,7 @@ class _HomePageTopState extends State<HomePageTop>
   }
 
   final ProfilePictureController _profilePictureController =
-      Get.put(ProfilePictureController());
+      Get.put(ProfilePictureController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {

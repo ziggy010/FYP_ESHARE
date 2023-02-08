@@ -20,63 +20,68 @@ class SavedCardPageMid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       return Expanded(
-        child: FadeTransition(
-          opacity: animationController,
-          child: ListView.builder(
-            itemCount: _savedCardPageController.foundSavedCard.value.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  Get.toNamed(
-                    SavedCardDetail.id,
-                    parameters: {
-                      'name':
-                          '${_savedCardPageController.foundSavedCard.value[index].name}',
-                    },
-                  );
-                },
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    bottom: 16.h,
-                  ),
-                  child: Container(
-                    height: 40.h,
-                    width: double.infinity,
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: kSelectedPrimary,
-                          radius: 20.r,
-                          child: Center(
-                            child: Text(
-                              _savedCardPageController
-                                  .foundSavedCard.value[index].name[0],
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'poppins',
-                                fontSize: 18.sp,
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 24.w,
+          ),
+          child: FadeTransition(
+            opacity: animationController,
+            child: ListView.builder(
+              itemCount: _savedCardPageController.foundSavedCard.value.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Get.toNamed(
+                      SavedCardDetail.id,
+                      parameters: {
+                        'name':
+                            '${_savedCardPageController.foundSavedCard.value[index].name}',
+                      },
+                    );
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      bottom: 16.h,
+                    ),
+                    child: Container(
+                      height: 40.h,
+                      width: double.infinity,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: kSelectedPrimary,
+                            radius: 20.r,
+                            child: Center(
+                              child: Text(
+                                _savedCardPageController
+                                    .foundSavedCard.value[index].name[0],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'poppins',
+                                  fontSize: 18.sp,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 12.h,
-                        ),
-                        Text(
-                          _savedCardPageController
-                              .foundSavedCard.value[index].name,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'poppins',
-                            fontSize: 14.sp,
+                          SizedBox(
+                            width: 12.h,
                           ),
-                        ),
-                      ],
+                          Text(
+                            _savedCardPageController
+                                .foundSavedCard.value[index].name,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'poppins',
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
       );
