@@ -16,7 +16,7 @@ class MyBottomNavBar extends StatefulWidget {
 class _MyBottomNavBarState extends State<MyBottomNavBar>
     with TickerProviderStateMixin {
   final BottomNavbarController _bottomNavbarController =
-      Get.put(BottomNavbarController());
+      Get.put(BottomNavbarController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {

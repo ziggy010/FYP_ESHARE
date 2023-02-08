@@ -7,4 +7,8 @@ class CardDetailsController extends GetxController {
   RxString designation = ''.obs;
   RxString emailAddress = ''.obs;
   RxString phoneNumber = ''.obs;
+
+  changeFullName(String name) {
+    fullName.value = name;
+  }
 }

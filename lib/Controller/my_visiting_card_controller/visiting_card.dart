@@ -37,7 +37,6 @@ class MyVistingCardController extends GetxController {
   }
 
   changeSwiperList() {
-    print(swiperContent);
     if (cardNumber.value == 1) {
       swiperContent.removeAt(0);
       swiperContent.insert(

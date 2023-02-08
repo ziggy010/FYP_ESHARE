@@ -1,10 +1,14 @@
+import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/Main%20files/constant.dart';
 import 'package:e_share/View/components/main_components/my_card_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class QrScanPageSecond extends StatelessWidget {
-  const QrScanPageSecond({super.key});
+  final CardDetailsController _cardDetailsController =
+      Get.put(CardDetailsController());
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +55,22 @@ class QrScanPageSecond extends StatelessWidget {
             height: 238.h,
             width: 238.w,
             decoration: BoxDecoration(
-              color: kContainerColor,
+              color: Color.fromARGB(255, 236, 235, 235),
               borderRadius: BorderRadius.circular(
                 14.r,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Obx(
+                () {
+                  return QrImage(
+                    data: '${_cardDetailsController.fullName.value},',
+                    version: QrVersions.auto,
+                    size: 200.0,
+                    foregroundColor: Colors.black,
+                  );
+                },
               ),
             ),
           )

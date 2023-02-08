@@ -1,10 +1,14 @@
+import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../Main files/constant.dart';
 
 class MyCardDetailsContainer extends StatelessWidget {
+  final CardDetailsController _cardDetailsController =
+      Get.put(CardDetailsController());
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -46,12 +50,15 @@ class MyCardDetailsContainer extends StatelessWidget {
           ),
           child: Padding(
             padding: EdgeInsets.all(10.0.sm),
-            child: QrImage(
-              data:
-                  'This is the longest text you\'ve ever seen in your life mother fucker',
-              version: QrVersions.auto,
-              size: 200.0,
-              foregroundColor: Colors.black,
+            child: Obx(
+              () {
+                return QrImage(
+                  data: '${_cardDetailsController.fullName.value},',
+                  version: QrVersions.auto,
+                  size: 200.0,
+                  foregroundColor: Colors.black,
+                );
+              },
             ),
           ),
         )

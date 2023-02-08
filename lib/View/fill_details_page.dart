@@ -19,7 +19,7 @@ class FillDetailsPage extends StatelessWidget {
   final TextEditingController _phoneNumberController = TextEditingController();
 
   final CardDetailsController _cardDetailsController =
-      Get.put(CardDetailsController());
+      Get.put(CardDetailsController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +47,9 @@ class FillDetailsPage extends StatelessWidget {
                 SizedBox(height: 33.h),
                 FillDetailsBottom(
                   onTap: () {
-                    _cardDetailsController.fullName.value =
-                        _fullNameController.text;
+                    _cardDetailsController
+                        .changeFullName(_fullNameController.text);
+
                     _cardDetailsController.profession.value =
                         _professionController.text;
                     _cardDetailsController.companyName.value =
@@ -59,6 +60,7 @@ class FillDetailsPage extends StatelessWidget {
                         _emailAddressController.text;
                     _cardDetailsController.phoneNumber.value =
                         _phoneNumberController.text;
+
                     Get.offAllNamed(HomePage.id);
                   },
                 )
