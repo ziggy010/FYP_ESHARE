@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "790866219653",
+    "project_id": "e-share-653a6",
+    "storage_bucket": "e-share-653a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790866219653:android:513f9a025b89df00de4fec",
+        "android_client_info": {
+          "package_name": "com.example.e_share"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790866219653-2nn7vg0meu27hkveqvcpuddlrb8ko5lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaf0sQUM9MfNDHcNvmka50C8FfT4ITvkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790866219653-2nn7vg0meu27hkveqvcpuddlrb8ko5lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

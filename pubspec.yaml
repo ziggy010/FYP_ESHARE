@@ -47,6 +47,8 @@ dependencies:
   awesome_snackbar_content: ^0.1.0
   qr_flutter: ^4.0.0
   image_picker: ^0.8.6+1
+  firebase_core: ^2.5.0
+  firebase_auth: ^4.2.6
 
 dev_dependencies:
   flutter_test:
