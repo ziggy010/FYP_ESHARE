@@ -1,4 +1,4 @@
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/my_detail_components/my_detail_bottom.dart';
 import 'package:e_share/View/components/my_detail_components/my_detail_mid.dart';
 import 'package:e_share/View/components/my_detail_components/my_detail_top.dart';

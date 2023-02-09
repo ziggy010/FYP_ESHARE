@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../Main files/constant.dart';
+import '../../../constant.dart';
 import '../citizenship_components/dotted_container.dart';
 import '../main_components/my_button.dart';
 

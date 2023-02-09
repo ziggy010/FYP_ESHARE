@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../Main files/constant.dart';
+import '../../../constant.dart';
 import 'package:flip_card/flip_card.dart';
 
 import 'dotted_container.dart';

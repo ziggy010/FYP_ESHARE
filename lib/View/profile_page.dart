@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/profile_components/profilePageMid.dart';

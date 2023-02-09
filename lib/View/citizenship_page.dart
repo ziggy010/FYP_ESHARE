@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/citizenship_components/citizenship_mid.dart';
 import 'package:e_share/View/components/citizenship_components/citizenship_top.dart';
 import 'package:flip_card/flip_card.dart';

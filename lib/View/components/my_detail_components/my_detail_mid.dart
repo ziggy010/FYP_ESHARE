@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
 import 'package:e_share/View/edit_information_page.dart';

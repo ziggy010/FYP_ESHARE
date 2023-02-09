@@ -3,7 +3,7 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../Main files/constant.dart';
+import '../../../constant.dart';
 
 class CitizenshipTop extends StatelessWidget {
   final PageController pageController;

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/saved_card_detail_components/saved_card_detail_bottom.dart';
 import 'package:e_share/View/components/saved_card_detail_components/saved_card_detail_mid.dart';
 import 'package:e_share/View/components/saved_card_detail_components/saved_card_detail_top.dart';

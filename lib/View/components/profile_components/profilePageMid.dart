@@ -1,4 +1,4 @@
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/saved_card_page.dart';
 import 'package:flutter/material.dart';

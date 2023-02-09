@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

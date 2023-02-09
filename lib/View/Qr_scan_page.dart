@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/Qr_scan_components/Qr_scan_page_mid.dart';
 import 'package:e_share/View/components/Qr_scan_components/Qr_scan_page_top.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/card_design_components/card_design_mid.dart';
 import 'package:e_share/View/components/card_design_components/card_design_top.dart';
 import 'package:flutter/material.dart';

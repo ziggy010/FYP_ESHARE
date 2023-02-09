@@ -1,4 +1,4 @@
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/faq_components/faq_page_mid.dart';
 import 'package:e_share/View/profile_page.dart';
 import 'package:flutter/material.dart';

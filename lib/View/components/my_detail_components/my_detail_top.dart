@@ -10,7 +10,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../Main files/constant.dart';
+import '../../../constant.dart';
 
 class MyDetailTop extends StatefulWidget {
   const MyDetailTop({super.key});

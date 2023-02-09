@@ -1,4 +1,4 @@
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/Qr_scan_page.dart';
 import 'package:e_share/View/components/main_components/My_fab.dart';
 import 'package:e_share/View/components/main_components/bottom_navbar.dart';

@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../Main files/constant.dart';
+import '../../../constant.dart';
 
 class SavedCardPageTop extends StatelessWidget {
   final TextEditingController textEditingController;

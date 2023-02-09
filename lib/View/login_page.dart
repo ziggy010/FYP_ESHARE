@@ -1,4 +1,4 @@
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/login_page_components./login_bottom.dart';
 import 'package:e_share/View/components/login_page_components./login_mid.dart';
 import 'package:e_share/View/components/login_page_components./login_top.dart';

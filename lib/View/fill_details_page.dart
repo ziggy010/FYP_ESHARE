@@ -1,5 +1,5 @@
 import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/fill_details_components/fill_details_bottom.dart';
 import 'package:e_share/View/components/fill_details_components/fill_details_mid.dart';
 import 'package:e_share/View/components/fill_details_components/fill_details_top.dart';

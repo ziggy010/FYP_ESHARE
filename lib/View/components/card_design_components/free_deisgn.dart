@@ -1,7 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/Model/card_design_model.dart';
 import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_card3/Eshare3_horizontal.dart';

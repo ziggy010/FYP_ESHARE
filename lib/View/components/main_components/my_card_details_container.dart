@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-import '../../../Main files/constant.dart';
+import '../../../constant.dart';
 
 class MyCardDetailsContainer extends StatelessWidget {
   final CardDetailsController _cardDetailsController =

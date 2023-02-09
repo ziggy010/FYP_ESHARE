@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/license_page_components/license_mid.dart';
 import 'package:e_share/View/components/license_page_components/license_top.dart';
 import 'package:flutter/material.dart';

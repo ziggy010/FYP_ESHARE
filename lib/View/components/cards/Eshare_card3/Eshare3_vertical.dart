@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../Main files/constant.dart';
+import '../../../../constant.dart';
 import '../Eshare_cards/Eshare_vertical_card.dart';
 
 class EshareVerticalThree extends StatelessWidget {

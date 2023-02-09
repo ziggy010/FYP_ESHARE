@@ -1,5 +1,5 @@
 import 'package:e_share/Controller/saved_card_page_controller/saved_card_page_controller.dart';
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/Model/saved_card_page_model/saved_card_list.dart';
 import 'package:e_share/View/saved_card_detail.dart';
 import 'package:flutter/material.dart';

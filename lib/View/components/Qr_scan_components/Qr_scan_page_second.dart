@@ -1,5 +1,5 @@
 import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/my_card_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

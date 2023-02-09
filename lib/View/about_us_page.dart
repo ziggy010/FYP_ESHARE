@@ -1,4 +1,4 @@
-import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/about_us_components/about_us_bottom.dart';
 import 'package:e_share/View/components/about_us_components/about_us_mid.dart';
 import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_horizontal.dart';
