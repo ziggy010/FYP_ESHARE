@@ -6,14 +6,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../main_components/my_password_field.dart';
 
 class LoginMid extends StatelessWidget {
-  final TextEditingController _loginEmailController = TextEditingController();
+  final TextEditingController loginEmailController, loginPasswordController;
+
+  LoginMid({
+    required this.loginEmailController,
+    required this.loginPasswordController,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         MyTextfield(
-          textEditingController: _loginEmailController,
+          textEditingController: loginEmailController,
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},
           hintText: 'Email address',
@@ -21,6 +26,7 @@ class LoginMid extends StatelessWidget {
           bottomPadding: 30,
         ),
         MyPasswordField(
+          textEditingController: loginPasswordController,
           keyboardType: TextInputType.visiblePassword,
           onSaved: (hello) {},
           hintText: 'Password',

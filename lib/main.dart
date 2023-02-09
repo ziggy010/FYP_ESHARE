@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           getPages: [
             GetPage(name: HomePage.id, page: () => const HomePage()),
             GetPage(name: MyDetail.id, page: () => const MyDetail()),
-            GetPage(name: LoginPage.id, page: () => const LoginPage()),
+            GetPage(name: LoginPage.id, page: () => LoginPage()),
             GetPage(name: RegisterPage.id, page: () => RegisterPage()),
             GetPage(name: FillDetailsPage.id, page: () => FillDetailsPage()),
             GetPage(name: ProfilePage.id, page: () => ProfilePage()),
@@ -61,6 +61,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: CitizenshipPage.id, page: () => CitizenshipPage()),
             GetPage(name: MyLicensePage.id, page: () => MyLicensePage()),
             GetPage(name: EditInformation.id, page: (() => EditInformation())),
+            GetPage(name: AuthPage.id, page: (() => AuthPage())),
           ],
         );
       },

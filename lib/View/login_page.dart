@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
   static const String id = '/loginpage';
+
+  final TextEditingController _loginEmailController = TextEditingController();
+  final TextEditingController _loginPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +35,14 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       LoginTop(),
-                      LoginMid(),
-                      LoginBottom(),
+                      LoginMid(
+                        loginEmailController: _loginEmailController,
+                        loginPasswordController: _loginPasswordController,
+                      ),
+                      LoginBottom(
+                        loginEmailTextController: _loginEmailController,
+                        loginPasswordTextController: _loginPasswordController,
+                      ),
                     ],
                   ),
                 ),

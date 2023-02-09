@@ -7,12 +7,14 @@ class MyPasswordField extends StatefulWidget {
   Function(String) onSaved;
   final String? hintText;
   final String? labelText;
+  final TextEditingController textEditingController;
 
   MyPasswordField({
     required this.keyboardType,
     required this.onSaved,
     required this.hintText,
     required this.labelText,
+    required this.textEditingController,
   });
 
   @override
@@ -27,6 +29,7 @@ class _MyPasswordFieldState extends State<MyPasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: widget.textEditingController,
       keyboardType: widget.keyboardType,
       keyboardAppearance: Brightness.dark,
       onChanged: widget.onSaved,

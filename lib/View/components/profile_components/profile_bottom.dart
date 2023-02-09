@@ -2,7 +2,9 @@ import 'package:e_share/View/about_us_page.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/components/profile_components/profile_mid.dart';
 import 'package:e_share/View/faq_page.dart';
-import 'package:e_share/View/login_page.dart';
+import 'package:e_share/authentication/auth_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
@@ -43,7 +45,8 @@ class ProfileBottom extends StatelessWidget {
             image: Icons.logout_outlined,
             title: 'Sign Out',
             onTap: () {
-              Get.toNamed(LoginPage.id);
+              FirebaseAuth.instance.signOut();
+              Get.offAllNamed(AuthPage.id);
             },
           ),
         ],

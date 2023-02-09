@@ -6,6 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class RegisterMid extends StatelessWidget {
   final TextEditingController _registerEmailController =
       TextEditingController();
+  final TextEditingController registerPasswordController =
+      TextEditingController();
+  final TextEditingController registerConfirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +25,7 @@ class RegisterMid extends StatelessWidget {
           bottomPadding: 32,
         ),
         MyPasswordField(
+          textEditingController: registerPasswordController,
           keyboardType: TextInputType.visiblePassword,
           onSaved: (hello) {},
           hintText: 'Enter your password',
@@ -30,6 +35,7 @@ class RegisterMid extends StatelessWidget {
           height: 32.h,
         ),
         MyPasswordField(
+          textEditingController: registerConfirmPasswordController,
           keyboardType: TextInputType.visiblePassword,
           onSaved: (hello) {},
           hintText: 'Confirm password',
