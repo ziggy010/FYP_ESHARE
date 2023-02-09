@@ -58,33 +58,38 @@ class _ProfilePageState extends State<ProfilePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: kNavbarColor,
-        title: Text(
-          'Profile',
-          style: kAppBar,
-        ),
-      ),
-      backgroundColor: kBackgroundColor,
-      body: Padding(
-        padding: EdgeInsets.all(24.0.sm),
-        child: SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(-0.1, 0),
-            end: Offset.zero,
-          ).animate(
-            _animationController,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: kNavbarColor,
+          title: Text(
+            'Profile',
+            style: kAppBar,
           ),
-          child: FadeTransition(
-            opacity: _animationController,
-            child: Column(
-              children: [
-                ProfileTop(),
-                ProfilePageMid(),
-                ProfileBottom(),
-              ],
+        ),
+        backgroundColor: kBackgroundColor,
+        body: Padding(
+          padding: EdgeInsets.all(24.0.sm),
+          child: SlideTransition(
+            position: Tween<Offset>(
+              begin: const Offset(-0.1, 0),
+              end: Offset.zero,
+            ).animate(
+              _animationController,
+            ),
+            child: FadeTransition(
+              opacity: _animationController,
+              child: Column(
+                children: [
+                  ProfileTop(),
+                  ProfilePageMid(),
+                  ProfileBottom(),
+                ],
+              ),
             ),
           ),
         ),

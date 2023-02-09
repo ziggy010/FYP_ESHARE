@@ -82,39 +82,44 @@ class _MyLicensePageState extends State<MyLicensePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: kNavbarColor,
-        title: Text(
-          'License Card',
-          style: kAppBar,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: kBackgroundColor,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: kNavbarColor,
+          title: Text(
+            'License Card',
+            style: kAppBar,
+          ),
         ),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              top: 24.w,
-              left: 24.h,
-              right: 24.h,
+        body: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                top: 24.w,
+                left: 24.h,
+                right: 24.h,
+              ),
+              child: LicenseTop(
+                pageController: _pageController,
+                animation1: _animation1,
+                animation2: _animation2,
+                animationController1: _animationController1,
+                animationController2: _animationController2,
+                animationController3: _animationController3,
+              ),
             ),
-            child: LicenseTop(
+            LicenseMid(
               pageController: _pageController,
-              animation1: _animation1,
-              animation2: _animation2,
               animationController1: _animationController1,
               animationController2: _animationController2,
-              animationController3: _animationController3,
             ),
-          ),
-          LicenseMid(
-            pageController: _pageController,
-            animationController1: _animationController1,
-            animationController2: _animationController2,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

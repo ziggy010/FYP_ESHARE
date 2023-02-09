@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:e_share/Controller/profile_picture_controller/profile_picture_controller.dart';
+import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
 import 'package:e_share/View/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

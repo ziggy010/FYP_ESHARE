@@ -1,9 +1,12 @@
 import 'dart:io';
 
-import 'package:e_share/Controller/profile_picture_controller/profile_picture_controller.dart';
+import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
+import 'package:e_share/Main%20files/constant.dart';
+import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfileTop extends StatelessWidget {
   final ProfilePictureController _profilePictureController =
@@ -38,7 +41,27 @@ class ProfileTop extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  _profilePictureController.getImage();
+                  // _profilePictureController.getImage();
+                  showModalBottomSheet(
+                    backgroundColor: Colors.transparent,
+                    context: context,
+                    builder: ((context) {
+                      return MyBottomModalSheetContainer(
+                        cameraOnTap: () {
+                          _profilePictureController.getImage(
+                            ImageSource.camera,
+                            context,
+                          );
+                        },
+                        galleryOnTap: () {
+                          _profilePictureController.getImage(
+                            ImageSource.gallery,
+                            context,
+                          );
+                        },
+                      );
+                    }),
+                  );
                 },
                 child: Text(
                   'Change picture',

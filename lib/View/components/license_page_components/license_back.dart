@@ -1,13 +1,18 @@
+import 'package:e_share/Controller/image_picker_controller/license_picture_controller.dart';
+import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../Main files/constant.dart';
 import '../citizenship_components/dotted_container.dart';
 import '../main_components/my_button.dart';
 
 class LicenseBack extends StatelessWidget {
-  const LicenseBack({super.key});
+  final LicensePictureController _licensePictureController =
+      Get.find<LicensePictureController>();
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +83,28 @@ class LicenseBack extends StatelessWidget {
                   fontSize: 16.sp,
                 ),
               ),
+              onTap: () {
+                showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (context) {
+                    return MyBottomModalSheetContainer(
+                      cameraOnTap: () {
+                        _licensePictureController.getLicenseBackImage(
+                          ImageSource.camera,
+                          context,
+                        );
+                      },
+                      galleryOnTap: () {
+                        _licensePictureController.getLicenseBackImage(
+                          ImageSource.gallery,
+                          context,
+                        );
+                      },
+                    );
+                  },
+                );
+              },
             ),
           )
         ],
