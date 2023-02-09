@@ -1,6 +1,11 @@
+import 'package:e_share/Controller/image_picker_controller/citizenship_picture_controller.dart';
+import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../Main files/constant.dart';
 import 'package:flip_card/flip_card.dart';
@@ -8,7 +13,8 @@ import 'package:flip_card/flip_card.dart';
 import 'dotted_container.dart';
 
 class CitizenshipFirst extends StatelessWidget {
-  const CitizenshipFirst({super.key});
+  final CitizenshipPictureController _citizenshipPictureController =
+      Get.put(CitizenshipPictureController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,7 @@ class CitizenshipFirst extends StatelessWidget {
         children: [
           Column(
             children: [
-              FlipCard(
+              const FlipCard(
                 fill: Fill.none,
                 direction: FlipDirection.VERTICAL,
                 side: CardSide.FRONT,
@@ -77,6 +83,29 @@ class CitizenshipFirst extends StatelessWidget {
                   fontSize: 16.sp,
                 ),
               ),
+              onTap: () {
+                showModalBottomSheet(
+                    backgroundColor: Colors.transparent,
+                    context: context,
+                    builder: (context) {
+                      return MyBottomModalSheetContainer(
+                        cameraOnTap: () {
+                          _citizenshipPictureController
+                              .getCitizenshipFrontImage(
+                            ImageSource.camera,
+                            context,
+                          );
+                        },
+                        galleryOnTap: () {
+                          _citizenshipPictureController
+                              .getCitizenshipFrontImage(
+                            ImageSource.gallery,
+                            context,
+                          );
+                        },
+                      );
+                    });
+              },
             ),
           )
         ],

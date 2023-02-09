@@ -1,13 +1,18 @@
+import 'package:e_share/Controller/image_picker_controller/citizenship_picture_controller.dart';
+import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../Main files/constant.dart';
 import '../main_components/my_button.dart';
 import 'dotted_container.dart';
 
 class CitizenshipSecond extends StatelessWidget {
-  const CitizenshipSecond({super.key});
+  final CitizenshipPictureController _citizenshipPictureController =
+      Get.find<CitizenshipPictureController>();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class CitizenshipSecond extends StatelessWidget {
         children: [
           Column(
             children: [
-              FlipCard(
+              const FlipCard(
                 fill: Fill.none,
                 direction: FlipDirection.VERTICAL,
                 side: CardSide.FRONT,
@@ -76,6 +81,27 @@ class CitizenshipSecond extends StatelessWidget {
                   fontSize: 16.sp,
                 ),
               ),
+              onTap: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return MyBottomModalSheetContainer(
+                      cameraOnTap: () {
+                        _citizenshipPictureController.getCitizenshipBackImage(
+                          ImageSource.camera,
+                          context,
+                        );
+                      },
+                      galleryOnTap: () {
+                        _citizenshipPictureController.getCitizenshipBackImage(
+                          ImageSource.gallery,
+                          context,
+                        );
+                      },
+                    );
+                  },
+                );
+              },
             ),
           )
         ],
