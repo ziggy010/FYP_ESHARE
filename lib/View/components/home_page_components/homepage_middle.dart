@@ -1,5 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
+import 'package:e_share/View/License_page.dart';
+import 'package:e_share/View/citizenship_page.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/home_page_methods.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
@@ -91,9 +93,13 @@ class _HomePageMidState extends State<HomePageMid> {
               height: 453.h,
               child: Swiper(
                 onTap: (value) {
-                  Get.toNamed(
-                    MyDetail.id,
-                  );
+                  if (value == 0) {
+                    Get.toNamed(MyDetail.id);
+                  } else if (value == 1) {
+                    Get.toNamed(CitizenshipPage.id);
+                  } else {
+                    Get.toNamed(MyLicensePage.id);
+                  }
                 },
                 controller: _mySwipperController,
                 itemCount: 3,
