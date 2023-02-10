@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoginModel {
   void LoginUser(String email, String password, BuildContext context) async {
@@ -8,7 +9,10 @@ class LoginModel {
       context: context,
       builder: ((context) {
         return const Center(
-          child: CircularProgressIndicator(),
+          child: SpinKitSpinningLines(
+            color: Colors.white,
+            size: 50.0,
+          ),
         );
       }),
     );

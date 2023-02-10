@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData(fontFamily: 'poppins'),
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: AuthPage(),
           getPages: [
             GetPage(name: HomePage.id, page: () => const HomePage()),
             GetPage(name: MyDetail.id, page: () => const MyDetail()),
