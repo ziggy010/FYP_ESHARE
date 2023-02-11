@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterMid extends StatelessWidget {
-  final TextEditingController _registerEmailController =
-      TextEditingController();
-  final TextEditingController registerPasswordController =
-      TextEditingController();
-  final TextEditingController registerConfirmPasswordController =
-      TextEditingController();
+  final TextEditingController registerEmailController;
+  final TextEditingController registerPasswordController;
+  final TextEditingController registerConfirmPasswordController;
+
+  RegisterMid({
+    required this.registerEmailController,
+    required this.registerConfirmPasswordController,
+    required this.registerPasswordController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class RegisterMid extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         MyTextfield(
-          textEditingController: _registerEmailController,
+          textEditingController: registerEmailController,
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},
           hintText: 'Enter your email address',

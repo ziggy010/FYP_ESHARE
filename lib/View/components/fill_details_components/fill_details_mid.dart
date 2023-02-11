@@ -46,14 +46,6 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
-          textEditingController: designationController,
-          keyboardType: TextInputType.text,
-          onSaved: (hello) {},
-          hintText: 'Designation',
-          labelText: 'Designation',
-          bottomPadding: 19,
-        ),
-        MyTextfield(
           textEditingController: emailAddressController,
           keyboardType: TextInputType.emailAddress,
           onSaved: (hello) {},

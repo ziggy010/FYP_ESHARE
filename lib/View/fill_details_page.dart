@@ -8,18 +8,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class FillDetailsPage extends StatelessWidget {
+class FillDetailsPage extends StatefulWidget {
   static const String id = '/fillDetails';
 
+  @override
+  State<FillDetailsPage> createState() => _FillDetailsPageState();
+}
+
+class _FillDetailsPageState extends State<FillDetailsPage> {
   final TextEditingController _fullNameController = TextEditingController();
+
   final TextEditingController _professionController = TextEditingController();
+
   final TextEditingController _companyNameController = TextEditingController();
+
   final TextEditingController _designationController = TextEditingController();
+
   final TextEditingController _emailAddressController = TextEditingController();
+
   final TextEditingController _phoneNumberController = TextEditingController();
 
   final CardDetailsController _cardDetailsController =
       Get.put(CardDetailsController(), permanent: true);
+
+  late String registerEmail;
+  late String registerPassword;
+  late String confirmRegisterPassword;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    registerEmail = Get.arguments[0];
+    registerPassword = Get.arguments[1];
+    confirmRegisterPassword = Get.arguments[2];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +57,7 @@ class FillDetailsPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 24.h),
             child: ListView(
               children: [
+                SizedBox(height: 33.h),
                 FillDetailsTop(),
                 SizedBox(height: 33.h),
                 FillDetailsMid(

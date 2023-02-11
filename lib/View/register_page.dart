@@ -7,7 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterPage extends StatelessWidget {
   static const String id = '/registerPage';
-  const RegisterPage({super.key});
+
+  final TextEditingController _registerEmailController =
+      TextEditingController();
+  final TextEditingController _registerPasswordController =
+      TextEditingController();
+  final TextEditingController _registerConfirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +36,18 @@ class RegisterPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       RegisterTop(),
-                      RegisterMid(),
-                      RegisterBottom(),
+                      RegisterMid(
+                        registerEmailController: _registerEmailController,
+                        registerPasswordController: _registerPasswordController,
+                        registerConfirmPasswordController:
+                            _registerConfirmPasswordController,
+                      ),
+                      RegisterBottom(
+                        registerEmailController: _registerEmailController,
+                        registerPasswordController: _registerPasswordController,
+                        registerConfirmPasswordController:
+                            _registerConfirmPasswordController,
+                      ),
                     ],
                   ),
                 )
