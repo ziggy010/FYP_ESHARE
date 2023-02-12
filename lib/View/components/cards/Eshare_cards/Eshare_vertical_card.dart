@@ -6,12 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareVerticalCard extends StatelessWidget {
-  final String name, profession, email, number, website, address;
+  final String email, number, website, address;
 
-  final GetCurrentUserCardDetails nameWidget;
+  final GetCurrentUserCardDetails nameWidget, profession;
 
   EshareVerticalCard({
-    required this.name,
     required this.profession,
     required this.email,
     required this.number,
@@ -73,10 +72,7 @@ class EshareVerticalCard extends StatelessWidget {
                   //   name,
                   //   style: kCardTextStyle(20, kGoldenColor),
                   // ),
-                  Text(
-                    profession,
-                    style: kCardTextStyle(12, kGoldenColor),
-                  ),
+                  profession,
                 ],
               ),
             ),

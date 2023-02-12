@@ -40,3 +40,11 @@ TextStyle basicTextStyle({
     fontSize: fontSize.sp,
   );
 }
+
+TextStyle cardTextStyle(double fontSize) {
+  return TextStyle(
+    color: kGoldenColor,
+    fontFamily: 'poppins',
+    fontSize: fontSize.sp,
+  );
+}

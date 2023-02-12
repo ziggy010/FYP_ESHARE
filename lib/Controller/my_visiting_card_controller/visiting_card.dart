@@ -9,6 +9,7 @@ import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.d
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/state_manager.dart';
 
@@ -21,9 +22,13 @@ class MyVistingCardController extends GetxController {
     FutureBuilder(
       future: GetCurrentUserModel.getCurrentUserId(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
+        var docId = GetCurrentUserModel.currentDocId;
         return EshareVerticalCard(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
+          profession: GetCurrentUserCardDetails(
+            documentId: docId,
+            DataKey: 'Profession',
+            textStyle: kCardTextStyle(12, kGoldenColor),
+          ),
           email: 'tajale01@gmail.com',
           number: '9813110577',
           website: 'risab.com.np',
@@ -53,18 +58,27 @@ class MyVistingCardController extends GetxController {
       swiperContent.removeAt(0);
       swiperContent.insert(
         0,
-        EshareVerticalCard(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          website: 'risab.com.np',
-          address: 'kamalbinayak, Bhaktapur',
-          nameWidget: GetCurrentUserCardDetails(
-            DataKey: 'full name',
-            documentId: GetCurrentUserModel.currentDocId,
-            textStyle: kCardTextStyle(20, kGoldenColor),
-          ),
+        FutureBuilder(
+          future: GetCurrentUserModel.getCurrentUserId(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            var docId = GetCurrentUserModel.currentDocId;
+            return EshareVerticalCard(
+              profession: GetCurrentUserCardDetails(
+                documentId: docId,
+                DataKey: 'Profession',
+                textStyle: kCardTextStyle(12, kGoldenColor),
+              ),
+              email: 'tajale01@gmail.com',
+              number: '9813110577',
+              website: 'risab.com.np',
+              address: 'kamalbinayak, Bhaktapur',
+              nameWidget: GetCurrentUserCardDetails(
+                DataKey: 'full name',
+                documentId: GetCurrentUserModel.currentDocId,
+                textStyle: kCardTextStyle(20, kGoldenColor),
+              ),
+            );
+          },
         ),
       );
     }
@@ -118,13 +132,27 @@ class MyVistingCardController extends GetxController {
   Widget getHorizontalCard() {
     switch (cardNumber.value) {
       case 1:
-        return EshareHorizontalCard(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          address: 'Kamalbinayak, Bhaktapur',
-          website: 'risab.com.np',
+        return FutureBuilder(
+          future: GetCurrentUserModel.getCurrentUserId(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            var docId = GetCurrentUserModel.currentDocId;
+            return EshareHorizontalCard(
+              name: GetCurrentUserCardDetails(
+                DataKey: 'full name',
+                documentId: GetCurrentUserModel.currentDocId,
+                textStyle: cardTextStyle(20),
+              ),
+              profession: GetCurrentUserCardDetails(
+                documentId: docId,
+                DataKey: 'Profession',
+                textStyle: cardTextStyle(12),
+              ),
+              email: 'tajale01@gmail.com',
+              number: '9813110577',
+              website: 'risab.com.np',
+              address: 'kamalbinayak, Bhaktapur',
+            );
+          },
         );
 
       case 2:
@@ -158,13 +186,27 @@ class MyVistingCardController extends GetxController {
         );
 
       default:
-        return EshareHorizontalCard(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          address: 'Kamalbinayak, Bhaktapur',
-          website: 'risab.com.np',
+        return FutureBuilder(
+          future: GetCurrentUserModel.getCurrentUserId(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            var docId = GetCurrentUserModel.currentDocId;
+            return EshareHorizontalCard(
+              name: GetCurrentUserCardDetails(
+                DataKey: 'full name',
+                documentId: GetCurrentUserModel.currentDocId,
+                textStyle: cardTextStyle(20),
+              ),
+              profession: GetCurrentUserCardDetails(
+                documentId: docId,
+                DataKey: 'Profession',
+                textStyle: cardTextStyle(12),
+              ),
+              email: 'tajale01@gmail.com',
+              number: '9813110577',
+              website: 'risab.com.np',
+              address: 'kamalbinayak, Bhaktapur',
+            );
+          },
         );
     }
   }

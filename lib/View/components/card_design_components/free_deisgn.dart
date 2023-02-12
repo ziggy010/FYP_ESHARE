@@ -1,6 +1,8 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/card_design_model.dart';
 import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_horizontal.dart';
@@ -34,13 +36,27 @@ class FreeDesign extends StatelessWidget {
                 onTap: () {
                   _cardDesignModel.onTap(1, context);
                 },
-                content: EshareHorizontalCard(
-                  name: 'Risab Tajale',
-                  profession: 'App Developer',
-                  email: 'tajale01@gmail.com',
-                  number: '9813110577',
-                  address: 'kamalbinayak,Bhaktapur',
-                  website: 'risab.com.np',
+                content: FutureBuilder(
+                  future: GetCurrentUserModel.getCurrentUserId(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    var docId = GetCurrentUserModel.currentDocId;
+                    return EshareHorizontalCard(
+                      name: GetCurrentUserCardDetails(
+                        DataKey: 'full name',
+                        documentId: GetCurrentUserModel.currentDocId,
+                        textStyle: cardTextStyle(20),
+                      ),
+                      profession: GetCurrentUserCardDetails(
+                        documentId: docId,
+                        DataKey: 'Profession',
+                        textStyle: cardTextStyle(12),
+                      ),
+                      email: 'tajale01@gmail.com',
+                      number: '9813110577',
+                      website: 'risab.com.np',
+                      address: 'kamalbinayak, Bhaktapur',
+                    );
+                  },
                 ),
               ),
               CardContainer(
