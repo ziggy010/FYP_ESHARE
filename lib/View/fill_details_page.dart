@@ -107,6 +107,7 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                       number: _phoneNumberController.text,
                     );
 
+                    Get.offAllNamed(AuthPage.id);
                     showDialog(
                       context: context,
                       builder: ((context) {
@@ -118,8 +119,6 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                         );
                       }),
                     );
-
-                    Get.offAllNamed(AuthPage.id);
                     // Navigator.pop(context);
                   },
                 )
