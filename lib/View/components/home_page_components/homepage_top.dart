@@ -1,9 +1,8 @@
 import 'dart:io';
 
 import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
-import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_fullname.dart';
-import 'package:e_share/Model/CRUD/read_documents/get_all_documents.dart';
-import 'package:e_share/Model/CRUD/read_documents/get_full_name.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
 import 'package:e_share/View/profile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -53,9 +52,7 @@ class _HomePageTopState extends State<HomePageTop>
   final ProfilePictureController _profilePictureController =
       Get.put(ProfilePictureController(), permanent: true);
 
-  final GetDocumentsModel _getDocumentsModel = GetDocumentsModel();
-
-  final GetCurrentFullName _getCurrentFullName = GetCurrentFullName();
+  final GetCurrentUserModel _getCurrentFullName = GetCurrentUserModel();
 
   @override
   Widget build(BuildContext context) {
@@ -79,11 +76,19 @@ class _HomePageTopState extends State<HomePageTop>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   FutureBuilder(
-                    future: _getCurrentFullName.getCurrentFullName(),
+                    future: GetCurrentUserModel.getCurrentUserId(),
+                    initialData: Text('hello'),
                     builder: ((context, snapshot) {
-                      return GetFullName(
-                        documentId: _getCurrentFullName.currentDocId,
+                      return GetCurrentUserCardDetails(
+                        documentId: GetCurrentUserModel.currentDocId,
+                        DataKey: 'full name',
+                        textStyle: TextStyle(
+                          color: Color.fromARGB(255, 174, 173, 173),
+                          fontFamily: 'poppins',
+                          fontSize: 12.sp,
+                        ),
                       );
+                      ;
                     }),
                   ),
                   // Text(

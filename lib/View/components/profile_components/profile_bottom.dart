@@ -41,13 +41,15 @@ class ProfileBottom extends StatelessWidget {
               Get.toNamed(FaqPage.id);
             },
           ),
-          ProfileMid(
-            image: Icons.logout_outlined,
-            title: 'Sign Out',
+          GestureDetector(
             onTap: () {
               FirebaseAuth.instance.signOut();
-              Get.offAllNamed(AuthPage.id);
+              Navigator.pop(context);
             },
+            child: ProfileMid(
+              image: Icons.logout_outlined,
+              title: 'Sign Out',
+            ),
           ),
         ],
       ),

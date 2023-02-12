@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:flutter/material.dart';
@@ -80,13 +82,20 @@ class ProfileTop extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Risab Tajale',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'poppins',
-                  fontSize: 20.sp,
-                ),
+              FutureBuilder(
+                future: GetCurrentUserModel.getCurrentUserId(),
+                // initialData: InitialData,
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  return GetCurrentUserCardDetails(
+                    documentId: GetCurrentUserModel.currentDocId,
+                    DataKey: 'full name',
+                    textStyle: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'poppins',
+                      fontSize: 20.sp,
+                    ),
+                  );
+                },
               ),
               Text(
                 'App Developer',

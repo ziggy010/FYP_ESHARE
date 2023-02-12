@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_share/Controller/fab_controller.dart';
-import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_fullname.dart';
-import 'package:e_share/Model/CRUD/read_documents/get_all_documents.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/option_box.dart';
 import 'package:firebase_auth/firebase_auth.dart';

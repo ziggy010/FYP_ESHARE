@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class GetCurrentFullName {
-  User? currentUser = FirebaseAuth.instance.currentUser;
+class GetCurrentUserModel {
+  static User? currentUser = FirebaseAuth.instance.currentUser;
 
-  String currentDocId = '';
+  static String currentDocId = '';
 
-  Future getCurrentFullName() async {
+  static Future getCurrentUserId() async {
     await FirebaseFirestore.instance
         .collection('users')
         .where('register email', isEqualTo: currentUser?.email)
