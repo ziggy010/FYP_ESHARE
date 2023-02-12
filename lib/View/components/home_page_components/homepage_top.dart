@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_fullname.dart';
+import 'package:e_share/Model/CRUD/read_documents/get_all_documents.dart';
+import 'package:e_share/Model/CRUD/read_documents/get_full_name.dart';
 import 'package:e_share/View/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
 
 class HomePageTop extends StatefulWidget {
   const HomePageTop({super.key});
@@ -50,6 +52,10 @@ class _HomePageTopState extends State<HomePageTop>
   final ProfilePictureController _profilePictureController =
       Get.put(ProfilePictureController(), permanent: true);
 
+  final GetDocumentsModel _getDocumentsModel = GetDocumentsModel();
+
+  final GetCurrentFullName _getCurrentFullName = GetCurrentFullName();
+
   @override
   Widget build(BuildContext context) {
     //home page top part component for simple accesss.
@@ -71,12 +77,20 @@ class _HomePageTopState extends State<HomePageTop>
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // FutureBuilder(
+                  //   future: _getCurrentFullName.getCurrentFullName(),
+                  //   builder: ((context, snapshot) {
+                  //     return Text(
+                  //       _getCurrentFullName.currentUser!.uid,
+                  //     );
+                  //   }),
+                  // ),
                   Text(
-                    'Hi, Risab',
+                    'HI, Risab!',
                     style: TextStyle(
-                      color: const Color(0x84FFFFFF),
-                      fontSize: 14.sp,
-                      letterSpacing: 1,
+                      color: Color.fromARGB(255, 174, 173, 173),
+                      fontFamily: 'poppins',
+                      fontSize: 12.sp,
                     ),
                   ),
                   SizedBox(

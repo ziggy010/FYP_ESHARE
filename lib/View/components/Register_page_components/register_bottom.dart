@@ -1,10 +1,10 @@
-import 'package:e_share/authentication/register_model.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
 import 'package:e_share/View/fill_details_page.dart';
 import 'package:e_share/View/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
 class RegisterBottom extends StatelessWidget {

@@ -1,16 +1,12 @@
 import 'package:e_share/authentication/login_model.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
-import 'package:e_share/View/home_page.dart';
 import 'package:e_share/View/register_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class LoginBottom extends StatelessWidget {
-  final LoginModel _loginModel = LoginModel();
-
   final TextEditingController loginEmailTextController,
       loginPasswordTextController;
 
@@ -18,6 +14,8 @@ class LoginBottom extends StatelessWidget {
     required this.loginEmailTextController,
     required this.loginPasswordTextController,
   });
+
+  final LoginModel _loginModel = LoginModel();
 
   @override
   Widget build(BuildContext context) {

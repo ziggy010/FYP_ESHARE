@@ -11,16 +11,15 @@ class RegisterModel {
   }) async {
     showDialog(
       context: context,
-      builder: (context) {
+      builder: ((context) {
         return const Center(
           child: SpinKitSpinningLines(
             color: Colors.white,
             size: 50.0,
           ),
         );
-      },
+      }),
     );
-
     //try to create user
     try {
       //checking if the confirm password is correct or not;

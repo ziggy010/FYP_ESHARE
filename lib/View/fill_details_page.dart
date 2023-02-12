@@ -1,11 +1,14 @@
 import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
+import 'package:e_share/Model/CRUD/add_user_details_model/add_user_details.dart';
+import 'package:e_share/authentication/auth_page.dart';
+import 'package:e_share/authentication/register_model.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/fill_details_components/fill_details_bottom.dart';
 import 'package:e_share/View/components/fill_details_components/fill_details_mid.dart';
 import 'package:e_share/View/components/fill_details_components/fill_details_top.dart';
-import 'package:e_share/View/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 class FillDetailsPage extends StatefulWidget {
@@ -34,6 +37,9 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
   late String registerEmail;
   late String registerPassword;
   late String confirmRegisterPassword;
+
+  final RegisterModel _registerModel = RegisterModel();
+  final AddUserDetailsModel _addUserDetailsModel = AddUserDetailsModel();
 
   @override
   void initState() {
@@ -85,7 +91,36 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                     _cardDetailsController.phoneNumber.value =
                         _phoneNumberController.text;
 
-                    Get.offAllNamed(HomePage.id);
+                    //registering the user
+                    _registerModel.RegisterUser(
+                      context: context,
+                      registerEmail: registerEmail,
+                      registerPassword: registerPassword,
+                      confirmRegisterPassword: confirmRegisterPassword,
+                    );
+
+                    _addUserDetailsModel.addUserDetails(
+                      fullName: _fullNameController.text,
+                      profession: _professionController.text,
+                      companyName: _companyNameController.text,
+                      email: _emailAddressController.text,
+                      number: _phoneNumberController.text,
+                    );
+
+                    showDialog(
+                      context: context,
+                      builder: ((context) {
+                        return const Center(
+                          child: SpinKitSpinningLines(
+                            color: Colors.white,
+                            size: 50.0,
+                          ),
+                        );
+                      }),
+                    );
+
+                    Get.offAllNamed(AuthPage.id);
+                    // Navigator.pop(context);
                   },
                 )
               ],
