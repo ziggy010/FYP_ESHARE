@@ -77,7 +77,6 @@ class _HomePageTopState extends State<HomePageTop>
                 children: [
                   FutureBuilder(
                     future: GetCurrentUserModel.getCurrentUserId(),
-                    initialData: Text('hello'),
                     builder: ((context, snapshot) {
                       return GetCurrentUserCardDetails(
                         documentId: GetCurrentUserModel.currentDocId,

@@ -1,3 +1,5 @@
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_vertical.dart';
 import 'package:e_share/View/components/cards/Eshare_card3/Eshare3_horizontal.dart';
@@ -16,13 +18,23 @@ class MyVistingCardController extends GetxController {
   RxInt cardNumber = 1.obs;
 
   List swiperContent = [
-    EshareVerticalCard(
-      name: 'Risab Tajale',
-      profession: 'App Developer',
-      email: 'tajale01@gmail.com',
-      number: '9813110577',
-      website: 'risab.com.np',
-      address: 'kamalbinayak, Bhaktapur',
+    FutureBuilder(
+      future: GetCurrentUserModel.getCurrentUserId(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        return EshareVerticalCard(
+          name: 'Risab Tajale',
+          profession: 'App Developer',
+          email: 'tajale01@gmail.com',
+          number: '9813110577',
+          website: 'risab.com.np',
+          address: 'kamalbinayak, Bhaktapur',
+          nameWidget: GetCurrentUserCardDetails(
+            DataKey: 'full name',
+            documentId: GetCurrentUserModel.currentDocId,
+            textStyle: kCardTextStyle(20, kGoldenColor),
+          ),
+        );
+      },
     ),
     Container(
       color: kContainerColor,
@@ -48,6 +60,11 @@ class MyVistingCardController extends GetxController {
           number: '9813110577',
           website: 'risab.com.np',
           address: 'kamalbinayak, Bhaktapur',
+          nameWidget: GetCurrentUserCardDetails(
+            DataKey: 'full name',
+            documentId: GetCurrentUserModel.currentDocId,
+            textStyle: kCardTextStyle(20, kGoldenColor),
+          ),
         ),
       );
     }
