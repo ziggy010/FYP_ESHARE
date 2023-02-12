@@ -105,6 +105,7 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                       companyName: _companyNameController.text,
                       email: _emailAddressController.text,
                       number: _phoneNumberController.text,
+                      registerEmail: registerEmail,
                     );
 
                     Get.offAllNamed(AuthPage.id);

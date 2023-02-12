@@ -5,6 +5,7 @@ import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_
 import 'package:e_share/Model/CRUD/read_documents/get_all_documents.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_full_name.dart';
 import 'package:e_share/View/profile_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -77,22 +78,22 @@ class _HomePageTopState extends State<HomePageTop>
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // FutureBuilder(
-                  //   future: _getCurrentFullName.getCurrentFullName(),
-                  //   builder: ((context, snapshot) {
-                  //     return Text(
-                  //       _getCurrentFullName.currentUser!.uid,
-                  //     );
-                  //   }),
-                  // ),
-                  Text(
-                    'HI, Risab!',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 174, 173, 173),
-                      fontFamily: 'poppins',
-                      fontSize: 12.sp,
-                    ),
+                  FutureBuilder(
+                    future: _getCurrentFullName.getCurrentFullName(),
+                    builder: ((context, snapshot) {
+                      return GetFullName(
+                        documentId: _getCurrentFullName.currentDocId,
+                      );
+                    }),
                   ),
+                  // Text(
+                  //   'HI, Risab!',
+                  //   style: TextStyle(
+                  //     color: Color.fromARGB(255, 174, 173, 173),
+                  //     fontFamily: 'poppins',
+                  //     fontSize: 12.sp,
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 3.h,
                   ),
