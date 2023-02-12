@@ -44,7 +44,7 @@ class ProfileBottom extends StatelessWidget {
           GestureDetector(
             onTap: () {
               FirebaseAuth.instance.signOut();
-              Navigator.pop(context);
+              Get.offAllNamed(AuthPage.id);
             },
             child: ProfileMid(
               image: Icons.logout_outlined,

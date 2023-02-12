@@ -87,7 +87,6 @@ class _HomePageTopState extends State<HomePageTop>
                           fontSize: 12.sp,
                         ),
                       );
-                      ;
                     }),
                   ),
                   // Text(

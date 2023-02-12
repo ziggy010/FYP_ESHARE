@@ -29,7 +29,9 @@ class GetCurrentUserCardDetails extends StatelessWidget {
             style: textStyle,
           );
         } else {
-          return Text('loading');
+          return Container(
+            color: Colors.white,
+          );
         }
       }),
     );
