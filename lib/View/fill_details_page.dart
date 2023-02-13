@@ -82,41 +82,7 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                 ),
                 SizedBox(height: 33.h),
                 FillDetailsBottom(
-                  onTap: () {
-                    _cardDetailsController
-                        .changeFullName(_fullNameController.text);
-
-                    _cardDetailsController.profession.value =
-                        _professionController.text;
-                    _cardDetailsController.companyName.value =
-                        _companyNameController.text;
-                    _cardDetailsController.designation.value =
-                        _designationController.text;
-                    _cardDetailsController.emailAddress.value =
-                        _emailAddressController.text;
-                    _cardDetailsController.phoneNumber.value =
-                        _phoneNumberController.text;
-
-                    //registering the user
-                    _registerModel.RegisterUser(
-                      context: context,
-                      registerEmail: registerEmail,
-                      registerPassword: registerPassword,
-                      confirmRegisterPassword: confirmRegisterPassword,
-                    );
-
-                    _addUserDetailsModel.addUserDetails(
-                      fullName: _fullNameController.text,
-                      profession: _professionController.text,
-                      companyName: _companyNameController.text,
-                      email: _emailAddressController.text,
-                      number: _phoneNumberController.text,
-                      registerEmail: registerEmail,
-                      website: _websiteController.text,
-                      address: _addressController.text,
-                    );
-
-                    Get.offAllNamed(AuthPage.id);
+                  onTap: () async {
                     showDialog(
                       context: context,
                       builder: ((context) {
@@ -128,7 +94,29 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                         );
                       }),
                     );
-                    // Navigator.pop(context);
+
+                    //registering the user
+                    await _registerModel.RegisterUser(
+                      context: context,
+                      registerEmail: registerEmail,
+                      registerPassword: registerPassword,
+                      confirmRegisterPassword: confirmRegisterPassword,
+                    );
+
+                    await _addUserDetailsModel.addUserDetails(
+                      fullName: _fullNameController.text,
+                      profession: _professionController.text,
+                      companyName: _companyNameController.text,
+                      email: _emailAddressController.text,
+                      number: _phoneNumberController.text,
+                      registerEmail: registerEmail,
+                      website: _websiteController.text,
+                      address: _addressController.text,
+                    );
+
+                    Navigator.pop(context);
+
+                    Get.offAllNamed(AuthPage.id);
                   },
                 )
               ],

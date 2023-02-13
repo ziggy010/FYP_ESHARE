@@ -3,23 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class RegisterModel {
-  void RegisterUser({
+  Future<void> RegisterUser({
     required BuildContext context,
     required String registerEmail,
     required String registerPassword,
     required String confirmRegisterPassword,
   }) async {
-    showDialog(
-      context: context,
-      builder: ((context) {
-        return const Center(
-          child: SpinKitSpinningLines(
-            color: Colors.white,
-            size: 50.0,
-          ),
-        );
-      }),
-    );
     //try to create user
     try {
       //checking if the confirm password is correct or not;
@@ -31,9 +20,6 @@ class RegisterModel {
       } else {
         print('error, not same');
       }
-      Navigator.pop(context);
-    } on FirebaseAuthException catch (e) {
-      Navigator.pop(context);
-    }
+    } on FirebaseAuthException catch (e) {}
   }
 }

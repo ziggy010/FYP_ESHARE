@@ -98,10 +98,10 @@ class MyVistingCardController extends GetxController {
             return EshareHorizontalCard(
               name: GetCurrentUserModel.name,
               profession: GetCurrentUserModel.profession,
-              email: 'tajale01@gmail.com',
-              number: '9813110577',
-              website: 'risab.com.np',
-              address: 'kamalbinayak, Bhaktapur',
+              email: GetCurrentUserModel.email,
+              number: GetCurrentUserModel.number,
+              website: GetCurrentUserModel.website,
+              address: GetCurrentUserModel.address,
             );
           },
         );
