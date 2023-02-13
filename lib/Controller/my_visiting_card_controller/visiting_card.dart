@@ -25,6 +25,8 @@ class MyVistingCardController extends GetxController {
         var docId = GetCurrentUserModel.currentDocId;
         return EshareVerticalCard(
           profession: GetCurrentUserCardDetails(
+            height: 23.h,
+            width: 80.w,
             documentId: docId,
             DataKey: 'Profession',
             textStyle: kCardTextStyle(12, kGoldenColor),
@@ -34,6 +36,8 @@ class MyVistingCardController extends GetxController {
           website: 'risab.com.np',
           address: 'kamalbinayak, Bhaktapur',
           nameWidget: GetCurrentUserCardDetails(
+            height: 25.h,
+            width: 140.w,
             DataKey: 'full name',
             documentId: GetCurrentUserModel.currentDocId,
             textStyle: kCardTextStyle(20, kGoldenColor),
@@ -64,6 +68,8 @@ class MyVistingCardController extends GetxController {
             var docId = GetCurrentUserModel.currentDocId;
             return EshareVerticalCard(
               profession: GetCurrentUserCardDetails(
+                height: 25.h,
+                width: 70.w,
                 documentId: docId,
                 DataKey: 'Profession',
                 textStyle: kCardTextStyle(12, kGoldenColor),
@@ -73,6 +79,8 @@ class MyVistingCardController extends GetxController {
               website: 'risab.com.np',
               address: 'kamalbinayak, Bhaktapur',
               nameWidget: GetCurrentUserCardDetails(
+                height: 25.h,
+                width: 70.w,
                 DataKey: 'full name',
                 documentId: GetCurrentUserModel.currentDocId,
                 textStyle: kCardTextStyle(20, kGoldenColor),
@@ -138,11 +146,15 @@ class MyVistingCardController extends GetxController {
             var docId = GetCurrentUserModel.currentDocId;
             return EshareHorizontalCard(
               name: GetCurrentUserCardDetails(
+                height: 25.h,
+                width: 70.w,
                 DataKey: 'full name',
                 documentId: GetCurrentUserModel.currentDocId,
                 textStyle: cardTextStyle(20),
               ),
               profession: GetCurrentUserCardDetails(
+                height: 20.h,
+                width: 50.w,
                 documentId: docId,
                 DataKey: 'Profession',
                 textStyle: cardTextStyle(12),
@@ -192,11 +204,15 @@ class MyVistingCardController extends GetxController {
             var docId = GetCurrentUserModel.currentDocId;
             return EshareHorizontalCard(
               name: GetCurrentUserCardDetails(
+                height: 25.h,
+                width: 70.w,
                 DataKey: 'full name',
                 documentId: GetCurrentUserModel.currentDocId,
                 textStyle: cardTextStyle(20),
               ),
               profession: GetCurrentUserCardDetails(
+                height: 20.h,
+                width: 50.w,
                 documentId: docId,
                 DataKey: 'Profession',
                 textStyle: cardTextStyle(12),

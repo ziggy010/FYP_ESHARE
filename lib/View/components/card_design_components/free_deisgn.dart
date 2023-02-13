@@ -11,6 +11,7 @@ import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.d
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/View/my_detail_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'card_container.dart';
@@ -42,11 +43,15 @@ class FreeDesign extends StatelessWidget {
                     var docId = GetCurrentUserModel.currentDocId;
                     return EshareHorizontalCard(
                       name: GetCurrentUserCardDetails(
+                        height: 25.h,
+                        width: 120.w,
                         DataKey: 'full name',
                         documentId: GetCurrentUserModel.currentDocId,
                         textStyle: cardTextStyle(20),
                       ),
                       profession: GetCurrentUserCardDetails(
+                        height: 25.h,
+                        width: 90.w,
                         documentId: docId,
                         DataKey: 'Profession',
                         textStyle: cardTextStyle(12),

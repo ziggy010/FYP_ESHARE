@@ -6,11 +6,15 @@ class GetCurrentUserCardDetails extends StatelessWidget {
   final String documentId;
   final String DataKey;
   final TextStyle textStyle;
+  final double height;
+  final double width;
 
   GetCurrentUserCardDetails({
     required this.documentId,
     required this.DataKey,
     required this.textStyle,
+    required this.height,
+    required this.width,
   });
 
   @override
@@ -30,7 +34,12 @@ class GetCurrentUserCardDetails extends StatelessWidget {
           );
         } else {
           return Container(
-            color: Colors.white,
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.20),
+              borderRadius: BorderRadius.circular(8.r),
+            ),
           );
         }
       }),

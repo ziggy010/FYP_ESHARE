@@ -87,6 +87,8 @@ class ProfileTop extends StatelessWidget {
                 // initialData: InitialData,
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   return GetCurrentUserCardDetails(
+                    height: 25.h,
+                    width: 70.w,
                     documentId: GetCurrentUserModel.currentDocId,
                     DataKey: 'full name',
                     textStyle: TextStyle(

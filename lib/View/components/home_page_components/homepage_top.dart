@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
@@ -23,9 +24,15 @@ class _HomePageTopState extends State<HomePageTop>
   late AnimationController _animationController;
   late Animation _animation;
 
+  late Future _data;
+
   @override
   void initState() {
     super.initState();
+
+    _data = GetCurrentUserModel.getCurrentUserId();
+
+    //future builder daqta
 
     //initializing the duration and curves of animation
     _animationController = AnimationController(
@@ -57,6 +64,7 @@ class _HomePageTopState extends State<HomePageTop>
   @override
   Widget build(BuildContext context) {
     //home page top part component for simple accesss.
+
     return Padding(
       padding: EdgeInsets.only(
         right: 24.w,
@@ -75,19 +83,33 @@ class _HomePageTopState extends State<HomePageTop>
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FutureBuilder(
-                    future: GetCurrentUserModel.getCurrentUserId(),
-                    builder: ((context, snapshot) {
-                      return GetCurrentUserCardDetails(
-                        documentId: GetCurrentUserModel.currentDocId,
-                        DataKey: 'full name',
-                        textStyle: TextStyle(
+                  Row(
+                    children: [
+                      Text(
+                        'Hi, ',
+                        style: TextStyle(
                           color: Color.fromARGB(255, 174, 173, 173),
                           fontFamily: 'poppins',
                           fontSize: 12.sp,
                         ),
-                      );
-                    }),
+                      ),
+                      FutureBuilder(
+                        future: _data,
+                        builder: ((context, snapshot) {
+                          return GetCurrentUserCardDetails(
+                            height: 19.h,
+                            width: 90.w,
+                            documentId: GetCurrentUserModel.currentDocId,
+                            DataKey: 'full name',
+                            textStyle: TextStyle(
+                              color: Color.fromARGB(255, 174, 173, 173),
+                              fontFamily: 'poppins',
+                              fontSize: 12.sp,
+                            ),
+                          );
+                        }),
+                      ),
+                    ],
                   ),
                   // Text(
                   //   'HI, Risab!',
@@ -100,6 +122,7 @@ class _HomePageTopState extends State<HomePageTop>
                   SizedBox(
                     height: 3.h,
                   ),
+
                   Text(
                     'Welcome Back!',
                     style: TextStyle(

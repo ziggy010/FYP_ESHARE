@@ -6,6 +6,7 @@ import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.d
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutUsModel {
   List<Widget> cards = [
@@ -15,11 +16,15 @@ class AboutUsModel {
         var docId = GetCurrentUserModel.currentDocId;
         return EshareHorizontalCard(
           name: GetCurrentUserCardDetails(
+            height: 25.h,
+            width: 70.w,
             DataKey: 'full name',
             documentId: GetCurrentUserModel.currentDocId,
             textStyle: cardTextStyle(20),
           ),
           profession: GetCurrentUserCardDetails(
+            height: 25.h,
+            width: 70.w,
             documentId: docId,
             DataKey: 'Profession',
             textStyle: cardTextStyle(12),
