@@ -15,12 +15,7 @@ class AuthPage extends StatelessWidget {
         builder: (context, snapshot) {
           //user is logged in
           if (snapshot.hasData) {
-            return FutureBuilder(
-              future: GetCurrentUserModel.getCurrentUserId(),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                return HomePage();
-              },
-            );
+            return HomePage();
           }
 
           //user is not logged in

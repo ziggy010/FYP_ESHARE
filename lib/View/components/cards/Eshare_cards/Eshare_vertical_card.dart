@@ -1,14 +1,13 @@
 import 'dart:math';
 
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareVerticalCard extends StatelessWidget {
-  final String email, number, website, address;
-
-  final GetCurrentUserCardDetails nameWidget, profession;
+  final String name, profession, email, number, website, address;
 
   EshareVerticalCard({
     required this.profession,
@@ -16,7 +15,7 @@ class EshareVerticalCard extends StatelessWidget {
     required this.number,
     required this.address,
     required this.website,
-    required this.nameWidget,
+    required this.name,
   });
 
   @override
@@ -67,12 +66,24 @@ class EshareVerticalCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  nameWidget,
-                  // Text(
-                  //   name,
-                  //   style: kCardTextStyle(20, kGoldenColor),
-                  // ),
-                  profession,
+                  FutureBuilder(
+                    future: GetCurrentUserModel.getCurrentUserId(),
+                    builder: ((context, snapshot) {
+                      return Text(
+                        GetCurrentUserModel.name,
+                        style: kCardTextStyle(20, kGoldenColor),
+                      );
+                    }),
+                  ),
+                  FutureBuilder(
+                    future: GetCurrentUserModel.getCurrentUserId(),
+                    builder: ((context, snapshot) {
+                      return Text(
+                        GetCurrentUserModel.profession,
+                        style: kCardTextStyle(12, kGoldenColor),
+                      );
+                    }),
+                  ),
                 ],
               ),
             ),

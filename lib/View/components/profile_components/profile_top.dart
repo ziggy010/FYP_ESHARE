@@ -86,17 +86,25 @@ class ProfileTop extends StatelessWidget {
                 future: GetCurrentUserModel.getCurrentUserId(),
                 // initialData: InitialData,
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  return GetCurrentUserCardDetails(
-                    height: 25.h,
-                    width: 70.w,
-                    documentId: GetCurrentUserModel.currentDocId,
-                    DataKey: 'full name',
-                    textStyle: TextStyle(
+                  return Text(
+                    GetCurrentUserModel.name,
+                    style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'poppins',
                       fontSize: 20.sp,
                     ),
                   );
+                  // return GetCurrentUserCardDetails(
+                  //   height: 25.h,
+                  //   width: 70.w,
+                  //   documentId: GetCurrentUserModel.currentDocId,
+                  //   DataKey: 'full name',
+                  //   textStyle: TextStyle(
+                  //     color: Colors.white,
+                  //     fontFamily: 'poppins',
+                  //     fontSize: 20.sp,
+                  //   ),
+                  // );
                 },
               ),
               Text(

@@ -18,30 +18,18 @@ import '../../constant.dart';
 class MyVistingCardController extends GetxController {
   RxInt cardNumber = 1.obs;
 
+  @override
   List swiperContent = [
     FutureBuilder(
       future: GetCurrentUserModel.getCurrentUserId(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
-        var docId = GetCurrentUserModel.currentDocId;
         return EshareVerticalCard(
-          profession: GetCurrentUserCardDetails(
-            height: 23.h,
-            width: 80.w,
-            documentId: docId,
-            DataKey: 'Profession',
-            textStyle: kCardTextStyle(12, kGoldenColor),
-          ),
+          name: GetCurrentUserModel.name,
+          profession: GetCurrentUserModel.profession,
           email: 'tajale01@gmail.com',
           number: '9813110577',
           website: 'risab.com.np',
           address: 'kamalbinayak, Bhaktapur',
-          nameWidget: GetCurrentUserCardDetails(
-            height: 25.h,
-            width: 140.w,
-            DataKey: 'full name',
-            documentId: GetCurrentUserModel.currentDocId,
-            textStyle: kCardTextStyle(20, kGoldenColor),
-          ),
         );
       },
     ),
@@ -67,24 +55,12 @@ class MyVistingCardController extends GetxController {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             var docId = GetCurrentUserModel.currentDocId;
             return EshareVerticalCard(
-              profession: GetCurrentUserCardDetails(
-                height: 25.h,
-                width: 70.w,
-                documentId: docId,
-                DataKey: 'Profession',
-                textStyle: kCardTextStyle(12, kGoldenColor),
-              ),
+              name: GetCurrentUserModel.name,
+              profession: GetCurrentUserModel.profession,
               email: 'tajale01@gmail.com',
               number: '9813110577',
               website: 'risab.com.np',
               address: 'kamalbinayak, Bhaktapur',
-              nameWidget: GetCurrentUserCardDetails(
-                height: 25.h,
-                width: 70.w,
-                DataKey: 'full name',
-                documentId: GetCurrentUserModel.currentDocId,
-                textStyle: kCardTextStyle(20, kGoldenColor),
-              ),
             );
           },
         ),
@@ -145,20 +121,8 @@ class MyVistingCardController extends GetxController {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             var docId = GetCurrentUserModel.currentDocId;
             return EshareHorizontalCard(
-              name: GetCurrentUserCardDetails(
-                height: 25.h,
-                width: 70.w,
-                DataKey: 'full name',
-                documentId: GetCurrentUserModel.currentDocId,
-                textStyle: cardTextStyle(20),
-              ),
-              profession: GetCurrentUserCardDetails(
-                height: 20.h,
-                width: 50.w,
-                documentId: docId,
-                DataKey: 'Profession',
-                textStyle: cardTextStyle(12),
-              ),
+              name: GetCurrentUserModel.name,
+              profession: GetCurrentUserModel.profession,
               email: 'tajale01@gmail.com',
               number: '9813110577',
               website: 'risab.com.np',
@@ -203,20 +167,8 @@ class MyVistingCardController extends GetxController {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             var docId = GetCurrentUserModel.currentDocId;
             return EshareHorizontalCard(
-              name: GetCurrentUserCardDetails(
-                height: 25.h,
-                width: 70.w,
-                DataKey: 'full name',
-                documentId: GetCurrentUserModel.currentDocId,
-                textStyle: cardTextStyle(20),
-              ),
-              profession: GetCurrentUserCardDetails(
-                height: 20.h,
-                width: 50.w,
-                documentId: docId,
-                DataKey: 'Profession',
-                textStyle: cardTextStyle(12),
-              ),
+              name: GetCurrentUserModel.name,
+              profession: GetCurrentUserModel.profession,
               email: 'tajale01@gmail.com',
               number: '9813110577',
               website: 'risab.com.np',

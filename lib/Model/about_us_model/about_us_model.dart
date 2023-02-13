@@ -15,20 +15,8 @@ class AboutUsModel {
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         var docId = GetCurrentUserModel.currentDocId;
         return EshareHorizontalCard(
-          name: GetCurrentUserCardDetails(
-            height: 25.h,
-            width: 70.w,
-            DataKey: 'full name',
-            documentId: GetCurrentUserModel.currentDocId,
-            textStyle: cardTextStyle(20),
-          ),
-          profession: GetCurrentUserCardDetails(
-            height: 25.h,
-            width: 70.w,
-            documentId: docId,
-            DataKey: 'Profession',
-            textStyle: cardTextStyle(12),
-          ),
+          name: GetCurrentUserModel.name,
+          profession: GetCurrentUserModel.profession,
           email: 'tajale01@gmail.com',
           number: '9813110577',
           website: 'risab.com.np',

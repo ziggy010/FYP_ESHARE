@@ -30,7 +30,7 @@ class _HomePageTopState extends State<HomePageTop>
   void initState() {
     super.initState();
 
-    _data = GetCurrentUserModel.getCurrentUserId();
+    // _data = GetCurrentUserModel.getCurrentUserId();
 
     //future builder daqta
 
@@ -83,46 +83,23 @@ class _HomePageTopState extends State<HomePageTop>
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Hi, ',
+                  FutureBuilder(
+                    future: GetCurrentUserModel.getCurrentUserId(),
+                    builder: ((context, snapshot) {
+                      return Text(
+                        'Hi ${GetCurrentUserModel.name}!',
                         style: TextStyle(
                           color: Color.fromARGB(255, 174, 173, 173),
                           fontFamily: 'poppins',
                           fontSize: 12.sp,
                         ),
-                      ),
-                      FutureBuilder(
-                        future: _data,
-                        builder: ((context, snapshot) {
-                          return GetCurrentUserCardDetails(
-                            height: 19.h,
-                            width: 90.w,
-                            documentId: GetCurrentUserModel.currentDocId,
-                            DataKey: 'full name',
-                            textStyle: TextStyle(
-                              color: Color.fromARGB(255, 174, 173, 173),
-                              fontFamily: 'poppins',
-                              fontSize: 12.sp,
-                            ),
-                          );
-                        }),
-                      ),
-                    ],
+                      );
+                      ;
+                    }),
                   ),
-                  // Text(
-                  //   'HI, Risab!',
-                  //   style: TextStyle(
-                  //     color: Color.fromARGB(255, 174, 173, 173),
-                  //     fontFamily: 'poppins',
-                  //     fontSize: 12.sp,
-                  //   ),
-                  // ),
                   SizedBox(
                     height: 3.h,
                   ),
-
                   Text(
                     'Welcome Back!',
                     style: TextStyle(
