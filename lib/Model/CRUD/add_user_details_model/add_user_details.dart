@@ -10,6 +10,8 @@ class AddUserDetailsModel {
     required String email,
     required String number,
     required String registerEmail,
+    required String address,
+    required String website,
   }) async {
     try {
       await FirebaseFirestore.instance
@@ -17,12 +19,14 @@ class AddUserDetailsModel {
           .doc(registerEmail)
           .set(
         {
-          'full name': fullName,
+          'Full Name': fullName,
           'Profession': profession,
           'Company Name': companyName,
           'Email': email,
-          'number': number,
-          'register email': registerEmail,
+          'Website': website,
+          'Address': address,
+          'Number': number,
+          'Register Email': registerEmail,
         },
       );
     } catch (e) {

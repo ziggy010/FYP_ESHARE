@@ -31,6 +31,10 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
 
   final TextEditingController _phoneNumberController = TextEditingController();
 
+  final TextEditingController _websiteController = TextEditingController();
+
+  final TextEditingController _addressController = TextEditingController();
+
   final CardDetailsController _cardDetailsController =
       Get.put(CardDetailsController(), permanent: true);
 
@@ -73,6 +77,8 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                   designationController: _designationController,
                   emailAddressController: _emailAddressController,
                   phoneNumberController: _phoneNumberController,
+                  websiteController: _websiteController,
+                  addressController: _addressController,
                 ),
                 SizedBox(height: 33.h),
                 FillDetailsBottom(
@@ -106,6 +112,8 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                       email: _emailAddressController.text,
                       number: _phoneNumberController.text,
                       registerEmail: registerEmail,
+                      website: _websiteController.text,
+                      address: _addressController.text,
                     );
 
                     Get.offAllNamed(AuthPage.id);

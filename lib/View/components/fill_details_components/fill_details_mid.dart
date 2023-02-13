@@ -8,6 +8,8 @@ class FillDetailsMid extends StatelessWidget {
   final TextEditingController designationController;
   final TextEditingController emailAddressController;
   final TextEditingController phoneNumberController;
+  final TextEditingController websiteController;
+  final TextEditingController addressController;
 
   FillDetailsMid({
     required this.companyNameController,
@@ -16,6 +18,8 @@ class FillDetailsMid extends StatelessWidget {
     required this.fullNameController,
     required this.phoneNumberController,
     required this.professionController,
+    required this.websiteController,
+    required this.addressController,
   });
   @override
   Widget build(BuildContext context) {
@@ -54,11 +58,27 @@ class FillDetailsMid extends StatelessWidget {
           bottomPadding: 19,
         ),
         MyTextfield(
+          textEditingController: websiteController,
+          keyboardType: TextInputType.emailAddress,
+          onSaved: (hello) {},
+          hintText: 'Website',
+          labelText: 'Website',
+          bottomPadding: 19,
+        ),
+        MyTextfield(
           textEditingController: phoneNumberController,
           keyboardType: TextInputType.phone,
           onSaved: (hello) {},
           hintText: 'Phone Number',
           labelText: 'Phone Number',
+          bottomPadding: 19,
+        ),
+        MyTextfield(
+          textEditingController: addressController,
+          keyboardType: TextInputType.text,
+          onSaved: (hello) {},
+          hintText: 'Address',
+          labelText: 'Address',
           bottomPadding: 19,
         ),
       ],

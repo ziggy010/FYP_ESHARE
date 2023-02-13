@@ -20,19 +20,7 @@ class MyVistingCardController extends GetxController {
 
   @override
   List swiperContent = [
-    FutureBuilder(
-      future: GetCurrentUserModel.getCurrentUserId(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        return EshareVerticalCard(
-          name: GetCurrentUserModel.name,
-          profession: GetCurrentUserModel.profession,
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          website: 'risab.com.np',
-          address: 'kamalbinayak, Bhaktapur',
-        );
-      },
-    ),
+    EshareVerticalCard(),
     Container(
       color: kContainerColor,
     ),
@@ -50,20 +38,7 @@ class MyVistingCardController extends GetxController {
       swiperContent.removeAt(0);
       swiperContent.insert(
         0,
-        FutureBuilder(
-          future: GetCurrentUserModel.getCurrentUserId(),
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            var docId = GetCurrentUserModel.currentDocId;
-            return EshareVerticalCard(
-              name: GetCurrentUserModel.name,
-              profession: GetCurrentUserModel.profession,
-              email: 'tajale01@gmail.com',
-              number: '9813110577',
-              website: 'risab.com.np',
-              address: 'kamalbinayak, Bhaktapur',
-            );
-          },
-        ),
+        EshareVerticalCard(),
       );
     }
     if (cardNumber.value == 2) {
