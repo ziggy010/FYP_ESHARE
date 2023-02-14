@@ -67,7 +67,7 @@ class EshareVerticalCard extends StatelessWidget {
                           style: kCardTextStyle(20, kGoldenColor),
                         );
                       }
-                      return Skeleton(height: 26, width: 120);
+                      return Skeleton(height: 22, width: 120);
                     }),
                   ),
                   FutureBuilder(
@@ -79,7 +79,7 @@ class EshareVerticalCard extends StatelessWidget {
                           style: kCardTextStyle(12, kGoldenColor),
                         );
                       }
-                      return Skeleton(height: 15, width: 90, padding: 7);
+                      return Skeleton(height: 19, width: 90, padding: 7);
                     }),
                   ),
                 ],
@@ -97,11 +97,14 @@ class EshareVerticalCard extends StatelessWidget {
                   FutureBuilder(
                     future: GetCurrentUserModel.getCurrentUserId(),
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      return cardRowDetail(
-                        text: GetCurrentUserModel.email,
-                        icon: Icons.email_outlined,
-                        color: kGoldenColor,
-                      );
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return cardRowDetail(
+                          text: GetCurrentUserModel.email,
+                          icon: Icons.email_outlined,
+                          color: kGoldenColor,
+                        );
+                      }
+                      return Skeleton(height: 16, width: 120);
                     },
                   ),
                   SizedBox(
@@ -110,11 +113,14 @@ class EshareVerticalCard extends StatelessWidget {
                   FutureBuilder(
                     future: GetCurrentUserModel.getCurrentUserId(),
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      return cardRowDetail(
-                        text: GetCurrentUserModel.number,
-                        icon: Icons.phone_outlined,
-                        color: kGoldenColor,
-                      );
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return cardRowDetail(
+                          text: GetCurrentUserModel.number,
+                          icon: Icons.phone_outlined,
+                          color: kGoldenColor,
+                        );
+                      }
+                      return Skeleton(height: 16, width: 80);
                     },
                   ),
                   SizedBox(
@@ -123,11 +129,14 @@ class EshareVerticalCard extends StatelessWidget {
                   FutureBuilder(
                     future: GetCurrentUserModel.getCurrentUserId(),
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      return cardRowDetail(
-                        text: GetCurrentUserModel.website,
-                        icon: Icons.language_outlined,
-                        color: kGoldenColor,
-                      );
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return cardRowDetail(
+                          text: GetCurrentUserModel.website,
+                          icon: Icons.language_outlined,
+                          color: kGoldenColor,
+                        );
+                      }
+                      return Skeleton(height: 16, width: 90);
                     },
                   ),
                   SizedBox(
@@ -136,11 +145,14 @@ class EshareVerticalCard extends StatelessWidget {
                   FutureBuilder(
                     future: GetCurrentUserModel.getCurrentUserId(),
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      return cardRowDetail(
-                        text: GetCurrentUserModel.address,
-                        icon: Icons.location_on_outlined,
-                        color: kGoldenColor,
-                      );
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return cardRowDetail(
+                          text: GetCurrentUserModel.address,
+                          icon: Icons.location_on_outlined,
+                          color: kGoldenColor,
+                        );
+                      }
+                      return Skeleton(height: 16, width: 90);
                     },
                   ),
                 ],
