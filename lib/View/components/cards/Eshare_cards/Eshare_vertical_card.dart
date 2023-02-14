@@ -2,9 +2,11 @@ import 'dart:math';
 
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class EshareVerticalCard extends StatelessWidget {
   @override
@@ -57,20 +59,27 @@ class EshareVerticalCard extends StatelessWidget {
                 children: [
                   FutureBuilder(
                     future: GetCurrentUserModel.getCurrentUserId(),
+                    initialData: CircularProgressIndicator,
                     builder: ((context, snapshot) {
-                      return Text(
-                        GetCurrentUserModel.name,
-                        style: kCardTextStyle(20, kGoldenColor),
-                      );
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return Text(
+                          GetCurrentUserModel.name,
+                          style: kCardTextStyle(20, kGoldenColor),
+                        );
+                      }
+                      return Skeleton(height: 26, width: 120);
                     }),
                   ),
                   FutureBuilder(
                     future: GetCurrentUserModel.getCurrentUserId(),
                     builder: ((context, snapshot) {
-                      return Text(
-                        GetCurrentUserModel.profession,
-                        style: kCardTextStyle(12, kGoldenColor),
-                      );
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return Text(
+                          GetCurrentUserModel.profession,
+                          style: kCardTextStyle(12, kGoldenColor),
+                        );
+                      }
+                      return Skeleton(height: 15, width: 90, padding: 7);
                     }),
                   ),
                 ],

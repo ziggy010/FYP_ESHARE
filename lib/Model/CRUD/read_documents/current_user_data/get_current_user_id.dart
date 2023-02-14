@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 class GetCurrentUserModel {
   static String currentDocId = '';
@@ -11,12 +12,15 @@ class GetCurrentUserModel {
   static String website = '';
   static String address = '';
 
+  static late Widget Loading;
+
   static Future getCurrentUserId() async {
     final docUser = FirebaseFirestore.instance
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.email);
 
     final snapshot = await docUser.get();
+    // await Future.delayed(Duration(seconds: 3));
     await FirebaseFirestore.instance
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.email)
