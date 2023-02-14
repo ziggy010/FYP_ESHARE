@@ -20,7 +20,7 @@ class GetCurrentUserModel {
         .doc(FirebaseAuth.instance.currentUser!.email);
 
     final snapshot = await docUser.get();
-    // await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 3));
     await FirebaseFirestore.instance
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.email)
