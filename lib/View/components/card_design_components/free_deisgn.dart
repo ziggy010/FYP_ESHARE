@@ -1,5 +1,4 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
-import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
@@ -19,9 +18,6 @@ import 'card_container.dart';
 class FreeDesign extends StatelessWidget {
   final MyVistingCardController _cardController =
       Get.put(MyVistingCardController());
-
-  final CardDetailsController _cardDetailsController =
-      Get.put(CardDetailsController());
 
   final _cardDesignModel = CardDesignModel();
 

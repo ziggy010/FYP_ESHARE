@@ -1,4 +1,3 @@
-import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,8 +25,6 @@ class EditInformationMid extends StatelessWidget {
     required this.editAddressController,
   });
 
-  final CardDetailsController _cardDetailsController =
-      Get.put(CardDetailsController());
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,7 +34,7 @@ class EditInformationMid extends StatelessWidget {
             ..text = GetCurrentUserModel.name,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
-          hintText: _cardDetailsController.fullName.value,
+          hintText: 'Full Name',
           labelText: 'Full Name',
           bottomPadding: 19,
         ),
@@ -46,7 +43,7 @@ class EditInformationMid extends StatelessWidget {
             ..text = GetCurrentUserModel.profession,
           keyboardType: TextInputType.text,
           onSaved: (hello) {},
-          hintText: _cardDetailsController.profession.value,
+          hintText: 'Profession',
           labelText: 'Profession',
           bottomPadding: 19,
         ),

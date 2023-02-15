@@ -1,4 +1,3 @@
-import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/edit_information_components/edit_information_bottom.dart';
 import 'package:e_share/View/components/edit_information_components/edit_information_mid.dart';
@@ -23,9 +22,6 @@ class EditInformation extends StatelessWidget {
       TextEditingController();
   final TextEditingController _editWebisteController = TextEditingController();
   final TextEditingController _editAddressController = TextEditingController();
-
-  final CardDetailsController _cardDetailsController =
-      Get.put(CardDetailsController());
 
   @override
   Widget build(BuildContext context) {
@@ -60,20 +56,7 @@ class EditInformation extends StatelessWidget {
                   editWebsiteController: _editWebisteController,
                 ),
                 EditInformationBottom(
-                  onTap: () {
-                    _cardDetailsController.fullName.value =
-                        _editFullNameController.text;
-                    _cardDetailsController.profession.value =
-                        _editProfessionController.text;
-                    _cardDetailsController.companyName.value =
-                        _editCompanyNameController.text;
-                    _cardDetailsController.designation.value =
-                        _editDesignationController.text;
-                    _cardDetailsController.emailAddress.value =
-                        _editEmailAddressController.text;
-                    _cardDetailsController.phoneNumber.value =
-                        _editPhoneNumberController.text;
-                  },
+                  onTap: () {},
                 ),
               ],
             ),

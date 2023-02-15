@@ -1,4 +1,3 @@
-import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
 import 'package:e_share/Model/CRUD/add_user_details_model/add_user_details.dart';
 import 'package:e_share/authentication/auth_page.dart';
 import 'package:e_share/authentication/register_model.dart';
@@ -34,9 +33,6 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
   final TextEditingController _websiteController = TextEditingController();
 
   final TextEditingController _addressController = TextEditingController();
-
-  final CardDetailsController _cardDetailsController =
-      Get.put(CardDetailsController(), permanent: true);
 
   late String registerEmail;
   late String registerPassword;

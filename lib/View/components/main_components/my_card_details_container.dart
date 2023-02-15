@@ -1,14 +1,10 @@
-import 'package:e_share/Controller/card_details_controller/card_details_controller.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-import '../../../constant.dart';
-
 class MyCardDetailsContainer extends StatelessWidget {
-  final CardDetailsController _cardDetailsController =
-      Get.put(CardDetailsController());
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -50,14 +46,18 @@ class MyCardDetailsContainer extends StatelessWidget {
           ),
           child: Padding(
             padding: EdgeInsets.all(10.0.sm),
-            child: Obx(
-              () {
-                return QrImage(
-                  data: '${_cardDetailsController.fullName.value},',
-                  version: QrVersions.auto,
-                  size: 200.0,
-                  foregroundColor: Colors.black,
-                );
+            child: FutureBuilder(
+              future: GetCurrentUserModel.getCurrentUserId(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return QrImage(
+                    data: '${GetCurrentUserModel.name},',
+                    version: QrVersions.auto,
+                    size: 200.0,
+                    foregroundColor: Colors.black,
+                  );
+                }
+                return Skeleton(height: 200, width: 200);
               },
             ),
           ),
