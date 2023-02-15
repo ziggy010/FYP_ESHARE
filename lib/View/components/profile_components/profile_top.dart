@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shimmer/shimmer.dart';
 
 class ProfileTop extends StatelessWidget {
   final ProfilePictureController _profilePictureController =
@@ -23,44 +24,61 @@ class ProfileTop extends StatelessWidget {
         children: [
           Column(
             children: [
-              Obx(
-                (() {
-                  return CircleAvatar(
-                    radius: 45.r,
-                    backgroundColor: Colors.transparent,
-                    backgroundImage: _profilePictureController
-                            .imagePath.isNotEmpty
-                        ? FileImage(
-                            File(
-                              _profilePictureController.imagePath.toString(),
-                            ),
-                          )
-                        : AssetImage('images/profile.png') as ImageProvider,
-                  );
-                }),
+              FutureBuilder(
+                future: _profilePictureController.downloadImage(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done &&
+                      snapshot.hasData) {
+                    return CircleAvatar(
+                      radius: 45.r,
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: NetworkImage(snapshot.data),
+                    );
+                  } else if (snapshot.hasData == false &&
+                      snapshot.connectionState == ConnectionState.done) {
+                    return CircleAvatar(
+                      radius: 45.r,
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: AssetImage('images/profile.png'),
+                    );
+                  } else {
+                    return Shimmer.fromColors(
+                      baseColor: Colors.grey.withOpacity(0.25),
+                      highlightColor: Colors.white.withOpacity(0.6),
+                      child: CircleAvatar(
+                        radius: 45.r,
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage('images/profile.png'),
+                      ),
+                    );
+                  }
+                },
               ),
               SizedBox(
                 height: 12.h,
               ),
               GestureDetector(
                 onTap: () {
-                  // _profilePictureController.getImage();
                   showModalBottomSheet(
                     backgroundColor: Colors.transparent,
                     context: context,
                     builder: ((context) {
                       return MyBottomModalSheetContainer(
                         cameraOnTap: () {
-                          _profilePictureController.getImage(
-                            ImageSource.camera,
-                            context,
-                          );
+                          _profilePictureController
+                              .uploadImage(
+                                ImageSource.camera,
+                                context,
+                              )
+                              .then((value) => print('done'));
                         },
                         galleryOnTap: () {
-                          _profilePictureController.getImage(
-                            ImageSource.gallery,
-                            context,
-                          );
+                          _profilePictureController
+                              .uploadImage(
+                                ImageSource.gallery,
+                                context,
+                              )
+                              .then((value) => print('done'));
                         },
                       );
                     }),

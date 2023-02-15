@@ -118,22 +118,41 @@ class _HomePageTopState extends State<HomePageTop>
                   )
                 ],
               ),
-              GestureDetector(onTap: () {
-                Get.toNamed(ProfilePage.id);
-              }, child: Obx(
-                () {
-                  return CircleAvatar(
-                    radius: 22.r,
-                    backgroundImage:
-                        _profilePictureController.imagePath.isNotEmpty
-                            ? FileImage(File(
-                                _profilePictureController.imagePath.toString(),
-                              ))
-                            : AssetImage('images/profile.png') as ImageProvider,
-                    backgroundColor: Colors.transparent,
-                  );
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(ProfilePage.id);
                 },
-              )),
+                child: FutureBuilder(
+                  future: _profilePictureController.downloadImage(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData) {
+                      return CircleAvatar(
+                        radius: 22.r,
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: NetworkImage(snapshot.data),
+                      );
+                    } else if (snapshot.hasData == false &&
+                        snapshot.connectionState == ConnectionState.done) {
+                      return CircleAvatar(
+                        radius: 22.r,
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage('images/profile.png'),
+                      );
+                    } else {
+                      return Shimmer.fromColors(
+                        baseColor: Colors.grey.withOpacity(0.25),
+                        highlightColor: Colors.white.withOpacity(0.6),
+                        child: CircleAvatar(
+                          radius: 22.r,
+                          backgroundColor: Colors.transparent,
+                          backgroundImage: AssetImage('images/profile.png'),
+                        ),
+                      );
+                    }
+                  },
+                ),
+              ),
             ],
           ),
         ),

@@ -1,9 +1,22 @@
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-class QrScanPageFirst extends StatelessWidget {
-  const QrScanPageFirst({super.key});
+class QrScanPageFirst extends StatefulWidget {
+  @override
+  State<QrScanPageFirst> createState() => _QrScanPageFirstState();
+}
+
+class _QrScanPageFirstState extends State<QrScanPageFirst> {
+  final qrKey = GlobalKey(debugLabel: 'QR');
+
+  QRViewController? controller;
+
+  void dispose() {
+    super.dispose();
+    controller?.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +45,22 @@ class QrScanPageFirst extends StatelessWidget {
               10.r,
             ),
           ),
+          child: buildQrView(context),
         )
       ],
     );
+  }
+
+  Widget buildQrView(BuildContext context) {
+    return QRView(
+      key: qrKey,
+      onQRViewCreated: onQRViewCreated,
+    );
+  }
+
+  void onQRViewCreated(QRViewController controller) {
+    setState(() {
+      this.controller = controller;
+    });
   }
 }
