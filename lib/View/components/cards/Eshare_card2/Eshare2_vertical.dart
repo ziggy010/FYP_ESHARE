@@ -7,16 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Eshare_cards/Eshare_vertical_card.dart';
 
 class EshareVerticalTwo extends StatelessWidget {
-  final String name, profession, email, number, website, address;
-
-  EshareVerticalTwo({
-    required this.name,
-    required this.profession,
-    required this.email,
-    required this.number,
-    required this.website,
-    required this.address,
-  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -114,7 +104,7 @@ class EshareVerticalTwo extends StatelessWidget {
                             if (snapshot.connectionState ==
                                 ConnectionState.done) {
                               return cardRowDetail(
-                                text: email,
+                                text: GetCurrentUserModel.email,
                                 icon: Icons.email_outlined,
                                 color: kGoldenColor,
                               );

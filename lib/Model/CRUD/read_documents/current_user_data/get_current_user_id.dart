@@ -11,6 +11,7 @@ class GetCurrentUserModel {
   static String number = '';
   static String website = '';
   static String address = '';
+  static int cardDesign = 0;
 
   static Future getCurrentUserId() async {
     final docUser = FirebaseFirestore.instance
@@ -33,6 +34,7 @@ class GetCurrentUserModel {
         number = snapshot.data()!['Number'];
         website = snapshot.data()!['Website'];
         address = snapshot.data()!['Address'];
+        cardDesign = snapshot.data()!['Card Design'];
       },
     );
   }

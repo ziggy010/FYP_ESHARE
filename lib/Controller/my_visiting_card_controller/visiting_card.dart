@@ -16,10 +16,27 @@ import 'package:get/state_manager.dart';
 import '../../constant.dart';
 
 class MyVistingCardController extends GetxController {
-  RxInt cardNumber = 1.obs;
-
   @override
-  List swiperContent = [
+  Widget getHorizontalCard() {
+    switch (GetCurrentUserModel.cardDesign) {
+      case 1:
+        return EshareHorizontalCard();
+
+      case 2:
+        return EshareHorizontalTwo();
+
+      case 3:
+        return EshareHorizontalThree();
+
+      case 4:
+        return EshareHorizontalFour();
+
+      default:
+        return EshareHorizontalCard();
+    }
+  }
+
+  List swiperContentOne = [
     EshareVerticalCard(),
     Container(
       color: kContainerColor,
@@ -29,128 +46,52 @@ class MyVistingCardController extends GetxController {
     ),
   ].obs;
 
-  changeCardNumber(int number) {
-    cardNumber.value = number;
-  }
+  List swiperContentTwo = [
+    EshareVerticalTwo(),
+    Container(
+      color: kContainerColor,
+    ),
+    Container(
+      color: kContainerColor,
+    ),
+  ].obs;
 
-  changeSwiperList() {
-    if (cardNumber.value == 1) {
-      swiperContent.removeAt(0);
-      swiperContent.insert(
-        0,
-        EshareVerticalCard(),
-      );
-    }
-    if (cardNumber.value == 2) {
-      swiperContent.removeAt(0);
+  List swiperContentThree = [
+    EshareVerticalThree(),
+    Container(
+      color: kContainerColor,
+    ),
+    Container(
+      color: kContainerColor,
+    ),
+  ].obs;
 
-      swiperContent.insert(
-        0,
-        EshareVerticalTwo(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          website: 'risab.com.np',
-          address: 'kamalbinayak, Bhaktapur',
-        ),
-      );
-    }
-    if (cardNumber.value == 3) {
-      swiperContent.removeAt(0);
+  List swiperContentFour = [
+    EshareVerticalFour(),
+    Container(
+      color: kContainerColor,
+    ),
+    Container(
+      color: kContainerColor,
+    ),
+  ].obs;
 
-      swiperContent.insert(
-        0,
-        EshareVerticalThree(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          website: 'risab.com.np',
-          address: 'kamalbinayak, Bhaktapur',
-        ),
-      );
-    }
-    if (cardNumber.value == 4) {
-      swiperContent.removeAt(0);
-
-      swiperContent.insert(
-        0,
-        EshareVerticalFour(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          website: 'risab.com.np',
-          address: 'kamalbinayak, Bhaktapur',
-        ),
-      );
-    }
-  }
-
-  Widget getHorizontalCard() {
-    switch (cardNumber.value) {
+  List getVerticalCard() {
+    switch (GetCurrentUserModel.cardDesign) {
       case 1:
-        return FutureBuilder(
-          future: GetCurrentUserModel.getCurrentUserId(),
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            var docId = GetCurrentUserModel.currentDocId;
-            return EshareHorizontalCard(
-              name: GetCurrentUserModel.name,
-              profession: GetCurrentUserModel.profession,
-              email: GetCurrentUserModel.email,
-              number: GetCurrentUserModel.number,
-              website: GetCurrentUserModel.website,
-              address: GetCurrentUserModel.address,
-            );
-          },
-        );
+        return swiperContentOne;
 
       case 2:
-        return EshareHorizontalTwo(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          address: 'Kamalbinayak, Bhaktapur',
-          website: 'risab.com.np',
-        );
+        return swiperContentTwo;
 
       case 3:
-        return EshareHorizontalThree(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          address: 'Kamalbinayak, Bhaktapur',
-          website: 'risab.com.np',
-        );
+        return swiperContentThree;
 
       case 4:
-        return EshareHorizontalFour(
-          name: 'Risab Tajale',
-          profession: 'App Developer',
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          address: 'Kamalbinayak, Bhaktapur',
-          website: 'risab.com.np',
-        );
+        return swiperContentFour;
 
       default:
-        return FutureBuilder(
-          future: GetCurrentUserModel.getCurrentUserId(),
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            var docId = GetCurrentUserModel.currentDocId;
-            return EshareHorizontalCard(
-              name: GetCurrentUserModel.name,
-              profession: GetCurrentUserModel.profession,
-              email: 'tajale01@gmail.com',
-              number: '9813110577',
-              website: 'risab.com.np',
-              address: 'kamalbinayak, Bhaktapur',
-            );
-          },
-        );
+        return swiperContentTwo;
     }
   }
 }

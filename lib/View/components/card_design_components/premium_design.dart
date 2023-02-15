@@ -16,14 +16,7 @@ class PremiumDesign extends StatelessWidget {
             children: [
               CardContainer(
                 onTap: (() {}),
-                content: EshareHorizontalThree(
-                  name: 'Risab Tajale',
-                  profession: 'App Developer',
-                  email: 'tajale01@gmail.com',
-                  number: '9813110577',
-                  address: 'Kamalbinayak, Bhaktapur',
-                  website: 'risab.com.np',
-                ),
+                content: EshareHorizontalThree(),
               ),
               // CardContainer(),
               // CardContainer(),

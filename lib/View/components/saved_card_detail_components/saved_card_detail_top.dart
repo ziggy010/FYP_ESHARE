@@ -21,14 +21,7 @@ class SavedCardDetailTop extends StatelessWidget {
           20.r,
         ),
       ),
-      child: EshareHorizontalThree(
-        name: name,
-        profession: 'App Developer',
-        email: 'tajale01@gmail.com',
-        number: '9813110577',
-        address: 'Kamalbinayak, Bhaktapur',
-        website: 'risab.com.np',
-      ),
+      child: EshareHorizontalThree(),
     );
   }
 }

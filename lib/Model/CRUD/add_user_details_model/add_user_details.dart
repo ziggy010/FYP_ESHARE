@@ -27,6 +27,7 @@ class AddUserDetailsModel {
           'Address': address,
           'Number': number,
           'Register Email': registerEmail,
+          'Card Design': 1,
         },
       );
     } catch (e) {

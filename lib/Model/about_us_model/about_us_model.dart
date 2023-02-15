@@ -10,43 +10,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutUsModel {
   List<Widget> cards = [
-    FutureBuilder(
-      future: GetCurrentUserModel.getCurrentUserId(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        var docId = GetCurrentUserModel.currentDocId;
-        return EshareHorizontalCard(
-          name: GetCurrentUserModel.name,
-          profession: GetCurrentUserModel.profession,
-          email: 'tajale01@gmail.com',
-          number: '9813110577',
-          website: 'risab.com.np',
-          address: 'kamalbinayak, Bhaktapur',
-        );
-      },
-    ),
-    EshareHorizontalTwo(
-      name: 'Risab Tajale',
-      profession: 'App Developer',
-      email: 'tajale01@gmail.com',
-      number: '9813110577',
-      address: 'kamalbinayak,Bhaktapur',
-      website: 'risab.com.np',
-    ),
-    EshareHorizontalThree(
-      name: 'Risab Tajale',
-      profession: 'App Developer',
-      email: 'tajale01@gmail.com',
-      number: '9813110577',
-      address: 'kamalbinayak,Bhaktapur',
-      website: 'risab.com.np',
-    ),
-    EshareHorizontalFour(
-      name: 'Risab Tajale',
-      profession: 'App Developer',
-      email: 'tajale01@gmail.com',
-      number: '9813110577',
-      address: 'kamalbinayak,Bhaktapur',
-      website: 'risab.com.np',
-    ),
+    EshareHorizontalCard(),
+    EshareHorizontalTwo(),
+    EshareHorizontalThree(),
+    EshareHorizontalFour(),
   ];
 }

@@ -1,21 +1,11 @@
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalCard extends StatelessWidget {
-  final String name, profession, email, number, address, website;
-
   int cardNo = 1;
-
-  EshareHorizontalCard({
-    required this.name,
-    required this.profession,
-    required this.email,
-    required this.number,
-    required this.address,
-    required this.website,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +40,11 @@ class EshareHorizontalCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        name,
+                        GetCurrentUserModel.name,
                         style: cardTextStyle(20),
                       ),
                       Text(
-                        profession,
+                        GetCurrentUserModel.profession,
                         style: cardTextStyle(12),
                       ),
                       SizedBox(
@@ -72,7 +62,7 @@ class EshareHorizontalCard extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              email,
+                              GetCurrentUserModel.email,
                               style: cardTextStyle(10),
                             ),
                           ),
@@ -89,7 +79,7 @@ class EshareHorizontalCard extends StatelessWidget {
                             width: 9.h,
                           ),
                           Text(
-                            number,
+                            GetCurrentUserModel.number,
                             style: cardTextStyle(10),
                           ),
                         ],
@@ -105,7 +95,7 @@ class EshareHorizontalCard extends StatelessWidget {
                             width: 9.h,
                           ),
                           Text(
-                            address,
+                            GetCurrentUserModel.address,
                             style: cardTextStyle(10),
                           ),
                         ],
@@ -121,7 +111,7 @@ class EshareHorizontalCard extends StatelessWidget {
                             width: 9.h,
                           ),
                           Text(
-                            website,
+                            GetCurrentUserModel.website,
                             style: cardTextStyle(10),
                           ),
                         ],

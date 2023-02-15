@@ -25,22 +25,13 @@ class HomePageText {
   ];
 
   List swiperContent = [
-    EshareVerticalThree(
-      name: 'Risab Tajale',
-      profession: 'App Developer',
-      email: 'tajale01@gmail.com',
-      number: '9813110577',
-      website: 'risab.com.np',
-      address: 'kamalbinayak, Bhaktapur',
-    ),
+    EshareVerticalThree(),
     Container(
       color: kContainerColor,
     ),
     Container(
       color: kContainerColor,
     ),
-    // EshareVerticalCard(),
-    // EshareVerticalCard(),
   ];
 
   void changeTextOrder(int getIndex) {

@@ -7,17 +7,6 @@ import '../../../../constant.dart';
 import '../Eshare_cards/Eshare_vertical_card.dart';
 
 class EshareVerticalFour extends StatelessWidget {
-  final String name, profession, email, number, website, address;
-
-  EshareVerticalFour({
-    required this.name,
-    required this.profession,
-    required this.email,
-    required this.number,
-    required this.website,
-    required this.address,
-  });
-
   @override
   Widget build(BuildContext context) {
     return Container(

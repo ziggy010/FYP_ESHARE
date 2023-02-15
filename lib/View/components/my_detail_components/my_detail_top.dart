@@ -61,18 +61,14 @@ class _MyDetailTopState extends State<MyDetailTop>
         ).animate(_animationController),
         child: FadeTransition(
           opacity: _animationController,
-          child: Obx(
-            () {
-              return Container(
-                height: 190.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: kContainerColor,
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: _cardController.getHorizontalCard(),
-              );
-            },
+          child: Container(
+            height: 190.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: kContainerColor,
+              borderRadius: BorderRadius.circular(20.r),
+            ),
+            child: _cardController.getHorizontalCard(),
           ),
         ),
       ),

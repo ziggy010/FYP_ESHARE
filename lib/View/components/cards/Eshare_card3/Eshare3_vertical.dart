@@ -7,16 +7,6 @@ import '../../../../constant.dart';
 import '../Eshare_cards/Eshare_vertical_card.dart';
 
 class EshareVerticalThree extends StatelessWidget {
-  final String name, profession, email, number, website, address;
-  EshareVerticalThree({
-    required this.name,
-    required this.profession,
-    required this.email,
-    required this.number,
-    required this.website,
-    required this.address,
-  });
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -82,34 +72,74 @@ class EshareVerticalThree extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      cardRowDetail(
-                        text: email,
-                        icon: Icons.email_outlined,
-                        color: kGoldenColor2,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.email,
+                              icon: Icons.email_outlined,
+                              color: kGoldenColor2,
+                            );
+                          }
+                          return Skeleton(height: 15, width: 130);
+                        },
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
-                      cardRowDetail(
-                        text: number,
-                        icon: Icons.phone_outlined,
-                        color: kGoldenColor2,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.number,
+                              icon: Icons.phone_outlined,
+                              color: kGoldenColor2,
+                            );
+                          }
+                          return Skeleton(height: 15, width: 130);
+                        },
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
-                      cardRowDetail(
-                        text: website,
-                        icon: Icons.language_outlined,
-                        color: kGoldenColor2,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.website,
+                              icon: Icons.language_outlined,
+                              color: kGoldenColor2,
+                            );
+                          }
+                          return Skeleton(height: 15, width: 130);
+                        },
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
-                      cardRowDetail(
-                        text: address,
-                        icon: Icons.location_on_outlined,
-                        color: kGoldenColor2,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.address,
+                              icon: Icons.location_on_outlined,
+                              color: kGoldenColor2,
+                            );
+                          }
+                          return Skeleton(height: 15, width: 130);
+                        },
                       ),
                     ],
                   ),

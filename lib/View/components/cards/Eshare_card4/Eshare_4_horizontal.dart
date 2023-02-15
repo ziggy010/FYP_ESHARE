@@ -4,18 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalFour extends StatelessWidget {
-  final String name, profession, address, email, number, website;
-
   int cardNo = 4;
-
-  EshareHorizontalFour({
-    required this.name,
-    required this.profession,
-    required this.address,
-    required this.email,
-    required this.number,
-    required this.website,
-  });
 
   @override
   Widget build(BuildContext context) {

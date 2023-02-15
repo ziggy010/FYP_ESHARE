@@ -11,8 +11,6 @@ class CardDesignModel {
       Get.put(MyVistingCardController());
 
   onTap(int cardNumber, BuildContext context) {
-    _cardController.changeCardNumber(cardNumber);
-    _cardController.changeSwiperList();
     final snackBar = SnackBar(
       duration: Duration(
         seconds: 2,
