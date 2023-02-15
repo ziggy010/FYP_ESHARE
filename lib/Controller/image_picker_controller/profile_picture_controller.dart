@@ -34,6 +34,7 @@ class ProfilePictureController extends GetxController {
       await storage.ref('test/profile').putFile(file);
 
       Navigator.pop(context);
+
       Get.offAllNamed(HomePage.id);
     }
   }
