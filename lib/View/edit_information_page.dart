@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/edit_information_components/edit_information_bottom.dart';
 import 'package:e_share/View/components/edit_information_components/edit_information_mid.dart';
 import 'package:e_share/View/components/edit_information_components/edit_information_top.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -22,6 +26,21 @@ class EditInformation extends StatelessWidget {
       TextEditingController();
   final TextEditingController _editWebisteController = TextEditingController();
   final TextEditingController _editAddressController = TextEditingController();
+
+  editInformationFunction({
+    required String compareData,
+    required TextEditingController textEditingController,
+    required String firebaseKey,
+  }) {
+    if (compareData != textEditingController.text) {
+      FirebaseFirestore.instance
+          .collection('users')
+          .doc(FirebaseAuth.instance.currentUser!.email)
+          .update(
+        {'$firebaseKey': textEditingController.text},
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +75,13 @@ class EditInformation extends StatelessWidget {
                   editWebsiteController: _editWebisteController,
                 ),
                 EditInformationBottom(
-                  onTap: () {},
+                  onTap: () {
+                    editInformationFunction(
+                      compareData: GetCurrentUserModel.name,
+                      textEditingController: _editFullNameController,
+                      firebaseKey: 'Full Name',
+                    );
+                  },
                 ),
               ],
             ),

@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:e_share/View/components/main_components/my_snackbar.dart';
 import 'package:e_share/View/home_page.dart';
 import 'package:e_share/View/profile_page.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
@@ -34,6 +36,9 @@ class ProfilePictureController extends GetxController {
       await storage.ref('test/profile').putFile(file);
 
       Navigator.pop(context);
+
+      MySnackbar.showSnackBar(context, 'Congratulation!',
+          'Profile Picture uploaded successfully', ContentType.success);
 
       Get.offAllNamed(HomePage.id);
     }
