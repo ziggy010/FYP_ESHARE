@@ -91,7 +91,7 @@ class MyVistingCardController extends GetxController {
         return swiperContentFour;
 
       default:
-        return swiperContentTwo;
+        return swiperContentOne;
     }
   }
 }

@@ -23,8 +23,6 @@ class FreeDesign extends StatelessWidget {
 
   final _cardDesignModel = CardDesignModel();
 
-  CollectionReference ref = FirebaseFirestore.instance.collection('users');
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,9 +33,7 @@ class FreeDesign extends StatelessWidget {
             children: [
               CardContainer(
                 onTap: () {
-                  ref.doc(FirebaseAuth.instance.currentUser!.email).update(
-                    {'Card Design': 1},
-                  );
+                  _cardDesignModel.onTap(1, context);
                 },
                 content: EshareHorizontalCard(),
               ),

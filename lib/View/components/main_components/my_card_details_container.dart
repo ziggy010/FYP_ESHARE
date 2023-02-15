@@ -51,7 +51,8 @@ class MyCardDetailsContainer extends StatelessWidget {
               builder: (BuildContext context, AsyncSnapshot snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   return QrImage(
-                    data: '${GetCurrentUserModel.name},',
+                    data:
+                        '${GetCurrentUserModel.name},${GetCurrentUserModel.profession},${GetCurrentUserModel.email},${GetCurrentUserModel.number},${GetCurrentUserModel.website}, ${GetCurrentUserModel.address}, ${GetCurrentUserModel.cardDesign}',
                     version: QrVersions.auto,
                     size: 200.0,
                     foregroundColor: Colors.black,
