@@ -1,3 +1,5 @@
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -44,13 +46,37 @@ class EshareVerticalFour extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Text(
-                        name,
-                        style: kCardTextStyle(20, Color(0xFFCE915B)),
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return Text(
+                              GetCurrentUserModel.name,
+                              style: kCardTextStyle(20, Color(0xFFCE915B)),
+                            );
+                          }
+                          return Skeleton(height: 22, width: 120);
+                        },
                       ),
-                      Text(
-                        profession,
-                        style: kCardTextStyle(12, Color(0xFFCE915B)),
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return Text(
+                              GetCurrentUserModel.profession,
+                              style: kCardTextStyle(12, Color(0xFFCE915B)),
+                            );
+                          }
+                          return Skeleton(
+                            height: 15,
+                            width: 90,
+                            padding: 7,
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -59,38 +85,78 @@ class EshareVerticalFour extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      cardRowDetail(
-                        text: email,
-                        icon: Icons.email_outlined,
-                        color: Color(0xFFCE915B),
-                        main: MainAxisAlignment.center,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.email,
+                              icon: Icons.email_outlined,
+                              color: Color(0xFFCE915B),
+                              main: MainAxisAlignment.center,
+                            );
+                          }
+                          return Skeleton(height: 14, width: 120);
+                        },
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
-                      cardRowDetail(
-                        text: number,
-                        icon: Icons.phone_outlined,
-                        color: Color(0xFFCE915B),
-                        main: MainAxisAlignment.center,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.number,
+                              icon: Icons.phone_outlined,
+                              color: Color(0xFFCE915B),
+                              main: MainAxisAlignment.center,
+                            );
+                          }
+                          return Skeleton(height: 14, width: 90);
+                        },
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
-                      cardRowDetail(
-                        text: website,
-                        icon: Icons.language_outlined,
-                        color: Color(0xFFCE915B),
-                        main: MainAxisAlignment.center,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.website,
+                              icon: Icons.language_outlined,
+                              color: Color(0xFFCE915B),
+                              main: MainAxisAlignment.center,
+                            );
+                          }
+                          return Skeleton(height: 14, width: 100);
+                        },
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
-                      cardRowDetail(
-                        text: address,
-                        icon: Icons.location_on_outlined,
-                        color: Color(0xFFCE915B),
-                        main: MainAxisAlignment.center,
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return cardRowDetail(
+                              text: GetCurrentUserModel.address,
+                              icon: Icons.location_on_outlined,
+                              color: Color(0xFFCE915B),
+                              main: MainAxisAlignment.center,
+                            );
+                          }
+                          return Skeleton(height: 14, width: 70);
+                        },
                       ),
                     ],
                   ),

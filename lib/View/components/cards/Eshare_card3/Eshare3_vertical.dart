@@ -1,3 +1,5 @@
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -45,13 +47,33 @@ class EshareVerticalThree extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        name,
-                        style: kCardTextStyle(20, kGoldenColor2),
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return Text(
+                              GetCurrentUserModel.name,
+                              style: kCardTextStyle(20, kGoldenColor2),
+                            );
+                          }
+                          return Skeleton(height: 22, width: 130);
+                        },
                       ),
-                      Text(
-                        profession,
-                        style: kCardTextStyle(12, kGoldenColor2),
+                      FutureBuilder(
+                        future: GetCurrentUserModel.getCurrentUserId(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return Text(
+                              GetCurrentUserModel.profession,
+                              style: kCardTextStyle(12, kGoldenColor2),
+                            );
+                          }
+                          return Skeleton(height: 16, width: 90, padding: 7);
+                        },
                       ),
                     ],
                   ),

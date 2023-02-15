@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:flutter/material.dart';
@@ -86,45 +87,58 @@ class ProfileTop extends StatelessWidget {
                 future: GetCurrentUserModel.getCurrentUserId(),
                 // initialData: InitialData,
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  return Text(
-                    GetCurrentUserModel.name,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'poppins',
-                      fontSize: 20.sp,
-                    ),
-                  );
-                  // return GetCurrentUserCardDetails(
-                  //   height: 25.h,
-                  //   width: 70.w,
-                  //   documentId: GetCurrentUserModel.currentDocId,
-                  //   DataKey: 'full name',
-                  //   textStyle: TextStyle(
-                  //     color: Colors.white,
-                  //     fontFamily: 'poppins',
-                  //     fontSize: 20.sp,
-                  //   ),
-                  // );
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return Text(
+                      GetCurrentUserModel.name,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'poppins',
+                        fontSize: 20.sp,
+                      ),
+                    );
+                  }
+                  return Skeleton(height: 22, width: 120);
                 },
               ),
-              Text(
-                'App Developer',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 225, 223, 223),
-                  fontFamily: 'poppins',
-                  fontSize: 12.sp,
-                ),
+              FutureBuilder(
+                future: GetCurrentUserModel.getCurrentUserId(),
+                // initialData: InitialData,
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return Text(
+                      GetCurrentUserModel.profession,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 225, 223, 223),
+                        fontFamily: 'poppins',
+                        fontSize: 12.sp,
+                      ),
+                    );
+                  }
+                  return Skeleton(height: 15, width: 90, padding: 7);
+                },
               ),
               SizedBox(
                 height: 3.h,
               ),
-              Text(
-                'E-Share',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 225, 223, 223),
-                  fontFamily: 'poppins',
-                  fontSize: 12.sp,
-                ),
+              FutureBuilder(
+                future: GetCurrentUserModel.getCurrentUserId(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return Text(
+                      GetCurrentUserModel.companyName,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 225, 223, 223),
+                        fontFamily: 'poppins',
+                        fontSize: 12.sp,
+                      ),
+                    );
+                  }
+                  return Skeleton(
+                    height: 15,
+                    width: 70,
+                    padding: 7,
+                  );
+                },
               ),
               SizedBox(
                 height: 25.h,

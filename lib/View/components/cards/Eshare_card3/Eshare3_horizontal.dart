@@ -1,3 +1,4 @@
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,11 +44,11 @@ class EshareHorizontalThree extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  name,
+                  GetCurrentUserModel.name,
                   style: basicTextStyle(font: 'lobster', fontSize: 24),
                 ),
                 Text(
-                  profession,
+                  GetCurrentUserModel.profession,
                   style: basicTextStyle(font: 'poppins', fontSize: 12),
                 ),
               ],
@@ -60,19 +61,19 @@ class EshareHorizontalThree extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CardRowDetail(
-                    text: address,
+                    text: GetCurrentUserModel.address,
                     icon: Icons.location_on_outlined,
                   ),
                   CardRowDetail(
-                    text: number,
+                    text: GetCurrentUserModel.number,
                     icon: Icons.phone_outlined,
                   ),
                   CardRowDetail(
-                    text: email,
+                    text: GetCurrentUserModel.email,
                     icon: Icons.email_outlined,
                   ),
                   CardRowDetail(
-                    text: website,
+                    text: GetCurrentUserModel.website,
                     icon: Icons.language_outlined,
                   ),
                 ],

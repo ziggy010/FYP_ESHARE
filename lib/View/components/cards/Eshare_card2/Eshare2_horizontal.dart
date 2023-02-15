@@ -1,3 +1,4 @@
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,7 +48,7 @@ class EshareHorizontalTwo extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    name,
+                    GetCurrentUserModel.name,
                     style: TextStyle(
                       color: kGoldenColor,
                       fontFamily: 'lobster',
@@ -56,7 +57,7 @@ class EshareHorizontalTwo extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    profession,
+                    GetCurrentUserModel.profession,
                     style: TextStyle(
                       color: kGoldenColor,
                       fontFamily: 'poppins',
@@ -84,22 +85,22 @@ class EshareHorizontalTwo extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CardDetailRow(
-                          text: address,
+                          text: GetCurrentUserModel.address,
                           icon: Icons.location_on_outlined,
                           fontSize: 10,
                         ),
                         CardDetailRow(
-                          text: number,
+                          text: GetCurrentUserModel.number,
                           icon: Icons.phone_outlined,
                           fontSize: 10,
                         ),
                         CardDetailRow(
-                          text: email,
+                          text: GetCurrentUserModel.email,
                           icon: Icons.email_outlined,
                           fontSize: 10,
                         ),
                         CardDetailRow(
-                          text: website,
+                          text: GetCurrentUserModel.website,
                           icon: Icons.language_outlined,
                           fontSize: 10,
                         ),

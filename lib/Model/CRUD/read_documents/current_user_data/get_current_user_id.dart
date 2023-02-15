@@ -12,8 +12,6 @@ class GetCurrentUserModel {
   static String website = '';
   static String address = '';
 
-  static late Widget Loading;
-
   static Future getCurrentUserId() async {
     final docUser = FirebaseFirestore.instance
         .collection('users')

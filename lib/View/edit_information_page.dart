@@ -21,6 +21,8 @@ class EditInformation extends StatelessWidget {
       TextEditingController();
   final TextEditingController _editPhoneNumberController =
       TextEditingController();
+  final TextEditingController _editWebisteController = TextEditingController();
+  final TextEditingController _editAddressController = TextEditingController();
 
   final CardDetailsController _cardDetailsController =
       Get.put(CardDetailsController());
@@ -54,6 +56,8 @@ class EditInformation extends StatelessWidget {
                   editFullNameController: _editFullNameController,
                   editProfessionController: _editProfessionController,
                   edtiPhoneNumberController: _editPhoneNumberController,
+                  editAddressController: _editAddressController,
+                  editWebsiteController: _editWebisteController,
                 ),
                 EditInformationBottom(
                   onTap: () {
