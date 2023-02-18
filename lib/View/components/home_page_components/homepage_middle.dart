@@ -3,6 +3,9 @@ import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dar
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/View/License_page.dart';
 import 'package:e_share/View/citizenship_page.dart';
+import 'package:e_share/View/components/cards/Eshare_card2/Eshare2_vertical.dart';
+import 'package:e_share/View/components/cards/Eshare_card3/Eshare3_horizontal.dart';
+import 'package:e_share/View/components/cards/Eshare_card4/Eshare4_vertical.dart';
 import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/home_page_methods.dart';
@@ -111,13 +114,14 @@ class _HomePageMidState extends State<HomePageMid> {
                 axisDirection: AxisDirection.right,
                 itemBuilder: (context, index) {
                   return FutureBuilder(
-                      future: GetCurrentUserModel.getCurrentUserId(),
-                      builder: (context, snapshot) {
-                        return ClipRRect(
-                          borderRadius: BorderRadius.circular(18.r),
-                          child: _cardController.getVerticalCard()[index],
-                        );
-                      });
+                    future: GetCurrentUserModel.getCurrentUserId(),
+                    builder: (context, snapshot) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(18.r),
+                        child: _cardController.getVerticalCard()[index],
+                      );
+                    },
+                  );
                 },
                 pagination: SwiperPagination(
                   margin: EdgeInsets.only(
