@@ -1,5 +1,8 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/View/components/main_components/my_snackbar.dart';
+import 'package:e_share/View/home_page.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/edit_information_components/edit_information_bottom.dart';
 import 'package:e_share/View/components/edit_information_components/edit_information_mid.dart';
@@ -42,6 +45,71 @@ class EditInformation extends StatelessWidget {
     }
   }
 
+  batchUpdate(BuildContext context) {
+    editInformationFunction(
+      compareData: GetCurrentUserModel.name,
+      textEditingController: _editFullNameController,
+      firebaseKey: 'Full Name',
+    );
+    editInformationFunction(
+      compareData: GetCurrentUserModel.profession,
+      textEditingController: _editProfessionController,
+      firebaseKey: 'Profession',
+    );
+    editInformationFunction(
+      compareData: GetCurrentUserModel.companyName,
+      textEditingController: _editCompanyNameController,
+      firebaseKey: 'Company Name',
+    );
+    editInformationFunction(
+      compareData: GetCurrentUserModel.email,
+      textEditingController: _editEmailAddressController,
+      firebaseKey: 'Email',
+    );
+    editInformationFunction(
+      compareData: GetCurrentUserModel.website,
+      textEditingController: _editWebisteController,
+      firebaseKey: 'Website',
+    );
+    editInformationFunction(
+      compareData: GetCurrentUserModel.number,
+      textEditingController: _editPhoneNumberController,
+      firebaseKey: 'Number',
+    );
+    editInformationFunction(
+      compareData: GetCurrentUserModel.address,
+      textEditingController: _editAddressController,
+      firebaseKey: 'Address',
+    );
+    MySnackbar.showSnackBar(
+      context,
+      'Congrats',
+      'Information edited successfully',
+      ContentType.success,
+    );
+    Get.offAllNamed(HomePage.id);
+  }
+
+  finalInformationUpdate(BuildContext context) {
+    if (GetCurrentUserModel.name == _editFullNameController.text &&
+        GetCurrentUserModel.profession == _editProfessionController.text &&
+        GetCurrentUserModel.companyName == _editCompanyNameController.text &&
+        GetCurrentUserModel.email == _editEmailAddressController.text &&
+        GetCurrentUserModel.website == _editWebisteController.text &&
+        GetCurrentUserModel.number == _editPhoneNumberController.text &&
+        GetCurrentUserModel.address == _editAddressController.text) {
+      MySnackbar.showSnackBar(
+        context,
+        'Sorry',
+        'Nothing to update',
+        ContentType.failure,
+      );
+      // Get.back();
+    } else {
+      batchUpdate(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -76,11 +144,7 @@ class EditInformation extends StatelessWidget {
                 ),
                 EditInformationBottom(
                   onTap: () {
-                    editInformationFunction(
-                      compareData: GetCurrentUserModel.name,
-                      textEditingController: _editFullNameController,
-                      firebaseKey: 'Full Name',
-                    );
+                    finalInformationUpdate(context);
                   },
                 ),
               ],

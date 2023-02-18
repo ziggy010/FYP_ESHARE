@@ -1,5 +1,6 @@
 import 'package:e_share/Controller/image_picker_controller/license_picture_controller.dart';
 import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,15 +24,65 @@ class LicenseFirst extends StatelessWidget {
         children: [
           Column(
             children: [
-              const FlipCard(
+              FlipCard(
                 fill: Fill.none,
                 direction: FlipDirection.VERTICAL,
                 side: CardSide.FRONT,
-                front: DottedContainer(
-                  text: 'License front',
+                front: FutureBuilder(
+                  future: _licensePictureController.downloadLicenseFront(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData) {
+                      return Container(
+                        height: 190.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                            image: NetworkImage(snapshot.data),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(14.r),
+                        ),
+                      );
+                    } else if (snapshot.connectionState ==
+                            ConnectionState.done &&
+                        snapshot.hasData == false) {
+                      return DottedContainer(
+                        text: 'License Front',
+                      );
+                    } else {
+                      return Skeleton(height: 190, width: double.infinity);
+                    }
+                  },
                 ),
-                back: DottedContainer(
-                  text: 'License back',
+                back: FutureBuilder(
+                  future: _licensePictureController.downloadLicenseBack(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData) {
+                      return Container(
+                        height: 190.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: kBackgroundColor,
+                          borderRadius: BorderRadius.circular(14.r),
+                          image: DecorationImage(
+                            image: NetworkImage(snapshot.data),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    } else if (snapshot.connectionState ==
+                            ConnectionState.done &&
+                        snapshot.hasData == false) {
+                      return DottedContainer(
+                        text: 'License Back',
+                      );
+                    } else {
+                      return Skeleton(height: 190, width: double.infinity);
+                    }
+                  },
                 ),
               ),
               SizedBox(
@@ -74,7 +125,7 @@ class LicenseFirst extends StatelessWidget {
               buttonColor: kSelectedColor,
               borderRadius: 16,
               textWidget: Text(
-                'Upload Your front page',
+                'Upload Your front image',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'poppins',

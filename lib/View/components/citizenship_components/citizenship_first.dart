@@ -1,6 +1,7 @@
 import 'package:e_share/Controller/image_picker_controller/citizenship_picture_controller.dart';
 import 'package:e_share/View/components/main_components/bottom_modal_sheet.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -25,15 +26,63 @@ class CitizenshipFirst extends StatelessWidget {
         children: [
           Column(
             children: [
-              const FlipCard(
+              FlipCard(
                 fill: Fill.none,
                 direction: FlipDirection.VERTICAL,
                 side: CardSide.FRONT,
-                front: DottedContainer(
-                  text: 'Citizenship front',
+                front: FutureBuilder(
+                  future:
+                      _citizenshipPictureController.downloadCitizenshipFront(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData) {
+                      return Container(
+                        height: 190.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: kBackgroundColor,
+                          borderRadius: BorderRadius.circular(14.r),
+                          image: DecorationImage(
+                            image: NetworkImage(snapshot.data),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    } else if (snapshot.connectionState ==
+                            ConnectionState.done &&
+                        snapshot.hasData == false) {
+                      return DottedContainer(text: 'Citizenship Front');
+                    } else {
+                      return Skeleton(height: 190, width: double.infinity);
+                    }
+                  },
                 ),
-                back: DottedContainer(
-                  text: 'Citizenship back',
+                back: FutureBuilder(
+                  future:
+                      _citizenshipPictureController.downloadCitizenshipBack(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData) {
+                      return Container(
+                        height: 190.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: kBackgroundColor,
+                          borderRadius: BorderRadius.circular(14.r),
+                          image: DecorationImage(
+                            image: NetworkImage(snapshot.data),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    } else if (snapshot.connectionState ==
+                            ConnectionState.done &&
+                        snapshot.hasData == false) {
+                      return DottedContainer(text: 'Citizenship back');
+                    } else {
+                      return Skeleton(height: 190, width: double.infinity);
+                    }
+                  },
                 ),
               ),
               SizedBox(

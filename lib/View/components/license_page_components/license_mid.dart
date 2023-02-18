@@ -18,7 +18,7 @@ class LicenseMid extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: EdgeInsets.only(
-          top: 32.w,
+          top: 18.w,
         ),
         child: PageView(
           controller: pageController,

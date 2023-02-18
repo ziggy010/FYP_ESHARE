@@ -13,6 +13,8 @@ class _QrScanPageFirstState extends State<QrScanPageFirst> {
 
   QRViewController? controller;
 
+  Barcode? barcode;
+
   void dispose() {
     super.dispose();
     controller?.dispose();
@@ -55,12 +57,25 @@ class _QrScanPageFirstState extends State<QrScanPageFirst> {
     return QRView(
       key: qrKey,
       onQRViewCreated: onQRViewCreated,
+      overlay: QrScannerOverlayShape(
+        borderRadius: 10.r,
+        borderWidth: 10,
+        borderLength: 20,
+        borderColor: Colors.white,
+      ),
     );
   }
 
   void onQRViewCreated(QRViewController controller) {
     setState(() {
       this.controller = controller;
+    });
+
+    controller.scannedDataStream.listen((barcode) {
+      setState(() {
+        this.barcode = barcode;
+        print(barcode.code);
+      });
     });
   }
 }

@@ -33,7 +33,7 @@ class ProfilePictureController extends GetxController {
           );
         }),
       );
-      await storage.ref('test/profile').putFile(file);
+      await storage.ref('profileFolder/profile').putFile(file);
 
       Navigator.pop(context);
 
@@ -45,7 +45,8 @@ class ProfilePictureController extends GetxController {
   }
 
   Future<String> downloadImage() async {
-    String downloadUrl = await storage.ref('test/profile').getDownloadURL();
+    String downloadUrl =
+        await storage.ref('profileFolder/profile').getDownloadURL();
 
     return downloadUrl;
   }
