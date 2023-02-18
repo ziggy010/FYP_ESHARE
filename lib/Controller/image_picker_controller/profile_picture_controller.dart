@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/View/components/main_components/my_snackbar.dart';
 import 'package:e_share/View/home_page.dart';
 import 'package:e_share/View/profile_page.dart';
@@ -33,7 +34,9 @@ class ProfilePictureController extends GetxController {
           );
         }),
       );
-      await storage.ref('profileFolder/profile').putFile(file);
+      await storage
+          .ref('profileFolder/${GetCurrentUserModel.email}_profile')
+          .putFile(file);
 
       Navigator.pop(context);
 
@@ -45,8 +48,9 @@ class ProfilePictureController extends GetxController {
   }
 
   Future<String> downloadImage() async {
-    String downloadUrl =
-        await storage.ref('profileFolder/profile').getDownloadURL();
+    String downloadUrl = await storage
+        .ref('profileFolder/${GetCurrentUserModel.email}_profile')
+        .getDownloadURL();
 
     return downloadUrl;
   }

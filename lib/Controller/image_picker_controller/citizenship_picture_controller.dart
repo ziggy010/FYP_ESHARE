@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/View/components/main_components/my_snackbar.dart';
 import 'package:e_share/View/home_page.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,10 @@ class CitizenshipPictureController extends GetxController {
           );
         }),
       );
-      await storage.ref('citizenshipFolder/citizenshipFront').putFile(file);
+      await storage
+          .ref(
+              'citizenshipFolder/${GetCurrentUserModel.email}_citizenshipFront')
+          .putFile(file);
 
       Navigator.pop(context);
 
@@ -47,7 +51,7 @@ class CitizenshipPictureController extends GetxController {
 
   Future<String> downloadCitizenshipFront() async {
     String downloadUrl = await storage
-        .ref('citizenshipFolder/citizenshipFront')
+        .ref('citizenshipFolder/${GetCurrentUserModel.email}_citizenshipFront')
         .getDownloadURL();
 
     return downloadUrl;
@@ -71,7 +75,9 @@ class CitizenshipPictureController extends GetxController {
           );
         }),
       );
-      await storage.ref('citizenshipFolder/citizenshipBack').putFile(file);
+      await storage
+          .ref('citizenshipFolder/${GetCurrentUserModel.email}_citizenshipBack')
+          .putFile(file);
 
       Navigator.pop(context);
 
@@ -83,8 +89,9 @@ class CitizenshipPictureController extends GetxController {
   }
 
   Future<String> downloadCitizenshipBack() async {
-    String downloadUrl =
-        await storage.ref('citizenshipFolder/citizenshipBack').getDownloadURL();
+    String downloadUrl = await storage
+        .ref('citizenshipFolder/${GetCurrentUserModel.email}_citizenshipBack')
+        .getDownloadURL();
 
     return downloadUrl;
   }

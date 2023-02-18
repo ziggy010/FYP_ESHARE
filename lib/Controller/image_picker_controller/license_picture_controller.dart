@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/View/components/main_components/my_snackbar.dart';
 import 'package:e_share/View/home_page.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,9 @@ class LicensePictureController extends GetxController {
           );
         }),
       );
-      await storage.ref('licenseFolder/licenseFront').putFile(file);
+      await storage
+          .ref('licenseFolder/${GetCurrentUserModel.email}_licenseFront')
+          .putFile(file);
 
       Navigator.pop(context);
 
@@ -45,8 +48,9 @@ class LicensePictureController extends GetxController {
   }
 
   Future<String> downloadLicenseFront() async {
-    String downloadUrl =
-        await storage.ref('licenseFolder/licenseFront').getDownloadURL();
+    String downloadUrl = await storage
+        .ref('licenseFolder/${GetCurrentUserModel.email}_licenseFront')
+        .getDownloadURL();
 
     return downloadUrl;
   }
@@ -68,7 +72,9 @@ class LicensePictureController extends GetxController {
           );
         }),
       );
-      await storage.ref('licenseFolder/licenseBack').putFile(file);
+      await storage
+          .ref('licenseFolder/${GetCurrentUserModel.email}_licenseBack')
+          .putFile(file);
 
       Navigator.pop(context);
 
@@ -80,8 +86,9 @@ class LicensePictureController extends GetxController {
   }
 
   Future<String> downloadLicenseBack() async {
-    String downloadUrl =
-        await storage.ref('licenseFolder/licenseBack').getDownloadURL();
+    String downloadUrl = await storage
+        .ref('licenseFolder/${GetCurrentUserModel.email}_licenseBack')
+        .getDownloadURL();
 
     return downloadUrl;
   }
