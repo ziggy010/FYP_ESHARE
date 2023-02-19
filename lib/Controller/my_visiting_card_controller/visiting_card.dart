@@ -9,11 +9,7 @@ import 'package:e_share/View/components/cards/Eshare_card4/Eshare4_vertical.dart
 import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
-import 'package:e_share/View/components/citizenship_components/dotted_container.dart';
-import 'package:e_share/View/components/main_components/skeleton.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
@@ -150,7 +146,8 @@ class CitizenshipWidget extends StatelessWidget {
             snapshot.hasData) {
           return Container(
             decoration: BoxDecoration(
-              color: kBackgroundColor,
+              color: kContainerColor,
+              borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
                 image: NetworkImage(snapshot.data),
                 fit: BoxFit.cover,
@@ -170,7 +167,7 @@ class CitizenshipWidget extends StatelessWidget {
                 child: SpinKitSpinningLines(
               color: Colors.white,
               size: 50.0,
-            )),
+            ),),
           );
         }
       },
