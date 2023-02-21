@@ -44,13 +44,13 @@ class SavedCardPageMid extends StatelessWidget {
                       bottom: 16.h,
                     ),
                     child: Container(
-                      height: 40.h,
+                      height: 50.h,
                       width: double.infinity,
                       child: Row(
                         children: [
                           CircleAvatar(
                             backgroundColor: kSelectedPrimary,
-                            radius: 20.r,
+                            radius: 22.r,
                             child: Center(
                               child: Text(
                                 _savedCardPageController
@@ -64,16 +64,29 @@ class SavedCardPageMid extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            width: 12.h,
+                            width: 20.h,
                           ),
-                          Text(
-                            _savedCardPageController
-                                .foundSavedCard.value[index].name,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'poppins',
-                              fontSize: 14.sp,
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                _savedCardPageController
+                                    .foundSavedCard.value[index].name,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'poppins',
+                                  fontSize: 14.sp,
+                                ),
+                              ),
+                              Text(
+                                'company',
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.6),
+                                  fontSize: 10.sp,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
