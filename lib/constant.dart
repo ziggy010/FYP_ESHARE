@@ -1,5 +1,7 @@
+import 'package:e_share/View/components/main_components/my_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 const kBackgroundColor = Color(0xFF17171A);
 const kNavbarColor = Color(0xFF211F30);
@@ -46,5 +48,30 @@ TextStyle cardTextStyle(double fontSize) {
     color: kGoldenColor,
     fontFamily: 'poppins',
     fontSize: fontSize.sp,
+  );
+}
+
+kSnackBar(String title, String message) {
+  Get.snackbar(
+    '',
+    '',
+    titleText: Text(
+      title,
+      style: TextStyle(
+        color: Colors.red,
+        fontFamily: 'poppins',
+        fontSize: 16.sp,
+      ),
+    ),
+    messageText: Text(
+      message,
+      style: const TextStyle(
+        color: Colors.white,
+        fontFamily: 'poppins',
+      ),
+    ),
+    snackPosition: SnackPosition.BOTTOM,
+    snackStyle: SnackStyle.FLOATING,
+    backgroundColor: kContainerColor,
   );
 }

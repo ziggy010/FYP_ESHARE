@@ -56,6 +56,17 @@ class RegisterBottom extends StatelessWidget {
         ),
         MyButton(
           onTap: () {
+            if (registerPasswordController.text.length > 6) {
+              if (registerPasswordController.text ==
+                  registerConfirmPasswordController.text) {
+                print('yes');
+              } else {
+                print('no');
+              }
+            } else {
+              print('enter 6 password');
+            }
+
             Get.toNamed(
               FillDetailsPage.id,
               arguments: [
