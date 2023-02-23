@@ -1,4 +1,3 @@
-import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';

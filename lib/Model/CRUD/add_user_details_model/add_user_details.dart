@@ -1,6 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 
 class AddUserDetailsModel {
   Future addUserDetails({
@@ -14,6 +12,12 @@ class AddUserDetailsModel {
     required String website,
   }) async {
     try {
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(registerEmail)
+          .collection('SavedCards')
+          .add({});
+
       await FirebaseFirestore.instance
           .collection('users')
           .doc(registerEmail)

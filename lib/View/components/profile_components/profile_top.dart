@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:e_share/Controller/image_picker_controller/profile_picture_controller.dart';
-import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:e_share/constant.dart';

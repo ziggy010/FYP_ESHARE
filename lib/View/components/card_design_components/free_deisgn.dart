@@ -1,7 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_share/Controller/my_visiting_card_controller/visiting_card.dart';
-import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_card_details.dart';
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/card_design_model.dart';
