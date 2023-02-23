@@ -1,6 +1,7 @@
 import 'package:e_share/Controller/saved_card_page_controller/saved_card_page_controller.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_details.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_single_letter.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/saved_card_page_model/saved_card_list.dart';
 import 'package:e_share/View/saved_card_detail.dart';
@@ -37,7 +38,12 @@ class SavedCardPageMid extends StatelessWidget {
                 itemCount: _getSavedCardDetailsModel.savedCardList.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      print(
+                        _getSavedCardDetailsModel.savedCardList[index],
+                      );
+                      Get.toNamed(SavedCardDetail.id);
+                    },
                     child: Padding(
                       padding: EdgeInsets.only(
                         bottom: 16.h,
@@ -51,13 +57,9 @@ class SavedCardPageMid extends StatelessWidget {
                               backgroundColor: kSelectedPrimary,
                               radius: 22.r,
                               child: Center(
-                                child: Text(
-                                  'r',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: 'poppins',
-                                    fontSize: 18.sp,
-                                  ),
+                                child: GetSingleLetter(
+                                  documentId: _getSavedCardDetailsModel
+                                      .savedCardList[index],
                                 ),
                               ),
                             ),
@@ -69,23 +71,23 @@ class SavedCardPageMid extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 GetSavedCardInformationModel(
+                                  keyValue: 'FullName',
                                   documentId: _getSavedCardDetailsModel
                                       .savedCardList[index],
+                                  textStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'poppins',
+                                    fontSize: 14.sp,
+                                  ),
                                 ),
-                                // Text(
-                                //   'r',
-                                //   style: TextStyle(
-                                //     color: Colors.white,
-                                //     fontFamily: 'poppins',
-                                //     fontSize: 14.sp,
-                                //   ),
-                                // ),
-                                Text(
-                                  'company',
-                                  style: TextStyle(
+                                GetSavedCardInformationModel(
+                                  documentId: _getSavedCardDetailsModel
+                                      .savedCardList[index],
+                                  textStyle: TextStyle(
                                     color: Colors.white.withOpacity(0.6),
                                     fontSize: 10.sp,
                                   ),
+                                  keyValue: 'Profession',
                                 ),
                               ],
                             ),

@@ -1,19 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class GetSavedCardInformationModel extends StatelessWidget {
-  final String documentId;
-  final TextStyle textStyle;
-  final String keyValue;
+import '../../../../View/components/main_components/skeleton.dart';
 
-  GetSavedCardInformationModel({
-    required this.documentId,
-    required this.textStyle,
-    required this.keyValue,
-  });
+class GetSingleLetter extends StatelessWidget {
+  String documentId;
+
+  GetSingleLetter({required this.documentId});
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +26,15 @@ class GetSavedCardInformationModel extends StatelessWidget {
               snapshot.data!.data() as Map<String, dynamic>;
 
           return Text(
-            data[keyValue],
-            style: textStyle,
+            data['FullName'][0],
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'poppins',
+              fontSize: 18.sp,
+            ),
           );
         }
-        return Skeleton(height: 10, width: 120);
+        return Text('');
       }),
     );
   }
