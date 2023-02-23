@@ -1,4 +1,6 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:e_share/Model/CRUD/add_user_details_model/add_user_details.dart';
+import 'package:e_share/View/components/main_components/my_snackbar.dart';
 import 'package:e_share/authentication/auth_page.dart';
 import 'package:e_share/authentication/register_model.dart';
 import 'package:e_share/constant.dart';
@@ -91,28 +93,44 @@ class _FillDetailsPageState extends State<FillDetailsPage> {
                       }),
                     );
 
-                    //registering the user
-                    await _registerModel.RegisterUser(
-                      context: context,
-                      registerEmail: registerEmail,
-                      registerPassword: registerPassword,
-                      confirmRegisterPassword: confirmRegisterPassword,
-                    );
+                    if (_fullNameController.text.isEmpty &&
+                        _professionController.text.isEmpty &&
+                        _companyNameController.text.isEmpty &&
+                        _emailAddressController.text.isEmpty &&
+                        _websiteController.text.isEmpty &&
+                        _phoneNumberController.text.isEmpty &&
+                        _addressController.text.isEmpty) {
+                      MySnackbar.showSnackBar(
+                        context,
+                        'Fill all the details',
+                        'Please fill all the details to register your account.',
+                        ContentType.failure,
+                      );
+                      Navigator.pop(context);
+                    } else {
+                      //registering the user
+                      await _registerModel.RegisterUser(
+                        context: context,
+                        registerEmail: registerEmail,
+                        registerPassword: registerPassword,
+                        confirmRegisterPassword: confirmRegisterPassword,
+                      );
 
-                    await _addUserDetailsModel.addUserDetails(
-                      fullName: _fullNameController.text,
-                      profession: _professionController.text,
-                      companyName: _companyNameController.text,
-                      email: _emailAddressController.text,
-                      number: _phoneNumberController.text,
-                      registerEmail: registerEmail,
-                      website: _websiteController.text,
-                      address: _addressController.text,
-                    );
+                      await _addUserDetailsModel.addUserDetails(
+                        fullName: _fullNameController.text,
+                        profession: _professionController.text,
+                        companyName: _companyNameController.text,
+                        email: _emailAddressController.text,
+                        number: _phoneNumberController.text,
+                        registerEmail: registerEmail,
+                        website: _websiteController.text,
+                        address: _addressController.text,
+                      );
 
-                    Navigator.pop(context);
+                      Navigator.pop(context);
 
-                    Get.offAllNamed(AuthPage.id);
+                      Get.offAllNamed(AuthPage.id);
+                    }
                   },
                 )
               ],

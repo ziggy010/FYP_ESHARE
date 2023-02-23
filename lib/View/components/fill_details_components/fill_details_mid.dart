@@ -1,5 +1,6 @@
 import 'package:e_share/View/components/main_components/my_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FillDetailsMid extends StatelessWidget {
   final TextEditingController fullNameController;
@@ -80,6 +81,24 @@ class FillDetailsMid extends StatelessWidget {
           hintText: 'Address',
           labelText: 'Address',
           bottomPadding: 19,
+        ),
+        Row(
+          children: [
+            const Icon(
+              Icons.info_outline,
+              color: Colors.grey,
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            const Text(
+              'All field are mandatory,',
+              style: TextStyle(
+                color: Colors.grey,
+                fontFamily: 'poppins',
+              ),
+            )
+          ],
         ),
       ],
     );

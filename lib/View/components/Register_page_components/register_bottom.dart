@@ -1,3 +1,5 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:e_share/View/components/main_components/my_snackbar.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
 import 'package:e_share/View/fill_details_page.dart';
@@ -59,22 +61,30 @@ class RegisterBottom extends StatelessWidget {
             if (registerPasswordController.text.length > 6) {
               if (registerPasswordController.text ==
                   registerConfirmPasswordController.text) {
-                print('yes');
+                Get.toNamed(
+                  FillDetailsPage.id,
+                  arguments: [
+                    registerEmailController.text,
+                    registerPasswordController.text,
+                    registerConfirmPasswordController.text,
+                  ],
+                );
               } else {
-                print('no');
+                MySnackbar.showSnackBar(
+                  context,
+                  'Password doesn\'t match.',
+                  'Password and confirm password doesn\'t match.',
+                  ContentType.failure,
+                );
               }
             } else {
-              print('enter 6 password');
+              MySnackbar.showSnackBar(
+                context,
+                'Weak Password',
+                'Password should be more than 6 letters for better security.',
+                ContentType.failure,
+              );
             }
-
-            Get.toNamed(
-              FillDetailsPage.id,
-              arguments: [
-                registerEmailController.text,
-                registerPasswordController.text,
-                registerConfirmPasswordController.text,
-              ],
-            );
           },
           height: 57.h,
           width: double.infinity,
