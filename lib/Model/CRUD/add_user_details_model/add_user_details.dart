@@ -15,12 +15,6 @@ class AddUserDetailsModel {
       await FirebaseFirestore.instance
           .collection('users')
           .doc(registerEmail)
-          .collection('SavedCards')
-          .add({});
-
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(registerEmail)
           .set(
         {
           'Full Name': fullName,

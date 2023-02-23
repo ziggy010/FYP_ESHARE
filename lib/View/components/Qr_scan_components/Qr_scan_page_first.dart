@@ -92,16 +92,7 @@ class _QrScanPageFirstState extends State<QrScanPageFirst> {
                 savedCardCardNumber: finalScannedData[6],
               );
 
-              Get.toNamed(SavedCardsPage.id);
-              // print('scanned data');
-              // print(finalScannedData);
-              // print(finalScannedData.length);
-              // _savedCardPageController.allSavedCardList.add(
-              //   SavedCardList(
-              //     name: finalScannedData[0],
-              //   ),
-              // );
-              // print(_savedCardPageController.allSavedCardList.length);
+              Get.offAllNamed(SavedCardsPage.id);
             },
           ),
         ),
