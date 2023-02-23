@@ -1,5 +1,6 @@
 import 'package:e_share/Controller/saved_card_page_controller/saved_card_page_controller.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_details.dart';
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/saved_card_page_model/saved_card_list.dart';
 import 'package:e_share/View/saved_card_detail.dart';
@@ -67,15 +68,18 @@ class SavedCardPageMid extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  _getSavedCardDetailsModel
+                                GetSavedCardInformationModel(
+                                  documentId: _getSavedCardDetailsModel
                                       .savedCardList[index],
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: 'poppins',
-                                    fontSize: 14.sp,
-                                  ),
                                 ),
+                                // Text(
+                                //   'r',
+                                //   style: TextStyle(
+                                //     color: Colors.white,
+                                //     fontFamily: 'poppins',
+                                //     fontSize: 14.sp,
+                                //   ),
+                                // ),
                                 Text(
                                   'company',
                                   style: TextStyle(
