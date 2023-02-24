@@ -77,7 +77,7 @@ class SavedCardPageMid extends StatelessWidget {
                                   textStyle: TextStyle(
                                     color: Colors.white,
                                     fontFamily: 'poppins',
-                                    fontSize: 14.sp,
+                                    fontSize: 13.sp,
                                   ),
                                 ),
                                 GetSavedCardInformationModel(
