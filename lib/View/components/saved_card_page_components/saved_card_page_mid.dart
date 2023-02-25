@@ -1,7 +1,7 @@
 import 'package:e_share/Controller/saved_card_page_controller/saved_card_page_controller.dart';
-import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_details.dart';
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_List.dart';
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_first_letter.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
-import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_single_letter.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/saved_card_page_model/saved_card_list.dart';
 import 'package:e_share/View/saved_card_detail.dart';
@@ -15,8 +15,8 @@ class SavedCardPageMid extends StatelessWidget {
 
   final AnimationController animationController;
 
-  final GetSavedCardDetailsModel _getSavedCardDetailsModel =
-      GetSavedCardDetailsModel();
+  final GetSavedCardListModel _getSavedCardDetailsModel =
+      GetSavedCardListModel();
 
   SavedCardPageMid({
     required this.animationController,
@@ -42,8 +42,13 @@ class SavedCardPageMid extends StatelessWidget {
                       print(
                         _getSavedCardDetailsModel.savedCardList[index],
                       );
-                      Get.toNamed(SavedCardDetail.id,
-                          parameters: {'name': 'gandu'});
+                      Get.toNamed(
+                        SavedCardDetail.id,
+                        parameters: {
+                          'docId':
+                              _getSavedCardDetailsModel.savedCardList[index],
+                        },
+                      );
                     },
                     child: Padding(
                       padding: EdgeInsets.only(
@@ -58,7 +63,7 @@ class SavedCardPageMid extends StatelessWidget {
                               backgroundColor: kSelectedPrimary,
                               radius: 22.r,
                               child: Center(
-                                child: GetSingleLetter(
+                                child: GetSavedCardFirstLetter(
                                   documentId: _getSavedCardDetailsModel
                                       .savedCardList[index],
                                 ),
@@ -72,7 +77,6 @@ class SavedCardPageMid extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 GetSavedCardInformationModel(
-                                  keyValue: 'FullName',
                                   documentId: _getSavedCardDetailsModel
                                       .savedCardList[index],
                                   textStyle: TextStyle(
@@ -80,12 +84,14 @@ class SavedCardPageMid extends StatelessWidget {
                                     fontFamily: 'poppins',
                                     fontSize: 14.sp,
                                   ),
+                                  keyValue: 'FullName',
                                 ),
                                 GetSavedCardInformationModel(
                                   documentId: _getSavedCardDetailsModel
                                       .savedCardList[index],
                                   textStyle: TextStyle(
                                     color: Colors.white.withOpacity(0.6),
+                                    fontFamily: 'poppins',
                                     fontSize: 10.sp,
                                   ),
                                   keyValue: 'Profession',

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/saved_card_detail_components/saved_card_detail_bottom.dart';
 import 'package:e_share/View/components/saved_card_detail_components/saved_card_detail_mid.dart';
@@ -61,9 +62,10 @@ class _SavedCardDetailState extends State<SavedCardDetail>
       appBar: AppBar(
         elevation: 0,
         backgroundColor: kNavbarColor,
-        title: Text(
-          Get.parameters['name'].toString(),
-          style: kAppBar,
+        title: GetSavedCardInformationModel(
+          documentId: Get.parameters['docId'].toString(),
+          textStyle: kAppBar,
+          keyValue: 'FullName',
         ),
       ),
       body: Column(
@@ -76,9 +78,7 @@ class _SavedCardDetailState extends State<SavedCardDetail>
             ),
             child: Column(
               children: [
-                SavedCardDetailTop(
-                  name: Get.parameters['name'].toString(),
-                ),
+                SavedCardDetailTop(),
                 SavedCardDetailMid(
                   animation: _animation,
                   animationController: _animationController,

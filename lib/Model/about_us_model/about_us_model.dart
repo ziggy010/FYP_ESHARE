@@ -4,6 +4,7 @@ import 'package:e_share/View/components/cards/Eshare_card3/Eshare3_horizontal.da
 import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/constant.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,7 +12,9 @@ class AboutUsModel {
   List<Widget> cards = [
     EshareHorizontalCard(),
     EshareHorizontalTwo(),
-    EshareHorizontalThree(),
+    EshareHorizontalThree(
+      docId: FirebaseAuth.instance.currentUser!.email!,
+    ),
     EshareHorizontalFour(),
   ];
 }

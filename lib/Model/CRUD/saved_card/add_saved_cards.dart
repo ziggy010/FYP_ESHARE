@@ -20,13 +20,13 @@ class AddSavedCardsModel {
           .doc(savedCardEmail)
           .set(
         {
-          'FullName': savedCardFullName,
+          'Full Name': savedCardFullName,
           'Profession': savedCardProfession,
           'Email': savedCardEmail,
-          'PhoneNumber': savedCardPhoneNumber,
+          'Number': savedCardPhoneNumber,
           'Website': savedCardWebsite,
           'Address': savedCardAddress,
-          'CardNumber': savedCardCardNumber,
+          'Card Design': savedCardCardNumber,
         },
       );
     } catch (e) {

@@ -1,4 +1,5 @@
 import 'package:e_share/View/components/card_design_components/card_container.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../cards/Eshare_card3/Eshare3_horizontal.dart';
@@ -16,7 +17,9 @@ class PremiumDesign extends StatelessWidget {
             children: [
               CardContainer(
                 onTap: (() {}),
-                content: EshareHorizontalThree(),
+                content: EshareHorizontalThree(
+                  docId: FirebaseAuth.instance.currentUser!.email!,
+                ),
               ),
               // CardContainer(),
               // CardContainer(),

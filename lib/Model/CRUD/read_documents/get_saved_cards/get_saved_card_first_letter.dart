@@ -5,10 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../View/components/main_components/skeleton.dart';
 
-class GetSingleLetter extends StatelessWidget {
-  String documentId;
+class GetSavedCardFirstLetter extends StatelessWidget {
+  final String documentId;
 
-  GetSingleLetter({required this.documentId});
+  GetSavedCardFirstLetter({
+    required this.documentId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +32,15 @@ class GetSingleLetter extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'poppins',
-              fontSize: 18.sp,
+              fontSize: 17.sp,
             ),
           );
         }
-        return Text('');
+        return Skeleton(
+          height: 10,
+          width: 120,
+          padding: 5,
+        );
       }),
     );
   }

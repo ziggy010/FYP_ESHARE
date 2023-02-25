@@ -1,10 +1,17 @@
 import 'package:e_share/Model/CRUD/read_documents/current_user_data/get_current_user_id.dart';
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EshareHorizontalThree extends StatelessWidget {
   int cardNo = 3;
+
+  final String docId;
+
+  EshareHorizontalThree({
+    required this.docId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +39,15 @@ class EshareHorizontalThree extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  GetCurrentUserModel.name,
-                  style: basicTextStyle(font: 'lobster', fontSize: 24),
+                GetSavedCardInformationModel(
+                  documentId: docId,
+                  textStyle: basicTextStyle(fontSize: 24, font: 'lobster'),
+                  keyValue: 'FullName',
                 ),
+                // Text(
+                //   GetCurrentUserModel.name,
+                //   style: basicTextStyle(font: 'lobster', fontSize: 24),
+                // ),
                 Text(
                   GetCurrentUserModel.profession,
                   style: basicTextStyle(font: 'poppins', fontSize: 12),

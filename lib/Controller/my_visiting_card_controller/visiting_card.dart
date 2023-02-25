@@ -9,6 +9,7 @@ import 'package:e_share/View/components/cards/Eshare_card4/Eshare4_vertical.dart
 import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
@@ -28,7 +29,9 @@ class MyVistingCardController extends GetxController {
         return EshareHorizontalTwo();
 
       case 3:
-        return EshareHorizontalThree();
+        return EshareHorizontalThree(
+          docId: FirebaseAuth.instance.currentUser!.email!,
+        );
 
       case 4:
         return EshareHorizontalFour();
@@ -164,10 +167,11 @@ class CitizenshipWidget extends StatelessWidget {
           return Container(
             color: kContainerColor,
             child: const Center(
-                child: SpinKitSpinningLines(
-              color: Colors.white,
-              size: 50.0,
-            ),),
+              child: SpinKitSpinningLines(
+                color: Colors.white,
+                size: 50.0,
+              ),
+            ),
           );
         }
       },
