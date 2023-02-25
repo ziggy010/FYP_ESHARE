@@ -42,7 +42,8 @@ class SavedCardPageMid extends StatelessWidget {
                       print(
                         _getSavedCardDetailsModel.savedCardList[index],
                       );
-                      Get.toNamed(SavedCardDetail.id);
+                      Get.toNamed(SavedCardDetail.id,
+                          parameters: {'name': 'gandu'});
                     },
                     child: Padding(
                       padding: EdgeInsets.only(

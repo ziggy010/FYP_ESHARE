@@ -35,7 +35,11 @@ class GetSavedCardInformationModel extends StatelessWidget {
             style: textStyle,
           );
         }
-        return Skeleton(height: 10, width: 120);
+        return Skeleton(
+          height: 10,
+          width: 120,
+          padding: 5,
+        );
       }),
     );
   }
