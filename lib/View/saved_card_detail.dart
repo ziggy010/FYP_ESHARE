@@ -65,7 +65,7 @@ class _SavedCardDetailState extends State<SavedCardDetail>
         title: GetSavedCardInformationModel(
           documentId: Get.parameters['docId'].toString(),
           textStyle: kAppBar,
-          keyValue: 'FullName',
+          keyValue: 'Full Name',
         ),
       ),
       body: Column(

@@ -12,9 +12,7 @@ class AboutUsModel {
   List<Widget> cards = [
     EshareHorizontalCard(),
     EshareHorizontalTwo(),
-    EshareHorizontalThree(
-      docId: FirebaseAuth.instance.currentUser!.email!,
-    ),
+    EshareHorizontalThree(),
     EshareHorizontalFour(),
   ];
 }

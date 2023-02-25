@@ -28,7 +28,7 @@ class GetSavedCardFirstLetter extends StatelessWidget {
               snapshot.data!.data() as Map<String, dynamic>;
 
           return Text(
-            data['FullName'][0],
+            data['Full Name'][0],
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'poppins',

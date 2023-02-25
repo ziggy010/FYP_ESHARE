@@ -17,9 +17,7 @@ class PremiumDesign extends StatelessWidget {
             children: [
               CardContainer(
                 onTap: (() {}),
-                content: EshareHorizontalThree(
-                  docId: FirebaseAuth.instance.currentUser!.email!,
-                ),
+                content: EshareHorizontalThree(),
               ),
               // CardContainer(),
               // CardContainer(),

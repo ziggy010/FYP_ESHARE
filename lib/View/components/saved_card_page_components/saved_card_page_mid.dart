@@ -84,7 +84,7 @@ class SavedCardPageMid extends StatelessWidget {
                                     fontFamily: 'poppins',
                                     fontSize: 14.sp,
                                   ),
-                                  keyValue: 'FullName',
+                                  keyValue: 'Full Name',
                                 ),
                                 GetSavedCardInformationModel(
                                   documentId: _getSavedCardDetailsModel

@@ -46,9 +46,7 @@ class FreeDesign extends StatelessWidget {
                 onTap: () {
                   _cardDesignModel.onTap(3, context);
                 },
-                content: EshareHorizontalThree(
-                  docId: FirebaseAuth.instance.currentUser!.email!,
-                ),
+                content: EshareHorizontalThree(),
               ),
               CardContainer(
                 onTap: () {

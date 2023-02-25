@@ -29,9 +29,7 @@ class MyVistingCardController extends GetxController {
         return EshareHorizontalTwo();
 
       case 3:
-        return EshareHorizontalThree(
-          docId: FirebaseAuth.instance.currentUser!.email!,
-        );
+        return EshareHorizontalThree();
 
       case 4:
         return EshareHorizontalFour();

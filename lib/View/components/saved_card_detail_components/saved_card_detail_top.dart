@@ -20,9 +20,7 @@ class SavedCardDetailTop extends StatelessWidget {
           20.r,
         ),
       ),
-      child: EshareHorizontalThree(
-        docId: Get.parameters['docId'].toString(),
-      ),
+      child: EshareHorizontalThree(),
     );
   }
 }

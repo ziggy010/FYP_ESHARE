@@ -7,12 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class EshareHorizontalThree extends StatelessWidget {
   int cardNo = 3;
 
-  final String docId;
-
-  EshareHorizontalThree({
-    required this.docId,
-  });
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,15 +33,15 @@ class EshareHorizontalThree extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                GetSavedCardInformationModel(
-                  documentId: docId,
-                  textStyle: basicTextStyle(fontSize: 24, font: 'lobster'),
-                  keyValue: 'FullName',
-                ),
-                // Text(
-                //   GetCurrentUserModel.name,
-                //   style: basicTextStyle(font: 'lobster', fontSize: 24),
+                // GetSavedCardInformationModel(
+                //   documentId: docId,
+                //   textStyle: basicTextStyle(fontSize: 24, font: 'lobster'),
+                //   keyValue: 'Full Name',
                 // ),
+                Text(
+                  GetCurrentUserModel.name,
+                  style: basicTextStyle(font: 'lobster', fontSize: 24),
+                ),
                 Text(
                   GetCurrentUserModel.profession,
                   style: basicTextStyle(font: 'poppins', fontSize: 12),
