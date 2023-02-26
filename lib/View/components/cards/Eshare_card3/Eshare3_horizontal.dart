@@ -7,6 +7,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class EshareHorizontalThree extends StatelessWidget {
   int cardNo = 3;
 
+  final Widget fullNameWidget;
+  final Widget professionWidget;
+  final Widget addressWidget;
+  final Widget phoneNumberWidget;
+  final Widget emailWidget;
+  final Widget websiteWidget;
+
+  EshareHorizontalThree({
+    required this.fullNameWidget,
+    required this.professionWidget,
+    required this.addressWidget,
+    required this.phoneNumberWidget,
+    required this.emailWidget,
+    required this.websiteWidget,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,19 +49,8 @@ class EshareHorizontalThree extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                // GetSavedCardInformationModel(
-                //   documentId: docId,
-                //   textStyle: basicTextStyle(fontSize: 24, font: 'lobster'),
-                //   keyValue: 'Full Name',
-                // ),
-                Text(
-                  GetCurrentUserModel.name,
-                  style: basicTextStyle(font: 'lobster', fontSize: 24),
-                ),
-                Text(
-                  GetCurrentUserModel.profession,
-                  style: basicTextStyle(font: 'poppins', fontSize: 12),
-                ),
+                fullNameWidget,
+                professionWidget,
               ],
             ),
             SizedBox(
@@ -56,19 +61,19 @@ class EshareHorizontalThree extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CardRowDetail(
-                    text: GetCurrentUserModel.address,
+                    textWidget: addressWidget,
                     icon: Icons.location_on_outlined,
                   ),
                   CardRowDetail(
-                    text: GetCurrentUserModel.number,
+                    textWidget: phoneNumberWidget,
                     icon: Icons.phone_outlined,
                   ),
                   CardRowDetail(
-                    text: GetCurrentUserModel.email,
+                    textWidget: emailWidget,
                     icon: Icons.email_outlined,
                   ),
                   CardRowDetail(
-                    text: GetCurrentUserModel.website,
+                    textWidget: websiteWidget,
                     icon: Icons.language_outlined,
                   ),
                 ],
@@ -82,11 +87,11 @@ class EshareHorizontalThree extends StatelessWidget {
 }
 
 class CardRowDetail extends StatelessWidget {
-  final String text;
+  final Widget textWidget;
   final IconData icon;
 
   CardRowDetail({
-    required this.text,
+    required this.textWidget,
     required this.icon,
   });
 
@@ -95,13 +100,14 @@ class CardRowDetail extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Text(
-          text,
-          style: basicTextStyle(
-            font: 'poppins',
-            fontSize: 10,
-          ),
-        ),
+        textWidget,
+        // Text(
+        //   text,
+        //   style: basicTextStyle(
+        //     font: 'poppins',
+        //     fontSize: 10,
+        //   ),
+        // ),
         SizedBox(
           width: 9.h,
         ),

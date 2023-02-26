@@ -20,7 +20,38 @@ class SavedCardDetailTop extends StatelessWidget {
           20.r,
         ),
       ),
-      child: EshareHorizontalThree(),
+      child: EshareHorizontalThree(
+        fullNameWidget: GetSavedCardInformationModel(
+          documentId: Get.parameters['docId'].toString(),
+          textStyle: basicTextStyle(fontSize: 24, font: 'lobster'),
+          keyValue: 'Full Name',
+        ),
+        professionWidget: GetSavedCardInformationModel(
+          documentId: Get.parameters['docId'].toString(),
+          textStyle: basicTextStyle(font: 'poppins', fontSize: 12),
+          keyValue: 'Profession',
+        ),
+        addressWidget: GetSavedCardInformationModel(
+          documentId: Get.parameters['docId'].toString(),
+          textStyle: basicTextStyle(font: 'poppins', fontSize: 10),
+          keyValue: 'Address',
+        ),
+        phoneNumberWidget: GetSavedCardInformationModel(
+          documentId: Get.parameters['docId'].toString(),
+          textStyle: basicTextStyle(font: 'poppins', fontSize: 10),
+          keyValue: 'Number',
+        ),
+        emailWidget: GetSavedCardInformationModel(
+          documentId: Get.parameters['docId'].toString(),
+          textStyle: basicTextStyle(font: 'poppins', fontSize: 10),
+          keyValue: 'Email',
+        ),
+        websiteWidget: GetSavedCardInformationModel(
+          documentId: Get.parameters['docId'].toString(),
+          textStyle: basicTextStyle(font: 'poppins', fontSize: 10),
+          keyValue: 'Website',
+        ),
+      ),
     );
   }
 }
