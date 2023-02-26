@@ -1,4 +1,9 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_share/View/components/main_components/my_snackbar.dart';
+import 'package:e_share/View/saved_card_page.dart';
 import 'package:e_share/constant.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -49,7 +54,22 @@ class SavedCardDetailMid extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  print(Get.parameters['docId']);
+                  FirebaseFirestore.instance
+                      .collection('users')
+                      .doc(FirebaseAuth.instance.currentUser!.email)
+                      .collection('SavedCards')
+                      .doc(
+                        Get.parameters['docId'],
+                      )
+                      .delete();
+
+                  Get.offAllNamed(SavedCardsPage.id);
+                  MySnackbar.showSnackBar(
+                    context,
+                    'Success',
+                    'Successfully deleted card.',
+                    ContentType.success,
+                  );
                 },
                 child: Container(
                   height: 42.h,
