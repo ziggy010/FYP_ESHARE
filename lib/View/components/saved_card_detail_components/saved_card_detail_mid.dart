@@ -1,6 +1,7 @@
 import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SavedCardDetailMid extends StatelessWidget {
   final AnimationController animationController;
@@ -46,25 +47,30 @@ class SavedCardDetailMid extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                height: 42.h,
-                width: 92.w,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(
-                    10.r,
+              GestureDetector(
+                onTap: () {
+                  print(Get.parameters['docId']);
+                },
+                child: Container(
+                  height: 42.h,
+                  width: 92.w,
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(
+                      10.r,
+                    ),
+                    border: Border.all(
+                      color: Color(0xFFFFDDDD),
+                    ),
                   ),
-                  border: Border.all(
-                    color: Color(0xFFFFDDDD),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Delete',
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontFamily: 'poppins',
-                      fontSize: 14.sp,
+                  child: Center(
+                    child: Text(
+                      'Delete',
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontFamily: 'poppins',
+                        fontSize: 14.sp,
+                      ),
                     ),
                   ),
                 ),

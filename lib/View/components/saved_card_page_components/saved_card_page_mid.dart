@@ -39,9 +39,6 @@ class SavedCardPageMid extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      print(
-                        _getSavedCardDetailsModel.savedCardList[index],
-                      );
                       Get.toNamed(
                         SavedCardDetail.id,
                         parameters: {
