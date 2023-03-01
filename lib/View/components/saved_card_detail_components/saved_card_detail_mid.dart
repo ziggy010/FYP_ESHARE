@@ -79,9 +79,7 @@ class SavedCardDetailMid extends StatelessWidget {
                     borderRadius: BorderRadius.circular(
                       10.r,
                     ),
-                    border: Border.all(
-                      color: Color(0xFFFFDDDD),
-                    ),
+                    border: Border.all(color: Color(0xFFFFDDDD)),
                   ),
                   child: Center(
                     child: Text(
