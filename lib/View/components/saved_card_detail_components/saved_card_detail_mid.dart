@@ -66,7 +66,7 @@ class SavedCardDetailMid extends StatelessWidget {
                   Get.offAllNamed(SavedCardsPage.id);
                   MySnackbar.showSnackBar(
                     context,
-                    'Successa',
+                    'Success',
                     'Successfully deleted card.',
                     ContentType.success,
                   );
