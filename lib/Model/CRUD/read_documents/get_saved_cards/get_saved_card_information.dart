@@ -8,11 +8,13 @@ class GetSavedCardInformationModel extends StatelessWidget {
   final String documentId;
   final TextStyle textStyle;
   final String keyValue;
+  final Widget skeletonWidget;
 
   GetSavedCardInformationModel({
     required this.documentId,
     required this.textStyle,
     required this.keyValue,
+    required this.skeletonWidget,
   });
 
   @override
@@ -35,11 +37,7 @@ class GetSavedCardInformationModel extends StatelessWidget {
             style: textStyle,
           );
         }
-        return Skeleton(
-          height: 10,
-          width: 120,
-          padding: 5,
-        );
+        return skeletonWidget;
       }),
     );
   }

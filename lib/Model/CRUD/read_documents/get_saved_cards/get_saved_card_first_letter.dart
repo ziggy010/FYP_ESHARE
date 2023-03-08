@@ -37,9 +37,8 @@ class GetSavedCardFirstLetter extends StatelessWidget {
           );
         }
         return Skeleton(
-          height: 10,
-          width: 120,
-          padding: 5,
+          height: 6,
+          width: 20,
         );
       }),
     );

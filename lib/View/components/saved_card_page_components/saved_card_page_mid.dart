@@ -2,6 +2,7 @@ import 'package:e_share/Controller/saved_card_page_controller/saved_card_page_co
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_List.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_first_letter.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/Model/saved_card_page_model/saved_card_list.dart';
 import 'package:e_share/View/saved_card_detail.dart';
@@ -82,6 +83,11 @@ class SavedCardPageMid extends StatelessWidget {
                                     fontSize: 14.sp,
                                   ),
                                   keyValue: 'Full Name',
+                                  skeletonWidget: Skeleton(
+                                    height: 10,
+                                    width: 120,
+                                    padding: 5,
+                                  ),
                                 ),
                                 GetSavedCardInformationModel(
                                   documentId: _getSavedCardDetailsModel
@@ -92,6 +98,11 @@ class SavedCardPageMid extends StatelessWidget {
                                     fontSize: 10.sp,
                                   ),
                                   keyValue: 'Profession',
+                                  skeletonWidget: Skeleton(
+                                    height: 7,
+                                    width: 90,
+                                    padding: 5,
+                                  ),
                                 ),
                               ],
                             ),

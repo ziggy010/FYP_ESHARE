@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
+import 'package:e_share/View/components/main_components/skeleton.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/saved_card_detail_components/saved_card_detail_bottom.dart';
 import 'package:e_share/View/components/saved_card_detail_components/saved_card_detail_mid.dart';
@@ -66,6 +67,11 @@ class _SavedCardDetailState extends State<SavedCardDetail>
           documentId: Get.parameters['docId'].toString(),
           textStyle: kAppBar,
           keyValue: 'Full Name',
+          skeletonWidget: Skeleton(
+            height: 10,
+            width: 120,
+            padding: 5,
+          ),
         ),
       ),
       body: Column(
