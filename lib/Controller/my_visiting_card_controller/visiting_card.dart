@@ -11,6 +11,7 @@ import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_car
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
@@ -138,6 +139,31 @@ class LicenseWidget extends StatelessWidget {
             snapshot.hasData == false) {
           return Container(
             color: kContainerColor,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.upload_file_outlined,
+                    color: Colors.white,
+                    size: 40.sp,
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Text(
+                    'Upload your License',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'poppins',
+                      fontSize: 15.sp,
+                    ),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
           );
         } else {
           // return Skeleton(height: 190, width: double.infinity);
@@ -184,6 +210,31 @@ class CitizenshipWidget extends StatelessWidget {
             snapshot.hasData == false) {
           return Container(
             color: kContainerColor,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.upload_file_outlined,
+                    color: Colors.white,
+                    size: 40.sp,
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Text(
+                    'Upload your Citizenship',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'poppins',
+                      fontSize: 15.sp,
+                    ),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
           );
         } else {
           // return Skeleton(height: 190, width: double.infinity);
