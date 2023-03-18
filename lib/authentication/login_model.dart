@@ -31,17 +31,31 @@ class LoginModel {
 
       // wrong email
       if (e.code == 'user-not-found') {
-        kSnackBar('User not found', 'This email has not been registered yet.');
+        kSnackBar(
+          'User not found',
+          'This email has not been registered yet.',
+          Colors.red,
+        );
       }
       //wrong password
       else if (e.code == 'wrong-password') {
         kSnackBar(
-            'Wrong Password', 'Please enter correct password and try again.');
+          'Wrong Password',
+          'Please enter correct password and try again.',
+          Colors.red,
+        );
       } else if (e.code == 'network-requrest-failed') {
-        kSnackBar('No internet', 'Please connect to internet and try again.');
+        kSnackBar(
+          'No internet',
+          'Please connect to internet and try again.',
+          Colors.red,
+        );
       } else if (e.code == 'invalid-email') {
         kSnackBar(
-            'Invalid Email', 'You have entered an invalid e-mail address.');
+          'Invalid Email',
+          'You have entered an invalid e-mail address.',
+          Colors.red,
+        );
       } else {
         print(e.code);
       }

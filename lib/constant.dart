@@ -51,14 +51,14 @@ TextStyle cardTextStyle(double fontSize) {
   );
 }
 
-kSnackBar(String title, String message) {
+kSnackBar(String title, String message, Color color) {
   Get.snackbar(
     '',
     '',
     titleText: Text(
       title,
       style: TextStyle(
-        color: Colors.red,
+        color: color,
         fontFamily: 'poppins',
         fontSize: 16.sp,
       ),

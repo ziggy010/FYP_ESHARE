@@ -6,6 +6,7 @@ import 'package:e_share/View/components/main_components/my_textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -25,17 +26,45 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   }
 
   Future passwordReset() async {
+    showDialog(
+      context: context,
+      builder: ((context) {
+        return Center(
+          child: SpinKitSpinningLines(
+            color: Colors.white,
+            size: 50.0,
+          ),
+        );
+      }),
+    );
     try {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: _forgotEmailController.text);
+      Navigator.pop(context);
+
+      kSnackBar(
+        'Email Sent Successfully',
+        'Please check your email for the password reset link.',
+        Colors.green,
+      );
     } on FirebaseAuthException catch (e) {
       print(e);
+      Navigator.pop(context);
+
       if (e.code == 'user-not-found') {
-        kSnackBar('User not found', 'This email has not been registered yet.');
+        kSnackBar(
+          'User not found',
+          'This email has not been registered yet.',
+          Colors.red,
+        );
       }
       //wrong password
       else if (e.code == 'missing-email') {
-        kSnackBar('Email Missing', 'An email address must be provided.');
+        kSnackBar(
+          'Email Missing',
+          'An email address must be provided.',
+          Colors.red,
+        );
       }
     }
   }
