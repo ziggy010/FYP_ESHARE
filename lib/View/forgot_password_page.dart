@@ -1,5 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:e_share/View/components/main_components/my_snackbar.dart';
+import 'package:e_share/View/login_page.dart';
+import 'package:e_share/authentication/auth_page.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/my_button.dart';
 import 'package:e_share/View/components/main_components/my_textfield.dart';
@@ -47,6 +49,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         'Please check your email for the password reset link.',
         Colors.green,
       );
+      Get.offAllNamed(AuthPage.id);
     } on FirebaseAuthException catch (e) {
       print(e);
       Navigator.pop(context);

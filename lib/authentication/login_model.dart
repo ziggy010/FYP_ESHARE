@@ -27,8 +27,6 @@ class LoginModel {
       );
       Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
-      print(e.code);
-
       // wrong email
       if (e.code == 'user-not-found') {
         kSnackBar(
