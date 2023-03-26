@@ -5,55 +5,11 @@ import 'package:get/get.dart';
 import '../../Model/saved_card_page_model/saved_card_list.dart';
 
 class SavedCardPageController extends GetxController {
-  final allSavedCardList = [
+  List allSavedCardList = [
     // SavedCardList(
     //   name: 'Risab Tajale',
     // ),
-    // SavedCardList(
-    //   name: 'Aashma Rai',
-    // ),
-    // SavedCardList(
-    //   name: 'Sirish donda',
-    // ),
-    // SavedCardList(
-    //   name: 'Andrew Suwal',
-    // ),
-    // SavedCardList(
-    //   name: 'Rushan Phanju',
-    // ),
-    // SavedCardList(
-    //   name: 'Nischhal Shrestha',
-    // ),
-    // SavedCardList(
-    //   name: 'Rohan Awal',
-    // ),
-    // SavedCardList(
-    //   name: 'Anish Koju',
-    // ),
-    // SavedCardList(
-    //   name: 'Rozen Awal',
-    // ),
-    // SavedCardList(
-    //   name: 'Trilok Thapa',
-    // ),
   ];
-
-  // Future getAllSavedCard() async {
-  //   await FirebaseFirestore.instance
-  //       .collection('users')
-  //       .doc(FirebaseAuth.instance.currentUser!.email)
-  //       .collection('SavedCards')
-  //       .get()
-  //       .then((snapshot) {
-  //     snapshot.docs.forEach(
-  //       (document) {
-  //         allSavedCardList.add(
-  //           SavedCardList(name: document.reference.id),
-  //         );
-  //       },
-  //     );
-  //   });
-  // }
 
   Rx<List> foundSavedCard = Rx<List>([]);
 
@@ -67,6 +23,26 @@ class SavedCardPageController extends GetxController {
   void onClose() {
     // TODO: implement onClose
     super.onClose();
+  }
+
+  Future getSavedCardDetails() async {
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.email)
+        .collection('SavedCards')
+        .get()
+        .then((snapshot) {
+      snapshot.docs.forEach(
+        (document) {
+          allSavedCardList.add(SavedCardList(name: document.reference.id));
+          var seen = Set<String>();
+          allSavedCardList = allSavedCardList
+              .where((element) => seen.add(element.name))
+              .toList();
+          foundSavedCard.value = allSavedCardList;
+        },
+      );
+    });
   }
 
   void filterSavedCard(String cardName) {

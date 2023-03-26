@@ -1,8 +1,6 @@
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_List.dart';
 import 'package:e_share/constant.dart';
-import 'package:e_share/View/Qr_scan_page.dart';
-import 'package:e_share/View/components/main_components/My_fab.dart';
 import 'package:e_share/View/components/main_components/bottom_navbar.dart';
-import 'package:e_share/View/components/main_components/option_box.dart';
 import 'package:e_share/View/components/saved_card_page_components/saved_card_page_mid.dart';
 import 'package:e_share/View/components/saved_card_page_components/saved_card_page_top.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +54,6 @@ class _SavedCardsPageState extends State<SavedCardsPage>
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        // resizeToAvoidBottomInset: false,
         appBar: AppBar(
           elevation: 0,
           backgroundColor: kNavbarColor,
