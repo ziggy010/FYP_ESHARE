@@ -72,5 +72,6 @@ class GetSavedCardListModel {
           )
           .toList();
     }
+    print(savedCards);
   }
 }

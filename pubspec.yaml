@@ -55,6 +55,7 @@ dependencies:
   qr_code_scanner: ^1.0.1
   firebase_storage: ^11.0.11
   blurrycontainer: ^1.0.2
+  flutter_phone_direct_caller: ^2.1.1
 
 dev_dependencies:
   flutter_test:
