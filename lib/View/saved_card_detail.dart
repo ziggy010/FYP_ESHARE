@@ -96,6 +96,7 @@ class _SavedCardDetailState extends State<SavedCardDetail>
           SavedCardDetailBottom(
             animation: _animation,
             animationController: _animationController,
+            docId: Get.parameters['docId'].toString(),
           )
         ],
       ),

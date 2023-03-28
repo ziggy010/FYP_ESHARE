@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SavedCardDetailMid extends StatelessWidget {
   final AnimationController animationController;
@@ -83,7 +84,10 @@ class SavedCardDetailMid extends StatelessWidget {
                           .doc(
                             Get.parameters['docId'],
                           )
-                          .get();
+                          // ignore: deprecated_member_use
+                          .get()
+                          .then((value) =>
+                              launch('mailto:${value.data()!['Email']}'));
                     },
                     text: 'Email',
                     buttonColor: Colors.transparent,
