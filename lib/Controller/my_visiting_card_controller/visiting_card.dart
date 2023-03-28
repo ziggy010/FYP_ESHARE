@@ -9,6 +9,8 @@ import 'package:e_share/View/components/cards/Eshare_card4/Eshare4_vertical.dart
 import 'package:e_share/View/components/cards/Eshare_card4/Eshare_4_horizontal.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_horizontal_card.dart';
 import 'package:e_share/View/components/cards/Eshare_cards/Eshare_vertical_card.dart';
+import 'package:e_share/View/components/cards/premium_card_two.dart/premium2_horizontal.dart';
+import 'package:e_share/View/components/cards/premium_card_two.dart/premium2_vertical.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,6 +62,9 @@ class MyVistingCardController extends GetxController {
       case 4:
         return EshareHorizontalFour();
 
+      case 5:
+        return PremiumHorizontalTwo();
+
       default:
         return EshareHorizontalCard();
     }
@@ -97,6 +102,13 @@ class MyVistingCardController extends GetxController {
       case 4:
         return [
           EshareVerticalFour(),
+          CitizenshipWidget(controller: citizenshipController),
+          LicenseWidget(licenseController: licenseController),
+        ];
+
+      case 5:
+        return [
+          PremiumVerticalTwo(),
           CitizenshipWidget(controller: citizenshipController),
           LicenseWidget(licenseController: licenseController),
         ];

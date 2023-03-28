@@ -42,37 +42,37 @@ class FreeDesign extends StatelessWidget {
                 },
                 content: EshareHorizontalTwo(),
               ),
-              CardContainer(
-                onTap: () {
-                  _cardDesignModel.onTap(3, context);
-                },
-                content: EshareHorizontalThree(
-                  fullNameWidget: Text(
-                    GetCurrentUserModel.name,
-                    style: basicTextStyle(font: 'lobster', fontSize: 24),
-                  ),
-                  professionWidget: Text(
-                    GetCurrentUserModel.profession,
-                    style: basicTextStyle(font: 'poppins', fontSize: 12),
-                  ),
-                  addressWidget: Text(
-                    GetCurrentUserModel.address,
-                    style: basicTextStyle(font: 'poppins', fontSize: 10),
-                  ),
-                  phoneNumberWidget: Text(
-                    GetCurrentUserModel.number,
-                    style: basicTextStyle(font: 'poppins', fontSize: 10),
-                  ),
-                  emailWidget: Text(
-                    GetCurrentUserModel.email,
-                    style: basicTextStyle(font: 'poppins', fontSize: 10),
-                  ),
-                  websiteWidget: Text(
-                    GetCurrentUserModel.website,
-                    style: basicTextStyle(font: 'poppins', fontSize: 10),
-                  ),
-                ),
-              ),
+              // CardContainer(
+              //   onTap: () {
+              //     _cardDesignModel.onTap(3, context);
+              //   },
+              //   content: EshareHorizontalThree(
+              //     fullNameWidget: Text(
+              //       GetCurrentUserModel.name,
+              //       style: basicTextStyle(font: 'lobster', fontSize: 24),
+              //     ),
+              //     professionWidget: Text(
+              //       GetCurrentUserModel.profession,
+              //       style: basicTextStyle(font: 'poppins', fontSize: 12),
+              //     ),
+              //     addressWidget: Text(
+              //       GetCurrentUserModel.address,
+              //       style: basicTextStyle(font: 'poppins', fontSize: 10),
+              //     ),
+              //     phoneNumberWidget: Text(
+              //       GetCurrentUserModel.number,
+              //       style: basicTextStyle(font: 'poppins', fontSize: 10),
+              //     ),
+              //     emailWidget: Text(
+              //       GetCurrentUserModel.email,
+              //       style: basicTextStyle(font: 'poppins', fontSize: 10),
+              //     ),
+              //     websiteWidget: Text(
+              //       GetCurrentUserModel.website,
+              //       style: basicTextStyle(font: 'poppins', fontSize: 10),
+              //     ),
+              //   ),
+              // ),
               CardContainer(
                 onTap: () {
                   _cardDesignModel.onTap(4, context);

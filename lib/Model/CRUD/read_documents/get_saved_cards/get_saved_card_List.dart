@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class GetSavedCardListModel {
   List savedCardList = [];
 
-  Future setSavedNames() async {
+  setSavedNames() async {
     _savedNamesCopy = await _savedNames;
   }
 
@@ -59,9 +59,9 @@ class GetSavedCardListModel {
 
   List<Map> get savedCards => _savedNamesCopy;
 
-  Future<void> filterUser(String? query) async {
+  Future<void> filterUser(String query) async {
     final savedNames = List<Map<String, dynamic>>.from(await _savedNames);
-    if (query == null || query.isEmpty) {
+    if (query.isEmpty) {
       _savedNamesCopy = savedNames;
     } else {
       _savedNamesCopy = savedNames
@@ -69,11 +69,8 @@ class GetSavedCardListModel {
             (data) => data.values.first.toLowerCase().contains(
                   query.toLowerCase(),
                 ),
-            // data.values.first.trim().toLowerCase() ==
-            // query.toLowerCase().trim(),
           )
           .toList();
-      print(savedCards);
     }
   }
 }
