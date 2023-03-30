@@ -1,4 +1,5 @@
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_List.dart';
+import 'package:e_share/View/components/saved_card_page_components/try_mid.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/bottom_navbar.dart';
 import 'package:e_share/View/components/saved_card_page_components/saved_card_page_mid.dart';
@@ -75,9 +76,10 @@ class _SavedCardsPageState extends State<SavedCardsPage>
                 textEditingController: _textEditingController,
                 animationController: _animationController,
               ),
-              SavedCardPageMid(
-                animationController: _animationController,
-              ),
+              TryMid(),
+              // SavedCardPageMid(
+              //   animationController: _animationController,
+              // ),
             ],
           ),
         ),
