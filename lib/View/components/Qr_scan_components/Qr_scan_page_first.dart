@@ -123,7 +123,6 @@ class _QrScanPageFirstState extends State<QrScanPageFirst> {
         this.barcode = barcode;
         scannedData = barcode.code!;
         buttonVisibility = true;
-        // print(barcode.code);
       });
     });
   }

@@ -1,3 +1,4 @@
+import 'package:e_share/Controller/saved_card_page_controller/saved_card_page_controller.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_List.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_first_letter.dart';
 import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_information.dart';
@@ -19,6 +20,8 @@ class SavedCardPageMid extends StatelessWidget {
   final GetSavedCardListModel _getSavedCardDetailsModel =
       GetSavedCardListModel();
 
+  final _savedCardPageController = Get.find<SavedCardPageController>();
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -28,98 +31,73 @@ class SavedCardPageMid extends StatelessWidget {
         ),
         child: FadeTransition(
           opacity: animationController,
-          child: FutureBuilder(
-            future: _getSavedCardDetailsModel.getSavedCardDetails(),
-            builder: (BuildContext context, AsyncSnapshot snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                return ListView.builder(
-                  itemCount: _getSavedCardDetailsModel.savedCards.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Get.toNamed(
-                          SavedCardDetail.id,
-                          parameters: {
-                            'docId': _getSavedCardDetailsModel
-                                .savedCards[index].keys.first,
-                          },
-                        );
+          child: Obx(() {
+            return ListView.builder(
+              itemCount: _savedCardPageController.foundCards.value.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Get.toNamed(
+                      SavedCardDetail.id,
+                      parameters: {
+                        'docId': _savedCardPageController
+                            .foundCards.value[index]['docId'],
                       },
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 16.h,
-                        ),
-                        child: Container(
-                          height: 50.h,
-                          width: double.infinity,
-                          child: Row(
+                    );
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      bottom: 16.h,
+                    ),
+                    child: Container(
+                      height: 50.h,
+                      width: double.infinity,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: kSelectedPrimary,
+                            radius: 22.r,
+                            child: Center(
+                              child: GetSavedCardFirstLetter(
+                                documentId: _savedCardPageController
+                                    .foundCards.value[index]['docId'],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20.h,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              CircleAvatar(
-                                backgroundColor: kSelectedPrimary,
-                                radius: 22.r,
-                                child: Center(
-                                  child: GetSavedCardFirstLetter(
-                                    documentId: _getSavedCardDetailsModel
-                                        .savedCards[index].keys.first,
-                                  ),
+                              Text(
+                                _savedCardPageController.foundCards.value[index]
+                                    ['Name'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'poppins',
                                 ),
                               ),
-                              SizedBox(
-                                width: 20.h,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  GetSavedCardInformationModel(
-                                    documentId: _getSavedCardDetailsModel
-                                        .savedCards[index].keys.first,
-                                    textStyle: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: 'poppins',
-                                      fontSize: 14.sp,
-                                    ),
-                                    keyValue: 'Full Name',
-                                    skeletonWidget: Skeleton(
-                                      height: 10,
-                                      width: 120,
-                                      padding: 5,
-                                    ),
-                                  ),
-                                  GetSavedCardInformationModel(
-                                    documentId: _getSavedCardDetailsModel
-                                        .savedCards[index].keys.first,
-                                    textStyle: TextStyle(
-                                      color: Colors.white.withOpacity(0.6),
-                                      fontFamily: 'poppins',
-                                      fontSize: 10.sp,
-                                    ),
-                                    keyValue: 'Profession',
-                                    skeletonWidget: Skeleton(
-                                      height: 7,
-                                      width: 90,
-                                      padding: 5,
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                _savedCardPageController.foundCards.value[index]
+                                    ['profession'],
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.4),
+                                  fontFamily: 'poppins',
+                                  fontSize: 9.sp,
+                                ),
                               ),
                             ],
                           ),
-                        ),
+                        ],
                       ),
-                    );
-                  },
-                );
-              } else {
-                return const Center(
-                  child: SpinKitSpinningLines(
-                    color: Colors.white,
-                    size: 50.0,
+                    ),
                   ),
                 );
-              }
-            },
-          ),
+              },
+            );
+          }),
         ),
       ),
     );

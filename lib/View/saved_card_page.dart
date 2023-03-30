@@ -1,8 +1,7 @@
-import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_List.dart';
-import 'package:e_share/View/components/saved_card_page_components/try_mid.dart';
+import 'package:e_share/Controller/saved_card_page_controller/saved_card_page_controller.dart';
+import 'package:e_share/View/components/saved_card_page_components/saved_card_page_mid.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/components/main_components/bottom_navbar.dart';
-import 'package:e_share/View/components/saved_card_page_components/saved_card_page_mid.dart';
 import 'package:e_share/View/components/saved_card_page_components/saved_card_page_top.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,8 +22,11 @@ class _SavedCardsPageState extends State<SavedCardsPage>
 
   late Animation _animation;
 
+  final _savedCardPageController = Get.put(SavedCardPageController());
+
   @override
   void initState() {
+    _savedCardPageController.getSavedCardDetails();
     super.initState();
     _animationController = AnimationController(
       vsync: this,
@@ -76,10 +78,10 @@ class _SavedCardsPageState extends State<SavedCardsPage>
                 textEditingController: _textEditingController,
                 animationController: _animationController,
               ),
-              TryMid(),
-              // SavedCardPageMid(
-              //   animationController: _animationController,
-              // ),
+              // TryMid(),
+              SavedCardPageMid(
+                animationController: _animationController,
+              ),
             ],
           ),
         ),

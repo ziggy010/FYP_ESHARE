@@ -18,12 +18,11 @@ class SavedCardPageTop extends StatelessWidget {
     required this.animationController,
   });
 
-  final SavedCardPageController _savedCardPageController =
-      Get.put(SavedCardPageController());
-
   final _getSavedCardModel = GetSavedCardListModel();
 
   List popList = ["Alphabetically"];
+
+  final _savedCardPageController = Get.find<SavedCardPageController>();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +43,7 @@ class SavedCardPageTop extends StatelessWidget {
                     keyboardType: TextInputType.name,
                     keyboardAppearance: Brightness.dark,
                     onChanged: (value) {
-                      _getSavedCardModel.filterUser(value);
+                      _savedCardPageController.filterCards(value);
                     },
                     autocorrect: false,
                     enableSuggestions: false,
@@ -110,13 +109,13 @@ class SavedCardPageTop extends StatelessWidget {
                       return popList
                           .map((e) => PopupMenuItem(
                                 onTap: () {
-                                  _savedCardPageController
-                                          .foundSavedCard.value =
-                                      _savedCardPageController
-                                          .foundSavedCard.value
-                                          .toList()
-                                        ..sort(
-                                            (a, b) => a.name.compareTo(b.name));
+                                  // _savedCardPageController
+                                  //         .foundSavedCard.value =
+                                  //     _savedCardPageController
+                                  //         .foundSavedCard.value
+                                  //         .toList()
+                                  //       ..sort(
+                                  //           (a, b) => a.name.compareTo(b.name));
                                 },
                                 value: e,
                                 child: Container(

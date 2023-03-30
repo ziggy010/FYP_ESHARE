@@ -1,29 +1,16 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_share/Model/saved_card_page_model/saved_card_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
-import '../../Model/saved_card_page_model/saved_card_list.dart';
-
 class SavedCardPageController extends GetxController {
-  List allSavedCardList = [
-    // SavedCardList(
-    //   name: 'Risab Tajale',
-    // ),
-  ];
+  List allCards = [];
 
-  Rx<List> foundSavedCard = Rx<List>([]);
+  List finalCards = [];
 
-  @override
-  void onInit() {
-    super.onInit();
-    foundSavedCard.value = allSavedCardList;
-  }
-
-  @override
-  void onClose() {
-    // TODO: implement onClose
-    super.onClose();
-  }
+  Rx<List> foundCards = Rx<List>([]);
 
   Future getSavedCardDetails() async {
     await FirebaseFirestore.instance
@@ -34,29 +21,44 @@ class SavedCardPageController extends GetxController {
         .then((snapshot) {
       snapshot.docs.forEach(
         (document) {
-          allSavedCardList.add(SavedCardList(name: document.reference.id));
-          var seen = Set<String>();
-          allSavedCardList = allSavedCardList
-              .where((element) => seen.add(element.name))
-              .toList();
-          foundSavedCard.value = allSavedCardList;
+          allCards.add(document.reference.id);
+          allCards = allCards.toSet().toList();
         },
       );
+
+      allCards.forEach((element) {
+        FirebaseFirestore.instance
+            .collection('users')
+            .doc(FirebaseAuth.instance.currentUser!.email)
+            .collection('SavedCards')
+            .doc(element)
+            .get()
+            .then(
+              (value) => finalCards.add({
+                'Name': value.data()!['Full Name'],
+                'docId': element,
+                'profession': value.data()!['Profession'],
+              }),
+            );
+      });
+      final jsonList = finalCards.map((e) => jsonEncode(e)).toList();
+      final uniqueJsonList = jsonList.toSet().toList();
+      final result = uniqueJsonList.map((e) => jsonDecode(e)).toList();
+      finalCards = result;
+      foundCards.value = finalCards;
     });
   }
 
-  void filterSavedCard(String cardName) {
-    List results = [];
-    if (cardName.isEmpty) {
-      results = allSavedCardList;
-    } else {
-      results = allSavedCardList
-          .where((element) => element.name
-              .toString()
-              .toLowerCase()
-              .contains(cardName.toLowerCase()))
+  void filterCards(String cardName) {
+    List result = [];
+    if (cardName.isNotEmpty) {
+      result = finalCards
+          .where((element) =>
+              element.toString().toLowerCase().contains(cardName.toLowerCase()))
           .toList();
+    } else {
+      result = finalCards;
     }
-    foundSavedCard.value = results;
+    foundCards.value = result;
   }
 }
