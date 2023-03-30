@@ -109,13 +109,11 @@ class SavedCardPageTop extends StatelessWidget {
                       return popList
                           .map((e) => PopupMenuItem(
                                 onTap: () {
-                                  // _savedCardPageController
-                                  //         .foundSavedCard.value =
-                                  //     _savedCardPageController
-                                  //         .foundSavedCard.value
-                                  //         .toList()
-                                  //       ..sort(
-                                  //           (a, b) => a.name.compareTo(b.name));
+                                  _savedCardPageController.foundCards.value =
+                                      _savedCardPageController.foundCards.value
+                                          .toList()
+                                        ..sort((a, b) =>
+                                            a['Name'].compareTo(b['Name']));
                                 },
                                 value: e,
                                 child: Container(
