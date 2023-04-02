@@ -15,6 +15,7 @@ class AboutUsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Scaffold containing the main layout of the About Us page
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Padding(
@@ -23,10 +24,12 @@ class AboutUsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Top section of the page containing the FAQ button
               FaqPageTop(),
               SizedBox(
                 height: 15.h,
               ),
+              // Title of the page
               Text(
                 'About Us',
                 style: TextStyle(
@@ -37,7 +40,9 @@ class AboutUsPage extends StatelessWidget {
                   letterSpacing: 1,
                 ),
               ),
+              // Middle section of the page containing the SwiperView component
               AboutUsMid(),
+              // Bottom section of the page containing the E-Share team info
               AboutUsBottom(),
             ],
           ),
