@@ -18,10 +18,15 @@ class CardDesignPage extends StatefulWidget {
 
 class _CardDesignPageState extends State<CardDesignPage>
     with TickerProviderStateMixin {
+  // page controller for the top and middle section of the page
   final _pageController = PageController();
+
+  // animation controllers for the different card designs
   late AnimationController _animationController1,
       _animationController2,
       _animationController3;
+
+  // animations for the different card designs
   late Animation _animation1, _animation2, _animation3;
 
   @override
@@ -29,6 +34,7 @@ class _CardDesignPageState extends State<CardDesignPage>
     // TODO: implement initState
     super.initState();
 
+    // initialize animation controllers
     _animationController1 = AnimationController(
       vsync: this,
       duration: const Duration(
@@ -50,6 +56,7 @@ class _CardDesignPageState extends State<CardDesignPage>
       ),
     );
 
+    // initialize animations
     _animation1 = ColorTween(
       begin: kSelectedColor,
       end: null,
@@ -71,6 +78,7 @@ class _CardDesignPageState extends State<CardDesignPage>
       curve: Curves.easeInOut,
     );
 
+    // start animation 3 after a delay of 100ms
     Timer(const Duration(milliseconds: 100), () {
       _animationController3.forward();
     });
@@ -78,6 +86,7 @@ class _CardDesignPageState extends State<CardDesignPage>
 
   @override
   void dispose() {
+    // dispose animation controllers
     _animationController1.dispose();
     _animationController2.dispose();
     super.dispose();
@@ -103,6 +112,7 @@ class _CardDesignPageState extends State<CardDesignPage>
         ),
         child: Column(
           children: [
+            // top section of the page
             CardDesignTop(
               pageController: _pageController,
               animation1: _animation1,
@@ -111,6 +121,8 @@ class _CardDesignPageState extends State<CardDesignPage>
               animationController2: _animationController2,
               animationController3: _animationController3,
             ),
+
+            // middle section of the page
             CardDesignMid(
               pageController: _pageController,
               animationController1: _animationController1,
