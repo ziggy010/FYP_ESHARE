@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutUsModel {
   List<Widget> cards = [
+    // a list of card widgets to display on the About Us page
     EshareHorizontalCard(),
     EshareHorizontalTwo(),
     EshareHorizontalThree(

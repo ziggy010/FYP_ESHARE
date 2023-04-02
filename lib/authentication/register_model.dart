@@ -11,15 +11,19 @@ class RegisterModel {
   }) async {
     //try to create user
     try {
-      //checking if the confirm password is correct or not;
+      //checking if the confirm password is correct or not
       if (confirmRegisterPassword == registerPassword) {
+        //creating a new user with the provided email and password
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: registerEmail,
           password: registerPassword,
         );
       } else {
+        //if the confirm password does not match with the entered password
         print('error, not same');
       }
-    } on FirebaseAuthException catch (e) {}
+    } on FirebaseAuthException catch (e) {
+      //handling firebase authentication exceptions
+    }
   }
 }

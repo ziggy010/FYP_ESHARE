@@ -21,22 +21,22 @@ class LoginModel {
     );
 
     try {
+      // Attempt to sign in the user with Firebase
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
+      // If successful, dismiss the loading spinner
       Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
-      // wrong email
+      // Handle errors with different codes
       if (e.code == 'user-not-found') {
         kSnackBar(
           'User not found',
           'This email has not been registered yet.',
           Colors.red,
         );
-      }
-      //wrong password
-      else if (e.code == 'wrong-password') {
+      } else if (e.code == 'wrong-password') {
         kSnackBar(
           'Wrong Password',
           'Please enter correct password and try again.',
@@ -57,6 +57,7 @@ class LoginModel {
       } else {
         print(e.code);
       }
+      // Dismiss the loading spinner
       Navigator.pop(context);
     }
   }

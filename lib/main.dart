@@ -23,27 +23,38 @@ import 'firebase_options.dart';
 
 import 'View/home_page.dart';
 
+// This function initializes Firebase and runs the MyApp widget as the main entry point for the app
 void main(List<String> args) async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding
+      .ensureInitialized(); // Initializes the Flutter app bindings
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    // Initializes Firebase
+    options: DefaultFirebaseOptions
+        .currentPlatform, // Uses default Firebase options for the current platform
   );
-  runApp(const MyApp());
+  runApp(
+      const MyApp()); // Runs the MyApp widget as the main entry point for the app
 }
 
+// MyApp is a stateless widget that serves as the main entry point for the app
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 800),
+      // Initializes the ScreenUtil package to set screen sizes
+      designSize: const Size(360, 800), // Sets the design size for the screen
       builder: (context, child) {
         return GetMaterialApp(
-          theme: ThemeData(fontFamily: 'poppins'),
-          debugShowCheckedModeBanner: false,
-          home: AuthPage(),
+          // Initializes the Get package for navigation and routing
+          theme: ThemeData(
+              fontFamily: 'poppins'), // Sets the app's default font to Poppins
+          debugShowCheckedModeBanner:
+              false, // Disables debug banner in release mode
+          home: AuthPage(), // Sets the authentication page as the initial page
           getPages: [
+            // Defines named routes for each page/screen of the app
             GetPage(name: HomePage.id, page: () => const HomePage()),
             GetPage(name: MyDetail.id, page: () => const MyDetail()),
             GetPage(name: LoginPage.id, page: () => LoginPage()),
