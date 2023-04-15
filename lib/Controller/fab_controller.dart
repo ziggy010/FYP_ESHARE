@@ -5,19 +5,20 @@ import 'package:e_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-//creating class which extends getx controlelr
+// creating a class which extends GetxController
 class FabController extends GetxController {
+  // declare variables
   late AnimationController animationControllerOption;
   late Animation animationOption;
-  //creating observable variables/
+
+  // create observable variables
   var backgroundColor = kBackgroundColor.obs;
   var isFabPressed = false.obs;
   var height = 0.obs;
   var width = 187.obs;
   var innerHeight = 0.obs;
 
-  //creating methods to change value
-
+  // methods to change the values of the variables
   changeBackgroundColor() {
     if (isFabPressed.value == false) {
       backgroundColor.value = kBackgroundColor;
