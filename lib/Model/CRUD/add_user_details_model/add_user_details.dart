@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// Creating a class to add user details to Firestore
 class AddUserDetailsModel {
   Future addUserDetails({
     required String fullName,
@@ -12,6 +13,7 @@ class AddUserDetailsModel {
     required String website,
   }) async {
     try {
+      // Adding user details to 'users' collection with document ID as registerEmail
       await FirebaseFirestore.instance
           .collection('users')
           .doc(registerEmail)

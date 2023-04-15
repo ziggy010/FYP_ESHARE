@@ -13,6 +13,7 @@ class AddSavedCardsModel {
     required String savedCardCardNumber,
   }) async {
     try {
+      // add saved card information to Firestore collection
       await FirebaseFirestore.instance
           .collection('users')
           .doc(registeredEmail)
@@ -30,6 +31,7 @@ class AddSavedCardsModel {
         },
       );
     } catch (e) {
+      // print error message if there is an error while adding saved card
       print('saved card error');
     }
   }

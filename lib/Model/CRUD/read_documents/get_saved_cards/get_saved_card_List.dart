@@ -4,10 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class GetSavedCardListModel {
-  List savedCardList = [];
+  List savedCardList = []; // list to store document IDs of saved cards
 
   setSavedNames() async {
-    _savedNamesCopy = await _savedNames;
+    _savedNamesCopy = await _savedNames; // update saved names list
   }
 
   Future getSavedCardDetails() async {
@@ -19,12 +19,13 @@ class GetSavedCardListModel {
         .then((snapshot) {
       snapshot.docs.forEach(
         (document) {
-          savedCardList.add(document.reference.id);
-          savedCardList = savedCardList.toSet().toList();
+          savedCardList.add(document.reference.id); // add document ID to list
+          savedCardList =
+              savedCardList.toSet().toList(); // remove duplicate IDs
         },
       );
     });
-    await setSavedNames();
+    await setSavedNames(); // update saved names list
   }
 
   Future<String> getData(String documentId, String keyValue) async {
@@ -37,7 +38,7 @@ class GetSavedCardListModel {
 
     if (snapshot.exists) {
       Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
-      return data[keyValue].toString();
+      return data[keyValue].toString(); // return value of specified key
     } else {
       throw Exception("Document does not exist");
     }
@@ -49,20 +50,22 @@ class GetSavedCardListModel {
     final processedData = <Map<String, dynamic>>[];
     for (final id in savedCardList) {
       try {
-        processedData.add({id: await getData(id, 'Full Name')});
+        processedData.add({
+          id: await getData(id, 'Full Name')
+        }); // add ID and Full Name to list
       } catch (e) {
-        continue;
+        continue; // skip if document does not exist
       }
     }
     return processedData;
   }
 
-  List<Map> get savedCards => _savedNamesCopy;
+  List<Map> get savedCards => _savedNamesCopy; // return saved names list
 
   Future<void> filterUser(String query) async {
     final savedNames = List<Map<String, dynamic>>.from(await _savedNames);
     if (query.isEmpty) {
-      _savedNamesCopy = savedNames;
+      _savedNamesCopy = savedNames; // show all saved names if query is empty
     } else {
       _savedNamesCopy = savedNames
           .where(
@@ -70,8 +73,8 @@ class GetSavedCardListModel {
                   query.toLowerCase(),
                 ),
           )
-          .toList();
+          .toList(); // filter saved names by query
     }
-    print(savedCards);
+    print(savedCards); // print filtered saved names list
   }
 }

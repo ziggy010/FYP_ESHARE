@@ -13,9 +13,8 @@ class GetCurrentUserModel {
   static String address = '';
   static int cardDesign = 0;
 
+  // This method retrieves the current user's data from the Firestore database.
   static Future getCurrentUserId() async {
-    // final snapshot = await docUser.get();
-    // await Future.delayed(Duration(seconds: 3));
     await FirebaseFirestore.instance
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.email)
