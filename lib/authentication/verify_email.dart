@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../View/components/main_components/my_button.dart';
 
@@ -55,22 +56,39 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     try {
       final user = FirebaseAuth.instance.currentUser!;
       await user.sendEmailVerification();
-      kSnackBar(
-        'Email Sent Successfully',
-        'Please check your email for the password reset link.',
-        Colors.green,
+
+      Get.snackbar(
+        '',
+        '',
+        titleText: Text(
+          'Email sent',
+          style: TextStyle(
+            color: Colors.green,
+            fontFamily: 'poppins',
+            fontSize: 16.sp,
+          ),
+        ),
+        messageText: Text(
+          'elo',
+          style: const TextStyle(
+            color: Colors.white,
+            fontFamily: 'poppins',
+          ),
+        ),
+        snackPosition: SnackPosition.BOTTOM,
+        snackStyle: SnackStyle.FLOATING,
+        backgroundColor: kContainerColor,
       );
 
       setState(() {
         canResendEmail = false;
       });
+
       await Future.delayed(Duration(seconds: 5));
       setState(() {
         canResendEmail = true;
       });
-    } catch (e) {
-      print('e');
-    }
+    } catch (e) {}
   }
 
   @override
@@ -124,25 +142,38 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                         SizedBox(
                           height: 40.h,
                         ),
-                        Visibility(
-                          visible: canResendEmail,
-                          child: MyButton(
-                            onTap: () {
-                              sendVerificationEmail();
-                            },
-                            height: 60,
-                            width: double.infinity,
-                            buttonColor: kSelectedColor,
-                            borderRadius: 15,
-                            textWidget: Text(
-                              'Send',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'poppins',
-                                fontSize: 16.sp,
-                              ),
+                        ElevatedButton(
+                          child: Text(
+                            'Resent email',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'poppins',
+                              fontSize: 16.sp,
                             ),
                           ),
+                          style: ElevatedButton.styleFrom(
+                            primary: kBackgroundColor,
+                          ),
+                          onPressed:
+                              canResendEmail ? sendVerificationEmail : null,
+                          // child: Container(
+                          //   height: 50.h,
+                          //   width: double.infinity,
+                          //   decoration: BoxDecoration(
+                          //     color: kSelectedColor,
+                          //     borderRadius: BorderRadius.circular(15.r),
+                          //   ),
+                          //   child: Center(
+                          //     child: Text(
+                          //       'Resent email',
+                          //       style: TextStyle(
+                          //         color: Colors.white,
+                          //         fontFamily: 'poppins',
+                          //         fontSize: 16.sp,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
                         ),
                         SizedBox(
                           height: 40.h,

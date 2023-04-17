@@ -1,3 +1,4 @@
+import 'package:e_share/Model/CRUD/read_documents/get_saved_cards/get_saved_card_List.dart';
 import 'package:e_share/constant.dart';
 import 'package:e_share/View/card_design_page.dart';
 import 'package:e_share/View/saved_card_page.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 
 class ProfilePageMid extends StatelessWidget {
-  const ProfilePageMid({super.key});
+  final getSavedCardList = GetSavedCardListModel();
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +18,21 @@ class ProfilePageMid extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ProfileContainer(
-            number: '20',
-            title: 'Saved Cards',
-            icon: Icons.bookmark_outline,
-            onTap: () {
-              Get.toNamed(SavedCardsPage.id);
+          FutureBuilder(
+            future: getSavedCardList.getSavedCardDetails(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              return ProfileContainer(
+                number: getSavedCardList.savedCardList.length.toString(),
+                title: 'Saved Cards',
+                icon: Icons.bookmark_outline,
+                onTap: () {
+                  Get.toNamed(SavedCardsPage.id);
+                },
+              );
             },
           ),
           ProfileContainer(
-            number: '2',
+            number: '3',
             title: 'Personal Cards',
             icon: Icons.wallet_outlined,
             onTap: () {
