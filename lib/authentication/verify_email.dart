@@ -56,28 +56,10 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     try {
       final user = FirebaseAuth.instance.currentUser!;
       await user.sendEmailVerification();
-
-      Get.snackbar(
-        '',
-        '',
-        titleText: Text(
-          'Email sent',
-          style: TextStyle(
-            color: Colors.green,
-            fontFamily: 'poppins',
-            fontSize: 16.sp,
-          ),
-        ),
-        messageText: Text(
-          'elo',
-          style: const TextStyle(
-            color: Colors.white,
-            fontFamily: 'poppins',
-          ),
-        ),
-        snackPosition: SnackPosition.BOTTOM,
-        snackStyle: SnackStyle.FLOATING,
-        backgroundColor: kContainerColor,
+      kSnackBar(
+        'Email Sent Successfully',
+        'Please check your email for the activation link.',
+        Colors.green,
       );
 
       setState(() {
