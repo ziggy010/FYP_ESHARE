@@ -55,6 +55,11 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     try {
       final user = FirebaseAuth.instance.currentUser!;
       await user.sendEmailVerification();
+      kSnackBar(
+        'Email Sent Successfully',
+        'Please check your email for the password reset link.',
+        Colors.green,
+      );
 
       setState(() {
         canResendEmail = false;
@@ -138,7 +143,27 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                               ),
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          height: 40.h,
+                        ),
+                        MyButton(
+                          onTap: () {
+                            FirebaseAuth.instance.signOut();
+                          },
+                          height: 60,
+                          width: double.infinity,
+                          buttonColor: kSelectedColor,
+                          borderRadius: 15,
+                          textWidget: Text(
+                            'Logout',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'poppins',
+                              fontSize: 16.sp,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
