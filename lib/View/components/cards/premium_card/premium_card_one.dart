@@ -42,7 +42,7 @@ class PremiumCardOne extends StatelessWidget {
       // initialData: InitialData,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          if (getSavedCardList.savedCardList.length < 2) {
+          if (getSavedCardList.savedCardList.length < 1) {
             return Stack(
               children: [
                 Container(
