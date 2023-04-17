@@ -40,7 +40,7 @@ class LicenseFirst extends StatelessWidget {
                           color: Colors.transparent,
                           image: DecorationImage(
                             image: NetworkImage(snapshot.data),
-                            fit: BoxFit.cover,
+                            // fit: BoxFit.cover,
                           ),
                           borderRadius: BorderRadius.circular(14.r),
                         ),
@@ -69,7 +69,7 @@ class LicenseFirst extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14.r),
                           image: DecorationImage(
                             image: NetworkImage(snapshot.data),
-                            fit: BoxFit.cover,
+                            // fit: BoxFit.cover,
                           ),
                         ),
                       );
