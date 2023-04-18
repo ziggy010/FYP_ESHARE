@@ -43,7 +43,6 @@ class LicenseBack extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14.r),
                           image: DecorationImage(
                             image: NetworkImage(snapshot.data),
-                            fit: BoxFit.cover,
                           ),
                         ),
                       );
@@ -70,7 +69,6 @@ class LicenseBack extends StatelessWidget {
                           color: Colors.transparent,
                           image: DecorationImage(
                             image: NetworkImage(snapshot.data),
-                            fit: BoxFit.cover,
                           ),
                           borderRadius: BorderRadius.circular(14.r),
                         ),

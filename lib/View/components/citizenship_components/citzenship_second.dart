@@ -42,7 +42,6 @@ class CitizenshipSecond extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14.r),
                           image: DecorationImage(
                             image: NetworkImage(snapshot.data),
-                            fit: BoxFit.cover,
                           ),
                         ),
                       );
@@ -69,7 +68,6 @@ class CitizenshipSecond extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14.r),
                           image: DecorationImage(
                             image: NetworkImage(snapshot.data),
-                            fit: BoxFit.cover,
                           ),
                         ),
                       );
