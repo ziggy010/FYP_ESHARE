@@ -110,7 +110,7 @@ class _FaqPageMidState extends State<FaqPageMid> with TickerProviderStateMixin {
                 ),
                 isOpen: true,
                 content: Text(
-                  'This is the introduction right here hello hello hello hello',
+                  'You can share your card via QR code.',
                   style: contentTextStyle,
                 ),
               ),
@@ -120,8 +120,10 @@ class _FaqPageMidState extends State<FaqPageMid> with TickerProviderStateMixin {
                   style: headerTextStyle,
                 ),
                 isOpen: true,
-                content: Icon(Icons.airline_seat_flat,
-                    size: 120, color: Colors.blue[200]),
+                content: Text(
+                  'To save other\'s card you can scan their QR code and you will be able to save their card.',
+                  style: contentTextStyle,
+                ),
               ),
               AccordionSection(
                 header: Text(
@@ -129,8 +131,10 @@ class _FaqPageMidState extends State<FaqPageMid> with TickerProviderStateMixin {
                   style: headerTextStyle,
                 ),
                 isOpen: true,
-                content:
-                    Icon(Icons.airplay, size: 70, color: Colors.green[200]),
+                content: Text(
+                  'Yes, It is completely fine.',
+                  style: contentTextStyle,
+                ),
               ),
             ],
           ),
